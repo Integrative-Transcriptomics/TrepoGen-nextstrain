@@ -1,4 +1,4 @@
-# [slide title](https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/4bc4df6592d553758843eb217d7df49abc032ad2/ds/TPASS-2588-snv-Tp0326.json)
+# [slide title](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/4bc4df6592d553758843eb217d7df49abc032ad2/ds/TPASS-2588-snv-Tp0326.json)
 
 Slide content rendered in the left-hand sidebar (as normal)
 

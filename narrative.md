@@ -4,6 +4,7 @@ authors: "Simon Hackl"
 authorLinks: "www.linkedin.com/in/s-t-h"
 affiliations: "University of Tuebingen, Institute for Bioinformatics and Medical Informatics, Integrative Transcriptomics, Tuebingen, Germany"
 date: "July 2025"
+dataset: "https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/4bc4df6592d553758843eb217d7df49abc032ad2/ds/TPASS-2588-snv-Tp0326.json"
 abstract: "Narrative to introduce the Nextstrain-TrepoGen project (https://github.com/Integrative-Transcriptomics/Nextstrain-TrepoGen) during ISMB/ECCB2025."
 ---
 

@@ -1,33 +1,69 @@
 ---
-title: Global Perspective on Treponema pallidum
+title: Global Perspective on _Treponema pallidum_
 authors: "Simon Hackl"
 authorLinks: "www.linkedin.com/in/s-t-h"
 affiliations: "University of Tuebingen, Institute for Bioinformatics and Medical Informatics, Integrative Transcriptomics, Tuebingen, Germany"
 date: "July 2025"
-dataset: "https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?c=country&d=map&p=full"
+dataset: "https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=map&c=country"
 abstract: "We want to democratize access to genomic diversity data of relevant _Treponema pallidum_ subspecies by developing and maintaining unified Nextstrain datasets for epidemiological surveillance, comparative evolutionary analysis, and facilitated data sharing. We are placing a special emphasis on tracking outer membrane protein diversity relevant for vaccine design."
 ---
 
-# [An escalating public health concern.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?c=country&d=map&p=full)
+# [An escalating public health concern.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=map&c=country)
 
-With 7 million cases of infection in 2020, syphilis and other treponematoses are a global public health concern. The WHO states that progress in fighting this sexually transmitted diseases has plateaued and although penicillin treatment is inexpensive and effective, vaccination is considered key to eliminate the disease.<sup>*</sup>
+In 2020, there were 7 million cases of infection, making syphilis and other treponematoses a global public health concern. The World Health Organization (WHO) has reported a plateau in the progress being made in the fight against these sexually transmitted disease.<sup>1</sup>
 
 ---
 
-<sub><sup>*</sup>World Health Organization, Global progress report on HIV, viral hepatitis and sexually transmitted infections, 2021. Online.</sub>
+<sub><sup>1</sup>World Health Organization, Global progress report on HIV, viral hepatitis and sexually transmitted infections, 2021. Online.</sub>
 
-...
+# [Syphilis prevention via vaccination.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=map&c=Azithromycin)
 
-# [Looping Animation](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-indel-genome.json)
+Despite the affordability and efficacy of penicillin treatment, resistance to azithromycin, a frequently used alternative antimicrobial agent, is widespread across the globe. Making the situation more difficult is the issue of congenital transmission, which highlights the importance of vaccination for the elimination of the disease through the prevention of infection.<sup>1</sup>
 
- _Treponema pallidum_ (Tp), the causative agent of syphilis, is considered a stealth pathogen due to its poorly antigenic and low-inflammatory surface. Progress has been made in identifying the structure and function of Tp outer membrane proteins (OMPs), some of which are promising vaccination targets. With this project we want to democratize access to genomic diversity data of relevant Tp subspecies by developing and maintaining unified Nextstrain datasets for epidemiological surveillance, comparative evolutionary analysis, and facilitated data sharing. We are placing a special emphasis on tracking OMP diversity relevant for vaccine design.
+---
 
-...
+<sub><sup>1</sup>World Health Organization, Global progress report on HIV, viral hepatitis and sexually transmitted infections, 2021. Online.</sub>
 
-# [Phylogenies](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json)
+# [Launching a curated knowledge hub.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=tree&branchLabel=none&c=subspecies)
 
-...
+Significant advancements in sample processing and sequencing over the past decade have led to the availability of substantial public whole genome sequencing data on _Treponema pallidum_. However, this data remains inaccessible due to the absence of a standardized analysis approach.
 
-# [Explore clock signal](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0865.json)
+![Cumulative number of T. pallidum samples deposited in the NCBI SRA from 2005 to 2024. Plot by N. Lieberman.](https://github.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/blob/narrative/media/sra_numbers.png)
 
-...
+Presently, our datasets encompass 2,588 samples of _Treponema pallidum_ subspecies _pallidum_, _pertenue_, and _endemicum_, which are utilized to generate robust phylogenies through the masking of known regions of high recombination across these most pertinent human pathogenic subspecies.
+
+# [Overcoming a language barrier.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=tree&branchLabel=none&c=clade)
+
+Different data sets form different clusters to classify pathogens, creating a "language barrier" for interpreting analyses across studies. While these strategies are useful for individual analyses, the explosion of sequencing data has improved our understanding of the _Treponema pallidum_ genome to the point where a unified, dataset-independent hierarchical clustering strategy is possible.
+
+We intend to utilize the functionalities of Nextstrain to overlay metadata and incorporate such a harmonized, hierarchical clustering schema applicable on a global scale. In addition, we also aim to integrate information regarding recent developments in multi-locus sequence typing schemas<sup>1</sup> to inform on clinically relevant sample diversity.
+
+---
+
+<sub><sup>1</sup>M. Pla-Diaz _et al._, A new typing scheme demonstrates high discriminatory power for Treponema pallidum subspecies, 2025. Preprint at bioRxiv 2025.07.10.664125.</sub>
+
+# [Informing on candidate vaccine targets - on a global scale.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json?d=tree&c=subspecies&l=radial)
+
+_Treponema pallidum_, the causative agent of syphilis, is considered a "stealth pathogen" due to its poorly antigenic and low-inflammatory surface.<sup>1</sup> Advancements have been made in the identification of the structure and function of _Treponema pallidum_ outer membrane proteins, with some of these proteins emerging as promising candidates for vaccination.<sup>2</sup> Recent studies<sup>3</sup> have developed a framework that provides insights into the variability of promising vaccine targets, including the BamA homolog Tp0326 and five FadL-like proteins.
+
+Beyond providing genome datasets, we offer gene-based datasets of vaccine target coding genes. An example of a Tp0326 based unrooted gene tree is displayed on the right, revealing divergent evolution among subspecies. By leveraging gene annotations, including protein topological regions, we establish a comprehensive perspective on vaccine target variability within a global data scale. The results obtained so far indicate that these previous findings have been validated, including the observation of the conservation of extracellular regions that are predicted to contain B-cell epitopes - for example ECL 1 and 6.
+
+![Tp0326 entropy per position and protein topologies indicated as colored tracks. Yellow segments represent extracellular loops.](https://github.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/blob/narrative/media/tp0326_diversity.png)
+
+---
+
+<sub><sup>1</sup>J. D. Radolf _et al._, Treponema pallidum, the syphilis spirochete: making a living as a stealth pathogen, 2016. Nat. Rev. Microbiol., 14(12): 744-759.</sub>
+<sub><sup>2</sup>K. L. Hawley _et al._, Structural Modeling of the Treponema pallidum Outer Membrane Protein Repertoire: a Road Map for Deconvolution of Syphilis Pathogenesis and Development of a Syphilis Vaccine, 2021. J. Bacteriol., 203(15):e0008221.</sub>
+<sub><sup>3</sup>E. B. Bettin _et al._, Sequence variability of BamA and FadL candidate vaccinogens suggests divergent evolutionary paths of Treponema pallidum outer membrane proteins, 2025. Preprint at bioRxiv 2025.04.21.649848.</sub>
+
+# [Conservation of candidate ECL vaccinogens.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json?d=tree&c=ecl_type&l=radial)
+
+In addition, we extract _extracellular loop_ (ECL) sequence types, i.e., the combination of ECL sequences, per sample. The objective is to inform on the usability of outer membrane protein coding genes for the development of globally effective vaccines against treponematoses. In the displayed example of Tp0326, ECL types are displayed per ECL 1 to 8: 0s represent the reference and other values indicate a variant sequence, indexed by occurrence order. Sequence types with frequency below 1% are indicated as "other“.
+
+# [...](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json?d=tree&c=ecl_type&l=scatter&scatterX=region&scatterY=ecl_type)
+
+When this is combined with the Nextstrain metadata geographical information overlay, the clustering of specific ECL types in distinct geographic regions becomes evident, indicating possible effects of endemic population evolution. We intend to expand this approach to encompass B-cell epitope predictions and establish connections to protein structure resources that are currently under development.
+
+# [Conclusion](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0865.json)
+
+

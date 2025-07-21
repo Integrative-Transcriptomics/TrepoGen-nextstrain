@@ -28,7 +28,7 @@ Despite the affordability and efficacy of penicillin treatment, resistance to az
 
 Significant advancements in sample processing and sequencing over the past decade have led to the availability of substantial public whole genome sequencing data on _Treponema pallidum_. However, this data remains inaccessible due to the absence of a standardized analysis approach.
 
-![Cumulative number of T. pallidum samples deposited in the NCBI SRA from 2005 to 2024. Plot by N. Lieberman.](https://github.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/blob/narrative/media/sra_numbers.png)
+![Cumulative number of T. pallidum samples deposited in the NCBI SRA from 2005 to 2024. Plot by N. Lieberman.](https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/media/sra_numbers.png)
 
 Presently, our datasets encompass 2,588 samples of _Treponema pallidum_ subspecies _pallidum_, _pertenue_, and _endemicum_, which are utilized to generate robust phylogenies through the masking of known regions of high recombination across these most pertinent human pathogenic subspecies.
 
@@ -48,9 +48,7 @@ _Treponema pallidum_, the causative agent of syphilis, is considered a "stealth 
 
 Beyond providing genome datasets, we offer gene-based datasets of vaccine target coding genes. An example of a Tp0326 based unrooted gene tree is displayed on the right, revealing divergent evolution among subspecies. By leveraging gene annotations, including protein topological regions, we establish a comprehensive perspective on vaccine target variability within a global data scale. The results obtained so far indicate that these previous findings have been validated, including the observation of the conservation of extracellular regions that are predicted to contain B-cell epitopes - for example ECL 1 and 6.
 
-![Y pestis SEM](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Yersinia_pestis.jpg/800px-Yersinia_pestis.jpg)
-
-![Tp0326 entropy per position and protein topologies indicated as colored tracks. Yellow segments represent extracellular loops.](https://github.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/blob/6b7db4678800e1be452d7d04a9f8e06b49096872/media/tp0326_diversity.png)
+![Tp0326 entropy per position and protein topologies indicated as colored tracks. Yellow segments represent extracellular loops.](https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/media/tp0326_diversity.png)
 
 ---
 

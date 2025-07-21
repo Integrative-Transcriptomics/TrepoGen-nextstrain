@@ -48,7 +48,9 @@ _Treponema pallidum_, the causative agent of syphilis, is considered a "stealth 
 
 Beyond providing genome datasets, we offer gene-based datasets of vaccine target coding genes. An example of a Tp0326 based unrooted gene tree is displayed on the right, revealing divergent evolution among subspecies. By leveraging gene annotations, including protein topological regions, we establish a comprehensive perspective on vaccine target variability within a global data scale. The results obtained so far indicate that these previous findings have been validated, including the observation of the conservation of extracellular regions that are predicted to contain B-cell epitopes - for example ECL 1 and 6.
 
-![Tp0326 entropy per position and protein topologies indicated as colored tracks. Yellow segments represent extracellular loops.](https://github.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/blob/narrative/media/tp0326_diversity.png)
+![Y pestis SEM](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Yersinia_pestis.jpg/800px-Yersinia_pestis.jpg)
+
+![Tp0326 entropy per position and protein topologies indicated as colored tracks. Yellow segments represent extracellular loops.](https://github.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/blob/6b7db4678800e1be452d7d04a9f8e06b49096872/media/tp0326_diversity.png)
 
 ---
 

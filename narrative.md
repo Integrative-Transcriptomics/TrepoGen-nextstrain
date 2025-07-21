@@ -36,7 +36,7 @@ Presently, our datasets encompass 2,588 samples of _Treponema pallidum_ subspeci
 
 Different data sets form different clusters to classify pathogens, creating a "language barrier" for interpreting analyses across studies. While these strategies are useful for individual analyses, the explosion of sequencing data has improved our understanding of the _Treponema pallidum_ genome to the point where a unified, dataset-independent hierarchical clustering strategy is possible.
 
-We intend to utilize the functionalities of Nextstrain to overlay metadata and incorporate such a harmonized, hierarchical clustering schema applicable on a global scale. In addition, we also aim to integrate information regarding recent developments in multi-locus sequence typing schemas<sup>1</sup> to inform on clinically relevant sample diversity.
+We intend to utilize the functionalities of Nextstrain to overlay metadata and incorporate such a harmonized, hierarchical clustering schema applicable on a global scale - an example of such is displayed on the right. In addition, we also aim to integrate information regarding recent developments in multi-locus sequence typing schemas<sup>1</sup> to inform on clinically relevant sample diversity.
 
 ---
 
@@ -53,7 +53,9 @@ Beyond providing genome datasets, we offer gene-based datasets of vaccine target
 ---
 
 <sub><sup>1</sup>J. D. Radolf _et al._, Treponema pallidum, the syphilis spirochete: making a living as a stealth pathogen, 2016. Nat. Rev. Microbiol., 14(12): 744-759.</sub>
+
 <sub><sup>2</sup>K. L. Hawley _et al._, Structural Modeling of the Treponema pallidum Outer Membrane Protein Repertoire: a Road Map for Deconvolution of Syphilis Pathogenesis and Development of a Syphilis Vaccine, 2021. J. Bacteriol., 203(15):e0008221.</sub>
+
 <sub><sup>3</sup>E. B. Bettin _et al._, Sequence variability of BamA and FadL candidate vaccinogens suggests divergent evolutionary paths of Treponema pallidum outer membrane proteins, 2025. Preprint at bioRxiv 2025.04.21.649848.</sub>
 
 # [Conservation of candidate ECL vaccinogens.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json?d=tree&c=ecl_type&l=radial)
@@ -64,6 +66,16 @@ In addition, we extract _extracellular loop_ (ECL) sequence types, i.e., the com
 
 When this is combined with the Nextstrain metadata geographical information overlay, the clustering of specific ECL types in distinct geographic regions becomes evident, indicating possible effects of endemic population evolution. We intend to expand this approach to encompass B-cell epitope predictions and establish connections to protein structure resources that are currently under development.
 
-# [Conclusion](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0865.json)
+# [Conclusion](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json)
 
+**Harmonized data processing – on a global scale.**
 
+We present a harmonized protocol for data processing, as well as visual phylogenetic analysis and interpretation using the Nextstrain platform. The workflow method described can be readily generalizable beyond T. pallidum to other bacterial pathogens.
+
+**Endeavor to identify vaccine targets.**
+
+By providing a comprehensive genomic context and accessible phylogenetic analysis on a global scale, subsequent analyses will prioritize the identification of vaccine candidates using available genomic data.
+
+**Engaging the Treponema research community.**
+
+The platform integrates disparate resources into a unified knowledge hub accessible via the web, fostering collaboration and cross-comparisons. Expansions include integrating hierarchical clustering- and clinically relevant typing schemes, as well as extensive protein structure resources established by various collaborations.

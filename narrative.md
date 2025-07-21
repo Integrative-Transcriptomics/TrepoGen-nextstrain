@@ -62,11 +62,11 @@ Beyond providing genome datasets, we offer gene-based datasets of vaccine target
 
 In addition, we extract _extracellular loop_ (ECL) sequence types, i.e., the combination of ECL sequences, per sample. The objective is to inform on the usability of outer membrane protein coding genes for the development of globally effective vaccines against treponematoses. In the displayed example of Tp0326, ECL types are displayed per ECL 1 to 8: 0s represent the reference and other values indicate a variant sequence, indexed by occurrence order. Sequence types with frequency below 1% are indicated as "other“.
 
-# [...](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json?d=tree&c=ecl_type&l=scatter&scatterX=region&scatterY=ecl_type)
+# [Endemic populations show distinct ECL types.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json?d=tree&c=ecl_type&l=scatter&scatterX=region&scatterY=ecl_type)
 
 When this is combined with the Nextstrain metadata geographical information overlay, the clustering of specific ECL types in distinct geographic regions becomes evident, indicating possible effects of endemic population evolution. We intend to expand this approach to encompass B-cell epitope predictions and establish connections to protein structure resources that are currently under development.
 
-# [Conclusion](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json)
+# [Conclusion](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?branchLabel=none&c=subspecies)
 
 **Harmonized data processing – on a global scale.**
 

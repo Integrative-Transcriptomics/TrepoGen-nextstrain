@@ -82,7 +82,9 @@ By providing a comprehensive genomic context and accessible phylogenetic analysi
 
 The platform integrates disparate resources into a unified knowledge hub accessible via the web, fostering collaboration and cross-comparisons. Expansions include integrating hierarchical clustering- and clinically relevant typing schemes. Our aim is to further expand the platform by providing access to the underlying genome and metadata, alongside extensive resources on protein structures and variability. 
 
-### Institutions involved:<sup>a</sup>
+---
+
+## **Institutions involved**<sup>a</sup>
 
 ![University of Washington](https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/media/partners/uw.png)
 

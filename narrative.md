@@ -3,7 +3,7 @@ title: Global Perspective on _Treponema pallidum_
 authors: "Simon Hackl"
 authorLinks: "www.linkedin.com/in/s-t-h"
 affiliations: "University of Tuebingen, Institute for Bioinformatics and Medical Informatics, Integrative Transcriptomics, Tuebingen, Germany"
-date: "July 2025"
+date: "November 2025"
 dataset: "https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=map&c=country"
 abstract: "We want to democratize access to genomic diversity data of relevant _Treponema pallidum_ subspecies by developing and maintaining unified Nextstrain datasets for epidemiological surveillance, comparative evolutionary analysis, and facilitated data sharing. We are placing a special emphasis on tracking outer membrane protein diversity relevant for vaccine design."
 ---
@@ -16,9 +16,9 @@ In 2020, there were 7 million cases of infection, making syphilis and other trep
 
 <sub><sup>1</sup>World Health Organization, Global progress report on HIV, viral hepatitis and sexually transmitted infections, 2021. Online.</sub>
 
-# [Syphilis prevention via vaccination.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=map&c=Azithromycin)
+# [Syphilis prevention via vaccination.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=map&c=macrolide_resistance)
 
-Despite the affordability and efficacy of penicillin treatment, resistance to azithromycin, a frequently used alternative antimicrobial agent, is widespread across the globe. Making the situation more difficult is the issue of congenital transmission, which highlights the importance of vaccination for the elimination of the disease through the prevention of infection.<sup>1</sup>
+Despite the affordability and efficacy of penicillin treatment, resistance to the macrolide azithromycin, a frequently used alternative antimicrobial agent, is widespread across the globe (pink sections of the map). Making the situation more difficult is the issue of congenital transmission, which highlights the importance of vaccination for the elimination of the disease through the prevention of infection.<sup>1</sup>
 
 ---
 
@@ -32,15 +32,17 @@ Significant advancements in sample processing and sequencing over the past decad
 
 Presently, our datasets encompass 2,588 samples of _Treponema pallidum_ subspecies _pallidum_, _pertenue_, and _endemicum_, which are utilized to generate robust phylogenies through the masking of known regions of high recombination across these most pertinent human pathogenic subspecies.
 
-# [Overcoming a language barrier.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=tree&branchLabel=none&c=clade)
+# [Overcoming a language barrier.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-genome.json?d=tree&branchLabel=none&c=beale2021_sublineage)
 
-Different data sets form different clusters to classify pathogens, creating a "language barrier" for interpreting analyses across studies. While these strategies are useful for individual analyses, the explosion of sequencing data has improved our understanding of the _Treponema pallidum_ genome to the point where a unified, dataset-independent hierarchical clustering strategy is possible.
+Different data sets form different clusters to classify pathogens, creating a "language barrier" for interpreting analyses across studies. While these strategies are useful for individual analyses, the explosion of sequencing data has improved our understanding of the _Treponema pallidum_ genome. As an example, the displayed tree highlights the clustering of samples according to a subpopulation scheme developed by Beale _et al._ in 2021<sup>1</sup>, which is widely used in the research community. 
 
-We intend to utilize the functionalities of Nextstrain to overlay metadata and incorporate such a harmonized, hierarchical clustering schema applicable on a global scale - an example of such is displayed on the right. In addition, we also aim to integrate information regarding recent developments in multi-locus sequence typing schemas<sup>1</sup> to inform on clinically relevant sample diversity.
+However, other studies have employed different clustering strategies, leading to inconsistencies in sample classification across datasets. We are in close ongoing contact with the research community to integrate a dataset-independent hierarchical clustering. Further, we aim to integrate information regarding recent developments in multi-locus sequence typing schemas<sup>2</sup> to inform on clinically relevant sample diversity.
 
 ---
 
-<sub><sup>1</sup>M. Pla-Diaz _et al._, A new typing scheme demonstrates high discriminatory power for Treponema pallidum subspecies, 2025. Preprint at bioRxiv 2025.07.10.664125.</sub>
+<sub><sup>1</sup>M. Beale _et al._, Global phylogeny of Treponema pallidum lineages reveals recent expansion and spread of contemporary syphilis, 2021. Nat. Microbiol., 6:1549-1560.</sub>
+
+<sub><sup>2</sup>M. Pla-Diaz _et al._, A new typing scheme demonstrates high discriminatory power for Treponema pallidum subspecies, 2025. Preprint at bioRxiv 2025.07.10.664125.</sub>
 
 # [Informing on candidate vaccine targets - on a global scale.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json?d=tree&c=subspecies&l=radial)
 
@@ -56,7 +58,7 @@ Beyond providing genome datasets, we offer gene-based datasets of vaccine target
 
 <sub><sup>2</sup>K. L. Hawley _et al._, Structural Modeling of the Treponema pallidum Outer Membrane Protein Repertoire: a Road Map for Deconvolution of Syphilis Pathogenesis and Development of a Syphilis Vaccine, 2021. J. Bacteriol., 203(15):e0008221.</sub>
 
-<sub><sup>3</sup>E. B. Bettin _et al._, Sequence variability of BamA and FadL candidate vaccinogens suggests divergent evolutionary paths of Treponema pallidum outer membrane proteins, 2025. Preprint at bioRxiv 2025.04.21.649848.</sub>
+<sub><sup>3</sup>E. B. Bettin _et al._, Sequence variability of BamA and FadL candidate vaccinogens suggests divergent evolutionary paths of Treponema pallidum outer membrane proteins, 2025. J. Bacteriol., 207(8):e0015925.</sub>
 
 # [Conservation of candidate ECL vaccinogens.](https://nextstrain.org/fetch/raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/ds/TPASS-2588-snv-Tp0326.json?d=tree&c=ecl_type&l=radial)
 
@@ -78,4 +80,18 @@ By providing a comprehensive genomic context and accessible phylogenetic analysi
 
 **Engaging the Treponema research community.**
 
-The platform integrates disparate resources into a unified knowledge hub accessible via the web, fostering collaboration and cross-comparisons. Expansions include integrating hierarchical clustering- and clinically relevant typing schemes, as well as extensive protein structure resources established by various collaborations.
+The platform integrates disparate resources into a unified knowledge hub accessible via the web, fostering collaboration and cross-comparisons. Expansions include integrating hierarchical clustering- and clinically relevant typing schemes. Our aim is to further expand the platform by providing access to the underlying genome and metadata, alongside extensive resources on protein structures and variability. 
+
+### Institutions involved:<sup>a</sup>
+
+![University of Washington](https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/media/partners/uw.png)
+
+![University of Tübingen](https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/media/partners/ut.png)
+
+![Wellcome Sanger Institute](https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/media/partners/wsi.png)
+
+##### This project receives funding [To support the development of a broadly effective syphilis vaccine (INV-072205)](https://www.gatesfoundation.org/about/committed-grants/2024/12/inv-072205) by the Gates Foundation.
+
+![Gates Foundation](https://raw.githubusercontent.com/Integrative-Transcriptomics/Nextstrain-TrepoGen/narrative/media/partners/gf.png)
+
+<sub><sup>a</sup>A list of relevant contacts will be provided shortly..</sub>

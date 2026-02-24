@@ -10,7 +10,7 @@ genes = list(config.get("genes", {}).keys())
 sources = ["TPASS-2588"]
 
 # subsets: List of variant subsets to use in the workflow; expected to match (VAL) in source/data/*/variants/<VAL>.vcf.
-subsets = ["snv"]
+subsets = ["snv-indel"]
 
 # source_files: List of files that are part of the source data; files are expected to be present in the source/data/{source} directory.
 source_files = [
@@ -20,9 +20,6 @@ source_files = [
 	"meta.csv", # Metadata file in CSV format containing information about the single samples.
 	"meta_colors.tsv", # TSV file defining colors for the metadata.
 	"meta_configuration.json", # Auspice configuration file in JSON format providing settings for the metadata of the dataset.
-	"clades.tsv", # (Optional empty) TSV file defining clades for the dataset.
-	"clades_colors.tsv", # (Optional empty) TSV file defining colors for the clades.
-	"clades_configuration.json", # (Optional empty) Auspice configuration file in JSON format providing settings for the clades of the dataset.
 	"resistance_mutations.tsv", # (Optional empty) TSV file defining resistance mutations for the dataset.
 ]
 
@@ -46,6 +43,7 @@ rule all:
 		expand(".work/{source}_{subset}_genome/filtered.vcf", source=sources, subset=subsets),
 		expand(".work/{source}_{subset}_genome/{work_file}", source=sources, subset=subsets, work_file=work_files),
 		expand("datasets/{source}_{subset}_genome.json", source=sources, subset=subsets),
+		expand("datasets/{source}_{subset}_genome_reprocessed.json", source=sources, subset=subsets),
 		"source/misc/genome_display_configuration.json", # Independent file for genome dataset display defaults.
 		"source/geo/color.tsv", # Independent file for geo colors.
 		"source/geo/loc.tsv" # Independent file for geo coordinates.
@@ -94,13 +92,12 @@ rule filter:
 rule colors:
 	input:
 		meta_colors="source/data/{source}/meta_colors.tsv",
-		clades_colors="source/data/{source}/clades_colors.tsv",
 		geo_colors="source/geo/color.tsv",
 	output:
 		".work/{source}_{subset}_genome/colors.tsv",
 	shell:
 		"""
-		cat {input.meta_colors} {input.clades_colors} {input.geo_colors} >> {output}
+		cat {input.meta_colors} {input.geo_colors} >> {output}
 		"""
 
 # Builds the phylogenetic tree from the variants.
@@ -209,24 +206,6 @@ rule traits:
 			--output-node-data {output}
 		"""
 
-# Assign clades to the nodes of the phylogenetic tree based on the provided clade definitions.
-rule clades:
-    input:
-        tree=rules.refine.output.tree,
-        variants=rules.ancestral.output.node_data,
-        clades="source/data/{source}/clades.tsv",
-    output:
-        ".work/{source}_{subset}_genome/clades.json",
-    shell:
-        """
-        augur clades --tree {input.tree} \
-            --mutations {input.variants} \
-            --clades {input.clades} \
-			--membership-name 'clade' \
-			--label-name 'clade' \
-            --output-node-data {output}
-        """
-
 # Computes resistances based on provided resistance mutations.
 rule resistances:
 	input:
@@ -241,8 +220,8 @@ rule resistances:
 			--vcf-reference {input.reference} \
 			--features {input.features} \
 			--output-node-data {output} \
-			--count traits \
-			--label 'Resistances' \
+			--count mutations \
+			--label resistance_mutations \
 			--output-node-data {output}
 		"""
 
@@ -301,8 +280,6 @@ rule export:
 		coordinates="source/geo/loc.tsv",
 		branch_lengths=rules.refine.output.branch_lengths,
 		traits=rules.traits.output,
-		clades=rules.clades.output,
-		clades_config="source/data/{source}/clades_configuration.json",
 		resistances=rules.resistances.output,
 		nucleotide_mutations=rules.ancestral.output.node_data,
 		amino_acid_mutations=rules.translate.output,
@@ -319,8 +296,8 @@ rule export:
 			--tree {input.tree} \
 			--metadata {input.metadata} \
 			--metadata-id-columns {params.metadata_id} \
-			--node-data {input.branch_lengths} {input.traits} {input.clades} {input.resistances} {input.nucleotide_mutations} {input.amino_acid_mutations} \
-			--auspice-config {input.meta_config} {input.display_defaults} {input.clades_config} \
+			--node-data {input.branch_lengths} {input.traits} {input.resistances} {input.nucleotide_mutations} {input.amino_acid_mutations} \
+			--auspice-config {input.meta_config} {input.display_defaults} \
 			--title {params.title} \
 			--maintainers {params.maintainers} \
 			--build-url {params.build_url} \
@@ -329,4 +306,26 @@ rule export:
 			--lat-longs {input.coordinates} \
 			--output {output} \
 			--include-root-sequence
+		"""
+
+# Reprocesses the exported dataset to add or remove specific metadata and node attributes.
+rule reprocess:
+	input:
+		dataset=rules.export.output,
+		metadata="source/data/{source}/meta.csv",
+	output:
+		"datasets/{source}_{subset}_genome_reprocessed.json",
+	params:
+		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
+		metadata_add="--metadata-add label",
+		node_attr_remove="--node-attr-remove resistance_mutations",
+	shell:
+		"""
+		python scripts/reprocess_dataset.py \
+			--dataset {input.dataset} \
+			--output {output} \
+			--metadata {input.metadata} \
+			--metadata-id-column {params.metadata_id} \
+			{params.metadata_add} \
+			{params.node_attr_remove}
 		"""

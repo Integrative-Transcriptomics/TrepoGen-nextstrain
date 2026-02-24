@@ -18,19 +18,19 @@ sources:
 describe:
   subset:
     snv: |
-      - Variants are restricted to **single nucleotide variants** (SNVs) to reduce the diversifying effect of low-frequency variants.
+      - Variants are restricted to **single nucleotide variants** (SNVs) to reduce the diversifying effect of InDel variants.
     snv-indel: |
       - Variants include **single nucleotide variants** (SNVs) and **InDels**, providing insight into the full spectrum of sequence changes.
     snv-masked: |
       - Variants are restricted to **single nucleotide variants** (SNVs), and highly recombinant regions are masked to focus on clonal sites that determine conservative pathogen evolution.
   source:
     TPASS-308: |
-      #### Genetic Data
+      ##### Data Source
 
       - This data source (TPASS-308) comprises genetic data from 308 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, each genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
       - Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>; <code>Subspecies</code> and <code>Lineage</code> designations (only for ssp. _pallidum_ as Nichols or SS14); and <code>Mean coverage</code> and <code>Ambiguity</code> to support quality control.
     TPASS-2588: |
-      #### Genetic Data
+      ##### Data Source
 
       - This data source (TPASS-2588) comprises genetic data from 2,588 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, each genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
       - Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>; <code>Subspecies</code> and <code>Lineage</code> designations (only for ssp. _pallidum_ as Nichols or SS14); and <code>Mean coverage</code> and <code>Ambiguity</code> to support quality control.

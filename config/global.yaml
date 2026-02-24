@@ -1,8 +1,8 @@
 seed: 1
-musial: "/mnt/c/Users/siha/Desktop/Tools/MUSIAL-v2.4.1.jar"
+musial: "/mnt/c/Users/siha/Desktop/Tools/MUSIAL-v2.4.2.jar"
 refine:
   precision: 3
-  iterations: 2
+  iterations: 1
 export:
   title: "Global perspective on Treponema pallidum"
   maintainers: "'Simon Hackl <https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/integrative-transkriptomik/gruppe/simon-hackl/>'"
@@ -21,9 +21,14 @@ describe:
     This severely limits their utility for molecular epidemiology, resistance surveillance, and vaccine development.
     We aim at democratizing access to _T. pallidum_ genomic diversity data by developing and maintaining unified, community-facing Nextstrain datasets for epidemiological surveillance, comparative evolutionary analysis and facilitated data sharing; with a special emphasis on tracking outer membrane protein (OMP) diversity relevant for vaccine design.
   funding: |
+    ##### Contributors
+
+    - The management of the underlying genomic data and metadata is overseen by [Nicole Lieberman, University of Washington, UW Medicine Laboratory Medicine & Pathology](https://dlmp.uw.edu/faculty/lieberman-nicole).
+
     ##### Funding and Provenance
+
+    - This project receives funding [To support the development of a broadly effective syphilis vaccine (INV-072205)](https://www.gatesfoundation.org/about/committed-grants/2024/12/inv-072205) by the _Gates Foundation_.
     
-    This project receives funding [To support the development of a broadly effective syphilis vaccine (INV-072205)](https://www.gatesfoundation.org/about/committed-grants/2024/12/inv-072205) by the _Gates Foundation_.
     We gratefully acknowledge the authors, originating and submitting laboratories of the genetic sequences and metadata for sharing their work.
     Data producers should be named where possible and cooperation should be sought in certain circumstances.
     Please avoid scooping the work of others and reach out if uncertain.

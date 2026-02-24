@@ -1,6 +1,8 @@
 {
 	"display_defaults": {
 		"color_by": "ecl_type",
+		"tip_label": "label",
+		"branch_label": "none",
 		"geo_resolution": "country",
 		"distance_measure": "div",
 		"map_triplicate": false,

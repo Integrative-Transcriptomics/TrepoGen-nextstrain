@@ -6,10 +6,10 @@ configfile: "config/gene.yaml"
 genes = list(config.get("genes", {}).keys())
 
 # sources: List of source datasets to use in the workflow; expected to match (VAL) in source/data/<VAL>.
-sources = ["TPASS-2588"]
+sources = ["TPASS-308"]
 
 # subsets: List of variant subsets to use in the workflow; expected to match (VAL) in source/data/*/variants/<VAL>.vcf.
-subsets = ["snv", "snv-indel"]
+subsets = ["snv-indel"]
 
 # source_files: List of files that are part of the source data; files are expected to be present in the source/data/{source} directory.
 source_files = [
@@ -47,6 +47,7 @@ rule all:
 		expand(".work/{source}_{subset}_{gene}/filtered.vcf", source=sources, subset=subsets, gene=genes),
 		expand(".work/{source}_{subset}_{gene}/{work_file}", source=sources, subset=subsets, gene=genes, work_file=work_files),
 		expand("datasets/{source}_{subset}_{gene}.json", source=sources, subset=subsets, gene=genes),
+		expand("datasets/{source}_{subset}_{gene}_reprocessed.json", source=sources, subset=subsets, gene=genes),
 		"source/misc/gene_display_configuration.json", # Independent file for gene dataset display defaults.
 		"source/geo/color.tsv", # Independent file for geo colors.
 		"source/geo/loc.tsv" # Independent file for geo coordinates.
@@ -334,4 +335,26 @@ rule export:
 			--lat-longs {input.coordinates} \
 			--output {output} \
 			--include-root-sequence-inline
+		"""
+
+# Reprocesses the exported dataset to add or remove specific metadata and node attributes.
+rule reprocess:
+	input:
+		dataset=rules.export.output,
+		metadata="source/data/{source}/meta.csv",
+	output:
+		"datasets/{source}_{subset}_{gene}_reprocessed.json",
+	params:
+		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
+		metadata_add="--metadata-add label",
+		node_attr_remove="--node-attr-remove resistance_mutations",
+	shell:
+		"""
+		python scripts/reprocess_dataset.py \
+			--dataset {input.dataset} \
+			--output {output} \
+			--metadata {input.metadata} \
+			--metadata-id-column {params.metadata_id} \
+			{params.metadata_add} \
+			{params.node_attr_remove}
 		"""

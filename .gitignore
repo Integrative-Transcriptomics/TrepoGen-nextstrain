@@ -1,5 +1,4 @@
 source/data/*
-datasets
 .snakemake
 .work
 .local

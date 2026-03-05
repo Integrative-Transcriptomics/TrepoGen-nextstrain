@@ -1,36 +1,114 @@
 sources:
-  TPASS-308:
+
+  TPA-SS14-2588:
     reference_sample: "CP004011"
     meta_identifier: "sra"
-    refine:
-      year_bounds_cl: "--year-bounds 2023 2000"
-    traits:
-      columns: "subspecies country region date"
-  TPASS-2588:
-    reference_sample: "CP004011"
-    meta_identifier: "sra"
+
+    # Optional command line arguments to filter variants.
     filter:
-      query_cl: "--query-columns ambiguity:float coverage:float --query '(coverage >= 3) & (ambiguity <= 25)'"
+      query_cl: "--query-columns ambiguity:float coverage:float --query '(coverage >= 5) & (ambiguity <= 10)'"
+
+    # Parameters to build the initial tree from this data source.
+    tree:
+      # The auto substitution model selection may be disabled in the future for runtime increase. HKY+F+ASC+R2 performed good for the 2588 source.
+      method_cl: "--method iqtree --substitution-model auto --tree-builder-args='-safe -pathogen'"
+
+    # Optional command line arguments for tree refinement.
     refine:
       year_bounds_cl: "--year-bounds 2023 2000"
+      precision: 3
+      iterations: 2
+      # The fixed clock rate is based on literature references: https://pmc.ncbi.nlm.nih.gov/articles/PMC8612932/.
+      clock_rate_cl: "--clock-rate 1.28e-7 --clock-std-dev 1.67e-8"
+
+    # Metadata fields to infer for ancestral states (internal nodes of the tree).
     traits:
       columns: "subspecies country region date"
-describe:
-  subset:
-    snv: |
-      - Variants are restricted to **single nucleotide variants** (SNVs) to reduce the diversifying effect of InDel variants.
-    snv-indel: |
-      - Variants include **single nucleotide variants** (SNVs) and **InDels**, providing insight into the full spectrum of sequence changes.
-    snv-masked: |
-      - Variants are restricted to **single nucleotide variants** (SNVs), and highly recombinant regions are masked to focus on clonal sites that determine conservative pathogen evolution.
-  source:
-    TPASS-308: |
-      ##### Data Source
 
-      - This data source (TPASS-308) comprises genetic data from 308 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, each genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
-      - Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>; <code>Subspecies</code> and <code>Lineage</code> designations (only for ssp. _pallidum_ as Nichols or SS14); and <code>Mean coverage</code> and <code>Ambiguity</code> to support quality control.
-    TPASS-2588: |
-      ##### Data Source
+    # Data source and metadata description.
+    describe: |
+      #### Dataset
 
-      - This data source (TPASS-2588) comprises genetic data from 2,588 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, each genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
-      - Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>; <code>Subspecies</code> and <code>Lineage</code> designations (only for ssp. _pallidum_ as Nichols or SS14); and <code>Mean coverage</code> and <code>Ambiguity</code> to support quality control.
+      The <code>TPA-SS14-2588</code> dataset comprises whole-genome variants of 2,588 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
+      Variants include **single nucleotide variants** (SNVs) and **InDels**, providing insight into the full spectrum of sequence changes and featuring the complete phylogenetic context of _T. pallidum_.
+
+      ##### Metadata
+
+      Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>, as well as <code>Subspecies</code> designations, including division into the Nichols and SS14 groups.
+      Moreover, the Sublineage and BAP assignments introduced by [Beale _et al._ 2021](https://doi.org/10.1038/s41564-021-01000-z), [Taouk _et al._ 2022](https://doi.org/10.1016/s2666-5247(22)00035-0), and [Sena _et al._ 2024](https://doi.org/10.1016/S2666-5247(24)00087-9) are available.
+      <code>Mean coverage</code> and <code>Ambiguity</code> (Ns) per sample provide a foundation for quality control.
+      Known macrolide resistance mutations, mediated by 23S rRNA mutations 2058A→G, 2058A→T (positions 283,691 and 235,246 in the used reference genome) and 2059A→G (positions 283,692 and 235,247 in the used reference genome), are also available via the metadata.
+
+    # Specification of genes to use for this data source.
+    genes:
+      TP0326:
+        describe: |
+          #### TP0326
+
+          BamA (TP0326) is the central component of the molecular machinery that inserts OMPs into the spirochete's outer membrane.
+          BamA in _T. pallidum_ is bipartite and consists of a predicted 16-stranded β-barrel with eight extracellular loops (ECLs) and five polypeptide transport-associated (POTRA) domains within the periplasm.
+
+          ##### Relevance
+
+          It has been demonstrated that pools of human syphilitic sera from the USA and Colombia exhibited the capacity to recognize both the N-terminal POTRA-containing and C-terminal beta-barrel domains, as well as ECL4.
+          This finding suggests that TP0326 stimulates the human immune system. [PMC4420902](https://pmc.ncbi.nlm.nih.gov/articles/PMC4420902/)
+
+          ##### Expression
+
+          The protein is estimated to be present at about 100 molecules per cell. [PMC3115443](https://pubmed.ncbi.nlm.nih.gov/21488980/)
+
+          Additional information on TP0326 can be found at:
+          - [UniProt O83346](https://www.uniprot.org/uniprotkb/O83346/entry)
+      TP0548:
+        describe: |
+          TP0548 encodes a putative outer-membrane protein.
+          
+          ##### Relevance
+          
+          It is a vital locus for multiple typing approaches. [PMID33093286](https://pubmed.ncbi.nlm.nih.gov/33093286/)
+
+          Additional information on TP0548 can be found at:
+          - [UniProt O83559](https://www.uniprot.org/uniprotkb/O83559/entry)
+      TP0856:
+        describe: |
+          TP0856 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
+
+          ##### Relevance
+
+          Studies have identified ECL2 and ECL4 as being highly immunogenic and surface-exposed, thus rendering them excellent candidates for a multivalent syphilis vaccine. [PMC9426418](https://pmc.ncbi.nlm.nih.gov/articles/PMC9426418/)
+
+          Additional information on TP0856 can be found at:
+          - [UniProt O83828](https://www.uniprot.org/uniprotkb/O83828/entry)
+      TP0858:
+        describe: |
+          TP0858 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
+
+          ##### Relevance
+
+          Studies have identified ECL2 and ECL4 as being highly immunogenic and surface-exposed, thus rendering them excellent candidates for a multivalent syphilis vaccine. [PMC9426418](https://pmc.ncbi.nlm.nih.gov/articles/PMC9426418/)
+
+          TP0858 is employed to characterize and differentiate _T. pallidum_ subspecies, particularly subsp. _pertenue_, the agent of yaws. [PMC6197692](https://pmc.ncbi.nlm.nih.gov/articles/PMC6197692/)
+
+          Additional information on TP0858 can be found in the following references:
+          - [UniProt O83830](https://www.uniprot.org/uniprotkb/O83830/entry)
+      
+      TP0859:
+        describe: |
+          TP0859 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
+
+          ##### Relevance
+
+          TP0859 shows variant proteoforms and recombination in clinical strains, but is still being investigated as potential vaccine candidate due to their surface-exposed nature. [PMC8407342](https://pmc.ncbi.nlm.nih.gov/articles/PMC8407342/)
+
+          Additional information on TP0859 can be found in the following references:
+          - [UniProt O83839](https://www.uniprot.org/uniprotkb/O83839/entry)
+      TP0865:
+        describe: |
+          TP0865 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
+
+          ##### Relevance
+
+          TP0865 shows variant proteoforms and recombination in clinical strains, but is still being investigated as potential vaccine candidate due to their surface-exposed nature. [PMC8407342](https://pmc.ncbi.nlm.nih.gov/articles/PMC8407342/)
+
+          Additional information on TP0859 can be found in the following references:
+          - [UniProt O83837](https://www.uniprot.org/uniprotkb/O83837/entry)

@@ -1,34 +1,49 @@
-seed: 1
-musial: "/mnt/c/Users/siha/Desktop/Tools/MUSIAL-v2.4.2.jar"
-refine:
-  precision: 3
-  iterations: 1
+seed: 10
+
 export:
-  title: "Global perspective on Treponema pallidum"
-  maintainers: "'Simon Hackl <https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/integrative-transkriptomik/gruppe/simon-hackl/>'"
-  build_url: "https://github.com/Integrative-Transcriptomics/Nextstrain-TrepoGen"
+  title: "Global phylogenomics of Treponema pallidum"
+  maintainers: "'Simon Hackl, Nicole Lieberman, Jeffrey Furlong'"
+  build_url: "https://github.com/Integrative-Transcriptomics/TrepoGen-nextstrain"
+
 describe:
-  resources: |
-    ##### Further resources
-
-    We are working diligently to provide resources for extended data/sequence access.
-  background: |
-    ##### Project Background
-
-    Syphilis is a resurging global health threat caused by _Treponema pallidum_ ssp. _pallidum_, with additional disease burden from the closely related subspecies _pertenue_ and _endemicum_, the causative agents of yaws and bejel, respectively.
+  preface: |
+    > **_Syphilis_** is a resurging global health threat caused by _Treponema pallidum_ ssp. _pallidum_, with additional disease burden from the closely related subspecies _pertenue_ and _endemicum_, the causative agents of yaws and bejel, respectively.
     By 2025 whole genome sequencing data for more than 3,000 _T. pallidum_ strains were available in the NCBI Sequence Read Archive.
     However, more than 80% of these lack publicly available genome assemblies and, more critically, systematic annotation.
     This severely limits their utility for molecular epidemiology, resistance surveillance, and vaccine development.
-    We aim at democratizing access to _T. pallidum_ genomic diversity data by developing and maintaining unified, community-facing Nextstrain datasets for epidemiological surveillance, comparative evolutionary analysis and facilitated data sharing; with a special emphasis on tracking outer membrane protein (OMP) diversity relevant for vaccine design.
-  funding: |
+    **We aim at democratizing access to _T. pallidum_ genomic diversity data by developing and maintaining unified, community-facing Nextstrain datasets for epidemiological surveillance, comparative evolutionary analysis and facilitated data sharing; with a special emphasis on tracking outer membrane protein (OMP) diversity relevant for vaccine design.**
+
+    ##### Features
+
+    In addition to [Nextstrain's standard features](https://docs.nextstrain.org/en/latest/learn/interpret/index.html), this customized Auspice implementation enables:
+
+    - **In-depth investigation of outer membrane protein (OMP) diversity**:
+    The <code>Nucleotide diversity of genome</code> panel is annotated with selected OMP genes.
+    Clicking on one of these genes switches the view to the <code>Amino acid diversity</code> of that gene.
+    This view is annotated with curated protein topology annotations that provide insight into, for example, the diversity of extracellular loops (ECLs), which are key targets for vaccine design.
+    Additionally, an information panel below provides more details on the protein, including links to external resources.
+    
+    - **Direct access to genome assemblies.**:
+    To download genome assemblies for all samples in the dataset with metadata filters applied, select <code>Download Data → Genome Sequences (FASTA)</code> at the bottom of the page.
+  postscript: |
     ##### Contributors
 
-    - The management of the underlying genomic data and metadata is overseen by [Nicole Lieberman, University of Washington, UW Medicine Laboratory Medicine & Pathology](https://dlmp.uw.edu/faculty/lieberman-nicole).
+    The curation of the underlying genome data and metadata is overseen by Nicole Lieberman (University of Washington).
+    Jeffrey Furlong (University of Washington) is in charge of generating the genotyping data. 
+    Simon Hackl (University of Tübingen) is responsible for implementing the Nextstrain workflow and the customized Auspice fork.
 
-    ##### Funding and Provenance
+    Acknowledgements go to Kay Nieselt (University of Tübingen) for scientific advice on the project and to the Nextstrain development team for their support in its implementation.
 
-    - This project receives funding [To support the development of a broadly effective syphilis vaccine (INV-072205)](https://www.gatesfoundation.org/about/committed-grants/2024/12/inv-072205) by the _Gates Foundation_.
+    ##### Funding and Data Provenance
+
+    This project receives funding [To support the development of a broadly effective syphilis vaccine (INV-072205)](https://www.gatesfoundation.org/about/committed-grants/2024/12/inv-072205) by the _Gates Foundation_.
     
     We gratefully acknowledge the authors, originating and submitting laboratories of the genetic sequences and metadata for sharing their work.
     Data producers should be named where possible and cooperation should be sought in certain circumstances.
     Please avoid scooping the work of others and reach out if uncertain.
+    Detailed author information can be found via the NCBI accessors (strain) in the downloadable metadata file.
+
+    ##### Disclaimer
+
+    The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes.
+    It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.

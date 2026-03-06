@@ -2,19 +2,25 @@
 configfile: "config/global.yaml" # Global configurations.
 configfile: "config/source.yaml" # Data-source specific configurations.
 
-# genes: List of genes to use in the workflow (cf. config/genes.yaml); these will be translated by augur translate.
-genes = list(config.get("genes", {}).keys())
+# TODO: List the source datasets to use in the workflow; the following files are expected in the directory source/data/{source}/:
+# - sequence.fasta: Reference genome sequence in FASTA format.
+# - annotation.gff3: Annotation file in GFF3 format.
+# - variants.vcf: VCF file containing the variants for the samples in the dataset.
+# - mask.bed: (Optional empty) BED file for masking regions in the genome for tree building.
+# - meta.csv: Metadata file in CSV format containing information about the single samples.
+# - meta_colors.tsv: TSV file defining colors for the metadata.
+# - meta_configuration.json: Auspice configuration file in JSON format providing settings for the metadata
+# - resistance_mutations.tsv: (Optional empty) TSV file defining resistance mutations for the dataset.
+sources = ["TPA-SS14-2588"]
 
-# sources: List of source datasets to use in the workflow; expected to match (VAL) in source/data/<VAL>.
-sources = ["TPASS-2588"]
+# The list of genes to use have to be specified in config/source.yaml under the {source} > genes section.
+# - The keys of this section are expected to match the gene names in the annotation.gff3 file and will be passed to augur translate for amino acid mutation inference.
 
-# subsets: List of variant subsets to use in the workflow; expected to match (VAL) in source/data/*/variants/<VAL>.vcf.
-subsets = ["snv-indel"]
-
-# source_files: List of files that are part of the source data; files are expected to be present in the source/data/{source} directory.
+# List of source files that are part of the source data; files are expected to be present in the source/data/{source} directory.
 source_files = [
 	"sequence.fasta", # Reference genome sequence in FASTA format.
 	"annotation.gff3", # Annotation file in GFF3 format.
+	"variants.vcf", # VCF file containing the variants for the samples in the dataset.
 	"mask.bed", # (Optional empty) BED file for masking regions in the genome for tree building.
 	"meta.csv", # Metadata file in CSV format containing information about the single samples.
 	"meta_colors.tsv", # TSV file defining colors for the metadata.
@@ -22,7 +28,7 @@ source_files = [
 	"resistance_mutations.tsv", # (Optional empty) TSV file defining resistance mutations for the dataset.
 ]
 
-# work_files: List of files that are generated during the workflow; files will be generated in the .work/{source}_{subset}_genome/ directory.
+# List of work files that are generated during the workflow; files will be generated in the .work/{source}/ directory.
 work_files = [
 	"initial.nwk", # Initial tree in Newick format (NWK) before refinement.
 	"tree.nwk", # Refined tree in Newick format (NWK) after refinement.
@@ -37,22 +43,21 @@ work_files = [
 rule all:
 	input:
 		expand("source/data/{source}/{source_file}", source=sources, source_file=source_files),
-		expand("source/data/{source}/variants/{subset}.vcf", source=sources, subset=subsets),
-		expand("source/data/{source}/variants/{subset}.tsv", source=sources, subset=subsets),
-		expand(".work/{source}_{subset}_genome/filtered.vcf", source=sources, subset=subsets),
-		expand(".work/{source}_{subset}_genome/{work_file}", source=sources, subset=subsets, work_file=work_files),
-		expand("datasets/{source}_{subset}_genome.json", source=sources, subset=subsets),
-		expand("datasets/{source}_{subset}_genome_reprocessed.json", source=sources, subset=subsets),
-		"source/misc/genome_display_configuration.json", # Independent file for genome dataset display defaults.
-		"source/geo/color.tsv", # Independent file for geo colors.
-		"source/geo/loc.tsv" # Independent file for geo coordinates.
+		expand("source/data/{source}/variants.tsv", source=sources), # Sample name index file created by augur.
+		expand(".work/{source}/filtered.vcf", source=sources), # Filtered variants after applying metadata-based filters.
+		expand(".work/{source}/{work_file}", source=sources, work_file=work_files),
+		expand("datasets/.{source}.raw.json", source=sources), # Raw dataset exported by augur export before reprocessing.
+		expand("datasets/{source}.json", source=sources), # Final dataset after reprocessing.
+		"source/misc/genome_display_configuration.json", # Source independent file for genome dataset display defaults.
+		"source/geo/color.tsv", # Source independent file for geo colors.
+		"source/geo/loc.tsv" # Source independent file for geo coordinates.
 
 # Generates an index of the input variants.
 rule index:
 	input:
-		"source/data/{source}/variants/{subset}.vcf",
+		"source/data/{source}/variants.vcf",
 	output:
-		"source/data/{source}/variants/{subset}.tsv",
+		"source/data/{source}/variants.tsv", # Index is stored in source directory for reuse.
 	shell:
 		"""
 		augur index \
@@ -63,14 +68,14 @@ rule index:
 # Filters variants (optional) based on metadata and excludes specified samples. If no filter is defined, it simply passes the data through.
 rule filter:
 	input:
-		variants="source/data/{source}/variants/{subset}.vcf",
-		index="source/data/{source}/variants/{subset}.tsv",
+		variants="source/data/{source}/variants.vcf",
+		index="source/data/{source}/variants.tsv",
 		metadata="source/data/{source}/meta.csv",
 	output:
-		".work/{source}_{subset}_genome/filtered.vcf",
+		".work/{source}/filtered.vcf",
 	params:
-		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
-		query_cl=lambda wc: config["sources"][wc.source].get("filter", {}).get("query_cl", ""),  # Optional query command line argument in config to filter variants.
+		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
+		query_cl=lambda wc: config["source"][wc.source].get("filter", {}).get("query_cl", ""),  # Optional query command line argument in config to filter variants.
 	run:
 		if bool(params.query_cl):
 			shell(
@@ -93,22 +98,22 @@ rule colors:
 		meta_colors="source/data/{source}/meta_colors.tsv",
 		geo_colors="source/geo/color.tsv",
 	output:
-		".work/{source}_{subset}_genome/colors.tsv",
+		".work/{source}/colors.tsv",
 	shell:
 		"""
 		cat {input.meta_colors} {input.geo_colors} >> {output}
 		"""
 
-# Builds the phylogenetic tree from the variants.
+# Builds the initial phylogenetic tree from the variants.
 rule tree:
 	input:
 		variants=rules.filter.output,
 		reference="source/data/{source}/sequence.fasta",
 		mask="source/data/{source}/mask.bed",
 	output:
-		".work/{source}_{subset}_genome/initial.nwk",
+		".work/{source}/initial.nwk",
 	params:
-		method_cl=lambda wc: config["genomes"][wc.source].get("tree", {}).get("method_cl", "--method iqtree"),
+		method_cl=lambda wc: config["source"][wc.source].get("tree", {}).get("method_cl", "--method iqtree"),
 	shell:
 		"""
 		augur tree --alignment {input.variants} \
@@ -126,16 +131,16 @@ rule refine:
 		metadata="source/data/{source}/meta.csv",
 		tree=rules.tree.output,
 	output:
-		tree=".work/{source}_{subset}_genome/tree.nwk",
-		branch_lengths=".work/{source}_{subset}_genome/branch_lengths.json",
+		tree=".work/{source}/tree.nwk",
+		branch_lengths=".work/{source}/branch_lengths.json",
 	params:
 		seed=config.get("seed", 1),
-		iterations=config.get("refine", {}).get("iterations", 1),
-		precision=config.get("refine", {}).get("precision", 1),
-		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
-		clock_rate_cl=lambda wc: config["genomes"][wc.source].get("refine", {}).get("clock_rate_cl", ""),
-		root_cl=lambda wc: config["sources"][wc.source].get("refine", {}).get("root_cl", ""),
-		year_bounds_cl=lambda wc: config["sources"][wc.source].get("refine", {}).get("year_bounds_cl", ""),
+		iterations=config["source"][wc.source].get("refine", {}).get("iterations", 1),
+		precision=config["source"][wc.source].get("refine", {}).get("precision", 1),
+		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
+		clock_rate_cl=lambda wc: config["source"][wc.source].get("refine", {}).get("clock_rate_cl", ""),
+		root_cl=lambda wc: config["source"][wc.source].get("refine", {}).get("root_cl", ""),
+		year_bounds_cl=lambda wc: config["source"][wc.source].get("refine", {}).get("year_bounds_cl", ""),
 	shell:
 		"""
 		augur refine --tree {input.tree} \
@@ -169,8 +174,8 @@ rule ancestral:
 		reference="source/data/{source}/sequence.fasta",
 		tree=rules.refine.output.tree,
 	output:
-		node_data=".work/{source}_{subset}_genome/nucleotide_mutations.json",
-		ancestral_variants=".work/{source}_{subset}_genome/nucleotide_mutations.vcf",
+		node_data=".work/{source}/nucleotide_mutations.json",
+		ancestral_variants=".work/{source}/nucleotide_mutations.vcf",
 	params:
 		seed=config.get("seed", 1),
 	shell:
@@ -192,10 +197,10 @@ rule traits:
 		tree=rules.refine.output.tree,
 		metadata="source/data/{source}/meta.csv",
 	output:
-		".work/{source}_{subset}_genome/traits.json",
+		".work/{source}/traits.json",
 	params:
-		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
-		columns=lambda wc: config["sources"][wc.source].get("traits", {}).get("columns", "country date"),
+		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
+		columns=lambda wc: config["source"][wc.source].get("traits", {}).get("columns", "date"),
 	shell:
 		"""
 		augur traits --tree {input.tree} \
@@ -212,7 +217,7 @@ rule resistances:
 		reference="source/data/{source}/sequence.fasta",
 		features="source/data/{source}/resistance_mutations.tsv",
 	output:
-		".work/{source}_{subset}_genome/resistances.json",
+		".work/{source}/resistances.json",
 	shell:
 		"""
 		augur sequence-traits --ancestral-sequences {input.variants} \
@@ -232,35 +237,40 @@ rule translate:
 		reference="source/data/{source}/sequence.fasta",
 		annotation="source/data/{source}/annotation.gff3",
 	output:
-		".work/{source}_{subset}_genome/amino_acid_mutations.json",
+		".work/{source}/amino_acid_mutations.json",
 	params:
-		genes=" ".join(genes),
+		genes=" ".join(config["source"][wc.source].get("genes", {}).keys()).strip(), # List of genes to translate, expected to match the gene names in the annotation.gff3 file.
 	run:
-		shell(
-			"""
-			augur translate \
-				--tree {input.tree} \
-				--ancestral-sequences {input.ancestral_variants} \
-				--reference-sequence {input.annotation} \
-				--vcf-reference {input.reference} \
-				--output-node-data {output} \
-				--genes {params.genes}
-			"""
-		)
+		if len(params.genes) > 0:
+			shell(
+				"""
+				augur translate \
+					--tree {input.tree} \
+					--ancestral-sequences {input.ancestral_variants} \
+					--reference-sequence {input.annotation} \
+					--vcf-reference {input.reference} \
+					--output-node-data {output} \
+					--genes {params.genes}
+				"""
+			)
+		else:
+			# If no genes are defined, create an empty dummy file.
+			shell(
+				"""
+				echo '{{}}' > {output}
+				"""
+			)
 
 # Generates a description file for the dataset.
 rule describe:
 	output:
-		".work/{source}_{subset}_genome/description.md",
+		".work/{source}/description.md",
 	params:
 		content=lambda wc: "\n".join([
-			config["describe"]["genome"][wc.source],
-			config["describe"]["source"][wc.source],
-			config["describe"]["subset"][wc.subset],
+			config["describe"]["preface"],
+			config["source"][wc.source]["describe"],
 			"---",
-			config["describe"]["resources"],
-			config["describe"]["background"],
-			config["describe"]["funding"]
+			config["describe"]["postscript"]
 		]),
 	shell:
 		"""
@@ -283,12 +293,12 @@ rule export:
 		nucleotide_mutations=rules.ancestral.output.node_data,
 		amino_acid_mutations=rules.translate.output,
 	output:
-		"datasets/{source}_{subset}_genome.json",
+		"datasets/.{source}.raw.json",
 	params:
-		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
-		title=lambda wc: f"'{config.get('export', {}).get('title', 'undefined')}'",
-		maintainers=config.get("export", {}).get("maintainers", "undefined"),
-		build_url=config.get("export", {}).get("build_url", "undefined"),
+		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
+		title=lambda wc: f"'{config.get('export', {}).get('title', 'Nextstrain Dataset')}'",
+		maintainers=config.get("export", {}).get("maintainers", "None"),
+		build_url=config.get("export", {}).get("build_url", "Unknown"),
 	shell:
 		"""
 		augur export v2 \
@@ -313,14 +323,14 @@ rule reprocess:
 		dataset=rules.export.output,
 		metadata="source/data/{source}/meta.csv",
 	output:
-		"datasets/{source}_{subset}_genome_reprocessed.json",
+		"datasets/{source}.json",
 	params:
-		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
+		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
 		metadata_add="--metadata-add label",
 		node_attr_remove="--node-attr-remove resistance_mutations",
 	shell:
 		"""
-		python scripts/reprocess_dataset.py \
+		python scripts/reprocess.py \
 			--dataset {input.dataset} \
 			--output {output} \
 			--metadata {input.metadata} \

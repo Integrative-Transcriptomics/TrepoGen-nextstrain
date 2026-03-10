@@ -74,8 +74,8 @@ rule filter:
 	output:
 		".work/{source}/filtered.vcf",
 	params:
-		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
-		query_cl=lambda wc: config["source"][wc.source].get("filter", {}).get("query_cl", ""),  # Optional query command line argument in config to filter variants.
+		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
+		query_cl=lambda wc: config["sources"][wc.source].get("filter", {}).get("query_cl", ""),  # Optional query command line argument in config to filter variants.
 	run:
 		if bool(params.query_cl):
 			shell(
@@ -113,7 +113,7 @@ rule tree:
 	output:
 		".work/{source}/initial.nwk",
 	params:
-		method_cl=lambda wc: config["source"][wc.source].get("tree", {}).get("method_cl", "--method iqtree"),
+		method_cl=lambda wc: config["sources"][wc.source].get("tree", {}).get("method_cl", "--method iqtree"),
 	shell:
 		"""
 		augur tree --alignment {input.variants} \
@@ -135,12 +135,12 @@ rule refine:
 		branch_lengths=".work/{source}/branch_lengths.json",
 	params:
 		seed=config.get("seed", 1),
-		iterations=config["source"][wc.source].get("refine", {}).get("iterations", 1),
-		precision=config["source"][wc.source].get("refine", {}).get("precision", 1),
-		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
-		clock_rate_cl=lambda wc: config["source"][wc.source].get("refine", {}).get("clock_rate_cl", ""),
-		root_cl=lambda wc: config["source"][wc.source].get("refine", {}).get("root_cl", ""),
-		year_bounds_cl=lambda wc: config["source"][wc.source].get("refine", {}).get("year_bounds_cl", ""),
+		iterations=lambda wc: config["sources"][wc.source].get("refine", {}).get("iterations", 1),
+		precision=lambda wc: config["sources"][wc.source].get("refine", {}).get("precision", 1),
+		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
+		clock_rate_cl=lambda wc: config["sources"][wc.source].get("refine", {}).get("clock_rate_cl", ""),
+		root_cl=lambda wc: config["sources"][wc.source].get("refine", {}).get("root_cl", ""),
+		year_bounds_cl=lambda wc: config["sources"][wc.source].get("refine", {}).get("year_bounds_cl", ""),
 	shell:
 		"""
 		augur refine --tree {input.tree} \
@@ -199,8 +199,8 @@ rule traits:
 	output:
 		".work/{source}/traits.json",
 	params:
-		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
-		columns=lambda wc: config["source"][wc.source].get("traits", {}).get("columns", "date"),
+		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
+		columns=lambda wc: config["sources"][wc.source].get("traits", {}).get("columns", "date"),
 	shell:
 		"""
 		augur traits --tree {input.tree} \
@@ -239,7 +239,7 @@ rule translate:
 	output:
 		".work/{source}/amino_acid_mutations.json",
 	params:
-		genes=" ".join(config["source"][wc.source].get("genes", {}).keys()).strip(), # List of genes to translate, expected to match the gene names in the annotation.gff3 file.
+		genes=lambda wc: " ".join(config["sources"][wc.source].get("genes", {}).keys()).strip(), # List of genes to translate, expected to match the gene names in the annotation.gff3 file.
 	run:
 		if len(params.genes) > 0:
 			shell(
@@ -268,13 +268,13 @@ rule describe:
 	params:
 		content=lambda wc: "\n".join([
 			config["describe"]["preface"],
-			config["source"][wc.source]["describe"],
+			config["sources"][wc.source]["describe"],
 			"---",
 			config["describe"]["postscript"]
 		]),
 	shell:
 		"""
-		echo '{params.content}' > {output}
+		echo "{params.content}" > {output}
 		"""
 
 # Exports the refined tree and associated data into a format suitable for visualization in Auspice.
@@ -295,7 +295,7 @@ rule export:
 	output:
 		"datasets/.{source}.raw.json",
 	params:
-		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
+		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
 		title=lambda wc: f"'{config.get('export', {}).get('title', 'Nextstrain Dataset')}'",
 		maintainers=config.get("export", {}).get("maintainers", "None"),
 		build_url=config.get("export", {}).get("build_url", "Unknown"),
@@ -320,20 +320,20 @@ rule export:
 # Reprocesses the exported dataset to add or remove specific metadata and node attributes.
 rule reprocess:
 	input:
-		dataset=rules.export.output,
-		metadata="source/data/{source}/meta.csv",
+		input=rules.export.output,
 	output:
 		"datasets/{source}.json",
 	params:
-		metadata_id=lambda wc: config["source"][wc.source].get("meta_identifier", "name strain id"),
+		source=lambda wc: wc.source,
+		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
 		metadata_add="--metadata-add label",
 		node_attr_remove="--node-attr-remove resistance_mutations",
 	shell:
 		"""
 		python scripts/reprocess.py \
-			--dataset {input.dataset} \
+			--input {input.dataset} \
 			--output {output} \
-			--metadata {input.metadata} \
+			--source {params.source} \
 			--metadata-id-column {params.metadata_id} \
 			{params.metadata_add} \
 			{params.node_attr_remove}

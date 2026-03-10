@@ -11,7 +11,7 @@ sources:
     # Parameters to build the initial tree from this data source.
     tree:
       # The auto substitution model selection may be disabled in the future for runtime increase. HKY+F+ASC+R2 performed good for the 2588 source.
-      method_cl: "--method iqtree --substitution-model auto --tree-builder-args='-safe -pathogen'"
+      method_cl: "--method iqtree --substitution-model HKY+F+ASC+R2 --tree-builder-args='-safe -pathogen'"
 
     # Optional command line arguments for tree refinement.
     refine:

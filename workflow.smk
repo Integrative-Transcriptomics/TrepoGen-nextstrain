@@ -320,7 +320,7 @@ rule export:
 # Reprocesses the exported dataset to add or remove specific metadata and node attributes.
 rule reprocess:
 	input:
-		input=rules.export.output,
+		dataset=rules.export.output,
 	output:
 		"datasets/{source}.json",
 	params:

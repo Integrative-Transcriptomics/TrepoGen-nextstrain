@@ -51,7 +51,7 @@ def main():
 
 	# Load metadata.
 	meta_file = join( "source", "data", args.source, 'meta.csv' )
-	meta_df = pd.read_csv( meta_file, sep='\t' if args.metadata.endswith('.tsv') or args.metadata.endswith('.txt') else ',' )
+	meta_df = pd.read_csv( meta_file, sep='\t' if meta_file.endswith('.tsv') or meta_file.endswith('.txt') else ',' )
 	meta_df.set_index( args.metadata_id_column, inplace=True )
 
 	# Reprocess tree nodes.

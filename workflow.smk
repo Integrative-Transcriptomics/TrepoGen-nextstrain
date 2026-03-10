@@ -293,7 +293,7 @@ rule export:
 		nucleotide_mutations=rules.ancestral.output.node_data,
 		amino_acid_mutations=rules.translate.output,
 	output:
-		"datasets/.{source}.raw.json",
+		"datasets/{source}-raw.json",
 	params:
 		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
 		title=lambda wc: f"'{config.get('export', {}).get('title', 'Nextstrain Dataset')}'",

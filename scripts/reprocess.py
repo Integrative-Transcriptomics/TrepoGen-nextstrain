@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """Reprocess the contents of a Auspice JSON dataset file.
 """
-import json, argparse
+import json, argparse, yaml
 import pandas as pd
+from os.path import join, exists
 
 def parse_args():
 	"""Parses command-line arguments for the dataset reprocessing script.
 
 	Returns:
 		argparse.Namespace: Parsed command-line arguments with the following attributes:
-			dataset (str): Path to the input file (required).
+			input (str): Path to the input file (required).
 			output (str): Path to the output file (required).
-			metadata (str): Path to a metadata file (required).
+			source (str): Path to the source directory (required). Expects to contain a meta.csv file and optional topology tsv files in subdirectory topology/.
 			metadata-id-column (str): Column name in the metadata file to match IDs (required).
 			metadata-add (list): List of metadata columns to add to the dataset.
 			node-attr-remove (list): List of node attributes to remove from the dataset.
@@ -19,12 +20,12 @@ def parse_args():
 	parser = argparse.ArgumentParser(
 		description="Reprocess the contents of a Auspice JSON dataset file.",
 	)
-	parser.add_argument("-d", "--dataset", type=str, required=True, help="The path to the input Auspice JSON dataset file.")
-	parser.add_argument("-o", "--output", type=str, required=True, help="The path to the output Auspice JSON dataset file.")
-	parser.add_argument("-m", "--metadata", type=str, required=True, help="The path to a metadata file to augment the dataset with.")
-	parser.add_argument("--metadata-id-column", type=str, required=True, help="The column name in the metadata file to match IDs.")
-	parser.add_argument("--metadata-add", type=str, nargs='*', help="The list of metadata columns to add to the dataset.")
-	parser.add_argument("--node-attr-remove", type=str, nargs='*', help="The list of node attributes to remove from the dataset.")
+	parser.add_argument("-i", "--input", type=str, required=True, help="Path to the input auspice JSON dataset file.")
+	parser.add_argument("-o", "--output", type=str, required=True, help="Path to the output Auspice JSON dataset file.")
+	parser.add_argument("-s", "--source", type=str, required=True, help="Path to project specific source identifier.")
+	parser.add_argument("--metadata-id-column", type=str, required=True, help="Column name in the metadata file to match IDs.")
+	parser.add_argument("--metadata-add", type=str, nargs='*', help="List of metadata columns to add to the dataset.")
+	parser.add_argument("--node-attr-remove", type=str, nargs='*', help="List of node attributes to remove from the dataset.")
 	return parser.parse_args()
 
 def main():
@@ -33,30 +34,27 @@ def main():
 	Description:
 		Reads an Auspice JSON dataset file, modifies its contents based on provided
 		metadata and specified node attributes to remove, and writes the modified
-		data back to the same file.
+		data back to the specified output file.
 
 	Arguments:
 		None. Arguments are parsed internally via parse_args().
 
 	Returns:
 		None.
-	
-	Side Effects:
-		The input JSON file is modified in place, with specified node attributes removed
-		and specified metadata columns added.
 	"""
 	# Parse command-line arguments.
 	args = parse_args()
 
 	# Load dataset.
-	with open( args.dataset, 'r' ) as f:
+	with open( args.input, 'r' ) as f:
 		dataset = json.load( f )
 
 	# Load metadata.
-	meta_df = pd.read_csv( args.metadata, sep='\t' if args.metadata.endswith('.tsv') or args.metadata.endswith('.txt') else ',' )
+	meta_file = join( "source", "data", args.source, 'meta.csv' )
+	meta_df = pd.read_csv( meta_file, sep='\t' if args.metadata.endswith('.tsv') or args.metadata.endswith('.txt') else ',' )
 	meta_df.set_index( args.metadata_id_column, inplace=True )
 
-	# Reprocess dataset.
+	# Reprocess tree nodes.
 	def _handle( node ) :
 		# Remove specified node attributes.
 		for attr in ( args.node_attr_remove if args.node_attr_remove is not None else [] ) :
@@ -67,11 +65,12 @@ def main():
 			if node_name is not None and node_name in meta_df.index :
 				for meta_col in ( args.metadata_add if args.metadata_add is not None else [] ) :
 					if meta_col in meta_df.columns :
+						meta_label = str(meta_col).capitalize()
 						if 'node_attrs' not in node :
 							node[ 'node_attrs' ] = {}
-						if meta_col not in node[ 'node_attrs' ] :
-							node[ 'node_attrs' ][ meta_col ] = {}
-						node[ 'node_attrs' ][ meta_col ][ 'value' ] = meta_df.at[ node_name, meta_col ]
+						if meta_label not in node[ 'node_attrs' ] :
+							node[ 'node_attrs' ][ meta_label ] = {}
+						node[ 'node_attrs' ][ meta_label ][ 'value' ] = meta_df.at[ node_name, meta_col ]
 		# Recurse into children.
 		for children in node.get( 'children', [] ) :
 			_handle( children )
@@ -85,6 +84,24 @@ def main():
 		for coloring in colorings :
 			if coloring.get( 'key', None ) == attr :
 				colorings.remove( coloring )
+
+	# If topology files are present, add topology information to matching genes; also add additional description if available from source .yaml.
+	feature_descriptions = {}
+	with open ( join( "config", 'source.yaml' ), 'r' ) as f :
+		source_config = yaml.safe_load( f )
+		feature_descriptions = source_config.get( 'sources', {} ).get( args.source, {} ).get( 'genes', {} )
+
+	if exists( join( args.source, 'topology' ) ) :
+		for feature in dataset.get( 'genome_annotations', {} ).keys() :
+			if feature == 'nuc' :
+				# Skip genome.
+				continue
+			topology_file = join( "source", "data", args.source, 'topology', f'{feature}.tsv' )
+			if exists( topology_file ) :
+				topology_df = pd.read_csv( topology_file, sep='\t', comment='#' )
+				dataset.get( 'genome_annotations', {} ).get( feature, {} )[ 'topology' ] = ",".join( [ f"{entry.type}:{entry.protein_start}:{entry.protein_end}" for entry in topology_df.itertuples() ] )
+			if feature in feature_descriptions :
+				dataset.get( 'genome_annotations', {} ).get( feature, {} )[ 'description' ] = feature_descriptions[ feature ][ 'describe' ]
 
 	# Save dataset.
 	with open( args.output, 'w' ) as f:

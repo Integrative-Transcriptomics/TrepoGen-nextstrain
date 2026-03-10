@@ -284,7 +284,7 @@ rule export:
 		metadata="source/data/{source}/meta.csv",
 		colors=rules.colors.output,
 		meta_config="source/data/{source}/meta_configuration.json",
-		display_defaults="source/misc/genome_display_configuration.json",
+		display_defaults="source/misc/display_configuration.json",
 		description=rules.describe.output,
 		coordinates="source/geo/loc.tsv",
 		branch_lengths=rules.refine.output.branch_lengths,

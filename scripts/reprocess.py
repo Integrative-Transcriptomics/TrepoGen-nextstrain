@@ -91,17 +91,16 @@ def main():
 		source_config = yaml.safe_load( f )
 		feature_descriptions = source_config.get( 'sources', {} ).get( args.source, {} ).get( 'genes', {} )
 
-	if exists( join( args.source, 'topology' ) ) :
-		for feature in dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).keys() :
-			if feature == 'nuc' :
-				# Skip genome.
-				continue
-			topology_file = join( "source", "data", args.source, 'topology', f'{feature}.tsv' )
-			if exists( topology_file ) :
-				topology_df = pd.read_csv( topology_file, sep='\t', comment='#' )
-				dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).get( feature, {} )[ 'topology' ] = ",".join( [ f"{entry.type}:{entry.protein_start}:{entry.protein_end}" for entry in topology_df.itertuples() ] )
-			if feature in feature_descriptions :
-				dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).get( feature, {} )[ 'info' ] = feature_descriptions[ feature ][ 'describe' ]
+	for feature in dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).keys() :
+		if feature == 'nuc' :
+			# Skip genome.
+			continue
+		topology_file = join( "source", "data", args.source, 'topologies', f'{feature}.tsv' )
+		if exists( topology_file ) :
+			topology_df = pd.read_csv( topology_file, sep='\t', comment='#' )
+			dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).get( feature, {} )[ 'topology' ] = ",".join( [ f"{entry.type}:{entry.protein_start}:{entry.protein_end}" for entry in topology_df.itertuples() ] )
+		if feature in feature_descriptions :
+			dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).get( feature, {} )[ 'info' ] = feature_descriptions[ feature ][ 'describe' ]
 
 	# Save dataset.
 	with open( args.output, 'w' ) as f:

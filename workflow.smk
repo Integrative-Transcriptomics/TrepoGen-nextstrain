@@ -48,7 +48,7 @@ rule all:
 		expand(".work/{source}/{work_file}", source=sources, work_file=work_files),
 		expand("datasets/.{source}.raw.json", source=sources), # Raw dataset exported by augur export before reprocessing.
 		expand("datasets/{source}.json", source=sources), # Final dataset after reprocessing.
-		"source/misc/genome_display_configuration.json", # Source independent file for genome dataset display defaults.
+		"source/misc/display_configuration.json", # Source independent file for dataset display defaults.
 		"source/geo/color.tsv", # Source independent file for geo colors.
 		"source/geo/loc.tsv" # Source independent file for geo coordinates.
 

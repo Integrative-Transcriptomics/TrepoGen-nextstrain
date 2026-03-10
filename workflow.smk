@@ -46,7 +46,7 @@ rule all:
 		expand("source/data/{source}/variants.tsv", source=sources), # Sample name index file created by augur.
 		expand(".work/{source}/filtered.vcf", source=sources), # Filtered variants after applying metadata-based filters.
 		expand(".work/{source}/{work_file}", source=sources, work_file=work_files),
-		expand("datasets/{source}-raw.json", source=sources), # Raw dataset exported by augur export before reprocessing.
+		expand("datasets/{source}_raw.json", source=sources), # Raw dataset exported by augur export before reprocessing.
 		expand("datasets/{source}.json", source=sources), # Final dataset after reprocessing.
 		"source/misc/display_configuration.json", # Source independent file for dataset display defaults.
 		"source/geo/color.tsv", # Source independent file for geo colors.
@@ -293,7 +293,7 @@ rule export:
 		nucleotide_mutations=rules.ancestral.output.node_data,
 		amino_acid_mutations=rules.translate.output,
 	output:
-		"datasets/{source}-raw.json",
+		"datasets/{source}_raw.json",
 	params:
 		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
 		title=lambda wc: f"'{config.get('export', {}).get('title', 'Nextstrain Dataset')}'",

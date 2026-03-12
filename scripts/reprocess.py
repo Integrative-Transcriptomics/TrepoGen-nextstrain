@@ -135,12 +135,13 @@ def main():
 		# Add resistance information if available.
 		if add_resistance_info :
 			resistance_info = _get_resistance_info( node )
-			for feature, resistance_label in resistance_info.items() :
-				if 'node_attrs' not in node :
-					node[ 'node_attrs' ] = {}
-				if feature not in node[ 'node_attrs' ] :
-					node[ 'node_attrs' ][ feature ] = {}
-				node[ 'node_attrs' ][ feature ][ 'value' ] = resistance_label
+			if resistance_info is not None :
+				for feature, resistance_label in resistance_info.items() :
+					if 'node_attrs' not in node :
+						node[ 'node_attrs' ] = {}
+					if feature not in node[ 'node_attrs' ] :
+						node[ 'node_attrs' ][ feature ] = {}
+					node[ 'node_attrs' ][ feature ][ 'value' ] = resistance_label
 		# Recurse into children.
 		for children in node.get( 'children', [] ) :
 			_handle( children )

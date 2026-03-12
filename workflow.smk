@@ -210,25 +210,6 @@ rule traits:
 			--output-node-data {output}
 		"""
 
-# Computes resistances based on provided resistance mutations.
-rule resistances:
-	input:
-		variants=rules.ancestral.output.ancestral_variants,
-		reference="source/data/{source}/sequence.fasta",
-		features="source/data/{source}/resistance_mutations.tsv",
-	output:
-		".work/{source}/resistances.json",
-	shell:
-		"""
-		augur sequence-traits --ancestral-sequences {input.variants} \
-			--vcf-reference {input.reference} \
-			--features {input.features} \
-			--output-node-data {output} \
-			--count mutations \
-			--label resistance_mutations \
-			--output-node-data {output}
-		"""
-
 # Translates nucleotide sequences of specified genes into amino acid sequences.
 rule translate:
 	input:
@@ -289,7 +270,6 @@ rule export:
 		coordinates="source/geo/loc.tsv",
 		branch_lengths=rules.refine.output.branch_lengths,
 		traits=rules.traits.output,
-		resistances=rules.resistances.output,
 		nucleotide_mutations=rules.ancestral.output.node_data,
 		amino_acid_mutations=rules.translate.output,
 	output:
@@ -305,7 +285,7 @@ rule export:
 			--tree {input.tree} \
 			--metadata {input.metadata} \
 			--metadata-id-columns {params.metadata_id} \
-			--node-data {input.branch_lengths} {input.traits} {input.resistances} {input.nucleotide_mutations} {input.amino_acid_mutations} \
+			--node-data {input.branch_lengths} {input.traits} {input.nucleotide_mutations} {input.amino_acid_mutations} \
 			--auspice-config {input.meta_config} {input.display_defaults} \
 			--title {params.title} \
 			--maintainers {params.maintainers} \
@@ -327,7 +307,6 @@ rule reprocess:
 		source=lambda wc: wc.source,
 		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
 		metadata_add="--metadata-add label",
-		node_attr_remove="--node-attr-remove resistance_mutations",
 	shell:
 		"""
 		python scripts/reprocess.py \
@@ -335,6 +314,5 @@ rule reprocess:
 			--output {output} \
 			--source {params.source} \
 			--metadata-id-column {params.metadata_id} \
-			{params.metadata_add} \
-			{params.node_attr_remove}
+			{params.metadata_add}
 		"""

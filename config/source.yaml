@@ -43,8 +43,6 @@ sources:
     genes:
       TP0326:
         describe: |
-          #### TP0326
-
           BamA (TP0326) is the central component of the molecular machinery that inserts OMPs into the spirochete's outer membrane.
           BamA in _T. pallidum_ is bipartite and consists of a predicted 16-stranded β-barrel with eight extracellular loops (ECLs) and five polypeptide transport-associated (POTRA) domains within the periplasm.
 

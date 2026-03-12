@@ -25,7 +25,6 @@ source_files = [
 	"meta.csv", # Metadata file in CSV format containing information about the single samples.
 	"meta_colors.tsv", # TSV file defining colors for the metadata.
 	"meta_configuration.json", # Auspice configuration file in JSON format providing settings for the metadata of the dataset.
-	"resistance.tsv", # (Optional empty) TSV file defining resistance mutations for the dataset.
 ]
 
 # List of work files that are generated during the workflow; files will be generated in the .work/{source}/ directory.

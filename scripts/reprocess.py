@@ -5,6 +5,20 @@ import json, argparse, yaml
 import pandas as pd
 from os.path import join, exists
 
+# Define a set of red colors for resistance features.
+REDS = [
+	'#f86043',
+	'#f5543c',
+	'#f24834',
+	'#ef3d2d',
+	'#e63228',
+	'#dd2924',
+	'#d42120',
+	'#cb181d',
+	'#c1151b',
+	'#b81319'
+]
+
 def parse_args():
 	"""Parses command-line arguments for the dataset reprocessing script.
 
@@ -36,6 +50,13 @@ def main():
 		metadata and specified node attributes to remove, and writes the modified
 		data back to the specified output file.
 
+		If the source directory contains topology files for genes (SOURCE/topology/GENE.tsv),
+		the script adds topology information to the corresponding gene annotations in the dataset.
+		Also adds additional descriptions for features if available from the source.yaml configuration.
+
+		If the source directory contains a resistance file (SOURCE/resistance.tsv), the script adds
+		resistance information to the corresponding tree nodes.
+
 	Arguments:
 		None. Arguments are parsed internally via parse_args().
 
@@ -54,6 +75,46 @@ def main():
 	meta_df = pd.read_csv( meta_file, sep='\t' if meta_file.endswith('.tsv') or meta_file.endswith('.txt') else ',' )
 	meta_df.set_index( args.metadata_id_column, inplace=True )
 
+	# Check if resistance information is available.
+	resistance_file = join( "source", "data", args.source, 'resistance.tsv' )
+	add_resistance_info = exists( resistance_file )
+	if add_resistance_info :
+		resistance_df = pd.read_csv( resistance_file, sep='\t' )
+		feature_tags = { }
+		def _get_resistance_info( node ) :
+			# If node has children, skip - we only want to add resistance information to leaf nodes, i.e., actual samples.
+			if node.get( 'children', [] ) :
+				return
+			
+			# Set per resistance feature tags. Initially, all features are set to 'Sensitive'.
+			node_tags = { }
+			for feature in resistance_df[ "feature" ].unique().tolist() :
+				node_tags[ feature ] = set( [ 'Sensitive' ] )
+
+			# Get mutations per relevant gene.
+			node_mutations = { }
+			for gene in resistance_df[ "gene" ].unique().tolist() :
+				node_mutations[gene] = set( node.get( 'branch_attrs', {} ).get( 'mutations', {} ).get( gene, [] ) )
+
+			# Check if any resistance mutations are present for the node.
+			for i, row in resistance_df.iterrows() :
+				resistance_mutation = f"{row['ref']}{row['position']}{row['alt']}"
+				if resistance_mutation in node_mutations.get( row['gene'], set() ) :
+					node_tags[row['feature']].add( row['tag'] )
+
+			# Construct final resistance labels for each feature based on tags.
+			for feature, tags in node_tags.items() :
+				if all( [ t == 'Sensitive' or t == 'Unknown' for t in tags ] ) :
+					if 'Unknown' in tags :
+						node_tags[ feature ] = 'Unknown'
+					else :
+						node_tags[ feature ] = 'Sensitive'
+				else :
+					node_tags[ feature ] = f"Resistant ({', '.join( sorted( [ tag for tag in tags if not tag in ['Unknown', 'Sensitive'] ] ) )})"
+			# Update global feature tags with any new tags observed in the node.
+			feature_tags.setdefault( feature, set() ).update( set( node_tags[ feature ] ) )
+			return node_tags
+
 	# Reprocess tree nodes.
 	def _handle( node ) :
 		# Remove specified node attributes.
@@ -71,6 +132,15 @@ def main():
 						if meta_label not in node[ 'node_attrs' ] :
 							node[ 'node_attrs' ][ meta_label ] = {}
 						node[ 'node_attrs' ][ meta_label ][ 'value' ] = meta_df.at[ node_name, meta_col ]
+		# Add resistance information if available.
+		if add_resistance_info :
+			resistance_info = _get_resistance_info( node )
+			for feature, resistance_label in resistance_info.items() :
+				if 'node_attrs' not in node :
+					node[ 'node_attrs' ] = {}
+				if feature not in node[ 'node_attrs' ] :
+					node[ 'node_attrs' ][ feature ] = {}
+				node[ 'node_attrs' ][ feature ][ 'value' ] = resistance_label
 		# Recurse into children.
 		for children in node.get( 'children', [] ) :
 			_handle( children )
@@ -84,6 +154,29 @@ def main():
 		for coloring in colorings :
 			if coloring.get( 'key', None ) == attr :
 				colorings.remove( coloring )
+
+	# Add resistance feature colorings, if information was added.
+	if add_resistance_info :
+		for feature, tags in feature_tags.items() :
+			coloring = {
+				'key': feature,
+				'title': " ".join( [ s.capitalize() for s in feature.split('_') ] ),
+				'type': 'categorical',
+			}
+			scale = []
+			# Set color for each tag. Resistant is set to reds, sensitive to blue, and unknown to grey.
+			if 'Unknown' in tags :
+				scale.append( [ 'Unknown', '#AAAAAA' ] )
+			if 'Sensitive' in tags :
+				scale.append( [ 'Sensitive', '#446DF6' ] )
+			resistant_tags = [ t for t in tags if not t in ['Unknown', 'Sensitive'] ]
+			if resistant_tags :
+				global REDS
+				for i, tag in enumerate( sorted( resistant_tags ) ) :
+					color = REDS[ i % len(REDS) ]
+					scale.append( [ tag, color ] )
+			coloring['scale'] = scale
+			colorings.append( coloring )
 
 	# If topology files are present, add topology information to matching genes; also add additional description if available from source .yaml.
 	feature_descriptions = {}

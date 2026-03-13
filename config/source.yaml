@@ -27,9 +27,9 @@ sources:
 
     # Data source and metadata description.
     describe: |
-      #### Dataset
+      ##### Dataset
 
-      The <code>TPA-SS14-2588</code> dataset comprises whole-genome variants of 2,588 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
+      The <code>TPA-SS14</code> dataset currently comprises whole-genome variants of 2,399 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
       Variants include **single nucleotide variants** (SNVs) and **InDels**, providing insight into the full spectrum of sequence changes and featuring the complete phylogenetic context of _T. pallidum_.
 
       ##### Metadata
@@ -37,7 +37,7 @@ sources:
       Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>, as well as <code>Subspecies</code> designations, including division into the Nichols and SS14 groups.
       Moreover, the Sublineage and BAP assignments introduced by [Beale _et al._ 2021](https://doi.org/10.1038/s41564-021-01000-z), [Taouk _et al._ 2022](https://doi.org/10.1016/s2666-5247(22)00035-0), and [Sena _et al._ 2024](https://doi.org/10.1016/S2666-5247(24)00087-9) are available.
       <code>Mean coverage</code> and <code>Ambiguity</code> (Ns) per sample provide a foundation for quality control.
-      Known macrolide resistance mutations, mediated by 23S rRNA mutations 2058A→G, 2058A→T (positions 283,691 and 235,246 in the used reference genome) and 2059A→G (positions 283,692 and 235,247 in the used reference genome), are also available via the metadata.
+      Known macrolide resistance mutations, mediated by 23S rRNA mutations A2058G, A2058T (positions 283,691 and 235,246 in the used reference genome) and A2059G (positions 283,692 and 235,247 in the used reference genome), are also available via the metadata.
 
     # Specification of genes to use for this data source.
     genes:
@@ -59,7 +59,7 @@ sources:
           - [UniProt O83346](https://www.uniprot.org/uniprotkb/O83346/entry)
       TP0548:
         describe: |
-          TP0548 encodes a putative outer-membrane protein.
+          TP0548 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
           
           ##### Relevance
           

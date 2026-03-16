@@ -58,6 +58,9 @@ def main():
 	meta_df = pd.read_csv( meta_file, sep='\t' if meta_file.endswith('.tsv') or meta_file.endswith('.txt') else ',' )
 	meta_df.set_index( args.metadata_id_column, inplace=True )
 
+	# Create a mapping of IDs to whether their date is inferred (contains "XX").
+	date_inferred = { s: d for s, d in zip( meta_df[ 'sra' ].tolist(), meta_df.date.map( lambda d : "XX" in d ).tolist() ) }
+
 	# Reprocess tree nodes.
 	def _handle( node ) :
 		# Remove specified node attributes.
@@ -68,6 +71,7 @@ def main():
 		if 'node_attrs' in node :
 			node_name = node.get( 'name', None )
 			if node_name is not None and node_name in meta_df.index :
+				# Add attributes to add from metadata.
 				for meta_col in ( args.metadata_add if args.metadata_add is not None else [] ) :
 					if meta_col in meta_df.columns :
 						meta_label = str(meta_col).capitalize()
@@ -76,6 +80,9 @@ def main():
 						if meta_label not in node[ 'node_attrs' ] :
 							node[ 'node_attrs' ][ meta_label ] = {}
 						node[ 'node_attrs' ][ meta_label ][ 'value' ] = meta_df.at[ node_name, meta_col ]
+				# Adjust date inferred state.
+				if 'num_date' in node.get( 'node_attrs', {} ) and node_name in date_inferred :
+					node[ 'node_attrs' ][ 'num_date' ][ 'inferred' ] = date_inferred[ node_name ]
 
 		# Recurse into children.
 		for children in node.get( 'children', [] ) :

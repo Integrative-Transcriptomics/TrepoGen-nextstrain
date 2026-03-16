@@ -2,19 +2,7 @@
 configfile: "config/global.yaml" # Global configurations.
 configfile: "config/source.yaml" # Data-source specific configurations.
 
-# TODO: List the source datasets to use in the workflow; the following files are expected in the directory source/data/{source}/:
-# - sequence.fasta: Reference genome sequence in FASTA format.
-# - annotation.gff3: Annotation file in GFF3 format.
-# - variants.vcf: VCF file containing the variants for the samples in the dataset.
-# - mask.bed: (Optional empty) BED file for masking regions in the genome for tree building.
-# - meta.csv: Metadata file in CSV format containing information about the single samples.
-# - meta_colors.tsv: TSV file defining colors for the metadata.
-# - meta_configuration.json: Auspice configuration file in JSON format providing settings for the metadata
-# - resistance_mutations.tsv: (Optional empty) TSV file defining resistance mutations for the dataset.
-sources = ["TPA-SS14-2588"]
-
-# The list of genes to use have to be specified in config/source.yaml under the {source} > genes section.
-# - The keys of this section are expected to match the gene names in the annotation.gff3 file and will be passed to augur translate for amino acid mutation inference.
+sources = ["TPA-SS14"]
 
 # List of source files that are part of the source data; files are expected to be present in the source/data/{source} directory.
 source_files = [
@@ -26,6 +14,8 @@ source_files = [
 	"meta_colors.tsv", # TSV file defining colors for the metadata.
 	"meta_configuration.json", # Auspice configuration file in JSON format providing settings for the metadata of the dataset.
 ]
+
+# ! The list of genes to use have to be specified in config/source.yaml under the {source} > genes section.
 
 # List of work files that are generated during the workflow; files will be generated in the .work/{source}/ directory.
 work_files = [

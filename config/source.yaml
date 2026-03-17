@@ -25,6 +25,10 @@ sources:
     traits:
       columns: "subspecies country region date"
 
+    # Additional metadata columns to be included in the Auspice export. These will not be available for coloring.
+    export:
+      metadata_columns: "label biosample bioproject"
+
     # Data source and metadata description.
     describe: |
       ##### Dataset

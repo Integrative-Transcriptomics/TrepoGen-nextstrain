@@ -265,6 +265,7 @@ rule export:
 		"datasets/{source}_raw.json",
 	params:
 		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
+		metadata_columns=lambda wc: config["sources"][wc.source].get("export", {}).get("metadata_columns", ""),
 		title=lambda wc: f"'{config.get('export', {}).get('title', 'Nextstrain Dataset')}'",
 		maintainers=config.get("export", {}).get("maintainers", "None"),
 		build_url=config.get("export", {}).get("build_url", "Unknown"),
@@ -273,6 +274,7 @@ rule export:
 		augur export v2 \
 			--tree {input.tree} \
 			--metadata {input.metadata} \
+			--metadata-columns {params.metadata_columns} \
 			--metadata-id-columns {params.metadata_id} \
 			--node-data {input.branch_lengths} {input.traits} {input.nucleotide_mutations} {input.amino_acid_mutations} \
 			--auspice-config {input.meta_config} {input.display_defaults} \
@@ -286,7 +288,7 @@ rule export:
 			--include-root-sequence
 		"""
 
-# Reprocesses the exported dataset to add or remove specific metadata and node attributes.
+# Reprocesses the exported dataset.
 rule reprocess:
 	input:
 		dataset=rules.export.output,
@@ -294,14 +296,12 @@ rule reprocess:
 		"datasets/{source}.json",
 	params:
 		source=lambda wc: wc.source,
-		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
-		metadata_add="--metadata-add label",
+		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "strain"),
 	shell:
 		"""
 		python scripts/reprocess.py \
 			--input {input.dataset} \
 			--output {output} \
 			--source {params.source} \
-			--metadata-id-column {params.metadata_id} \
-			{params.metadata_add}
+			--id {params.metadata_id}
 		"""

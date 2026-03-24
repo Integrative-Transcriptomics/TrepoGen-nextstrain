@@ -53,7 +53,7 @@ def main():
 	meta_df.set_index( args.id, inplace=True )
 
 	# Create a mapping of IDs to whether their date is inferred (contains "XX").
-	date_inferred = { s: d for s, d in zip( meta_df[ args.id ].tolist(), meta_df.date.map( lambda d : "XX" in d ).tolist() ) }
+	date_inferred = { s: d for s, d in zip( meta_df.index.tolist(), meta_df.date.map( lambda d : "XX" in d ).tolist() ) }
 
 	# Reprocess tree nodes.
 	def _handle( node ) :

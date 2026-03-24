@@ -11,12 +11,12 @@ sources:
     # Parameters to build the initial tree from this data source.
     tree:
       # The auto substitution model selection may be disabled in the future for runtime increase. HKY+F+ASC+R2 performed good for the 2588 source.
-      method_cl: "--method iqtree --substitution-model HKY+F+ASC+R2 --tree-builder-args='-safe -pathogen'"
+      method_cl: "--method iqtree --substitution-model HKY+F+ASC+R2 --tree-builder-args='-safe'"
 
     # Optional command line arguments for tree refinement.
     refine:
       year_bounds_cl: "--year-bounds 2023 2000"
-      precision: 3
+      precision: 2
       iterations: 2
       # The fixed clock rate is based on literature references: https://pmc.ncbi.nlm.nih.gov/articles/PMC8612932/.
       clock_rate_cl: "--clock-rate 1.28e-7 --clock-std-dev 1.67e-8"

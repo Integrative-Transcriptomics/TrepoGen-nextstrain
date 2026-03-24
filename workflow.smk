@@ -142,16 +142,17 @@ rule refine:
 			--max-iter {params.iterations} \
 			--covariance \
 			--keep-polytomies \
+			--stochastic-resolve \
 			--precision {params.precision} \
 			--coalescent opt \
 			--date-format %Y-%m-%d \
-			--date-inference marginal \
+			--date-inference joint \
 			--date-confidence \
-			--branch-length-inference marginal \
+			--branch-length-inference joint \
 			--seed {params.seed} \
 			--output-tree {output.tree} \
 			--output-node-data {output.branch_lengths} \
-			--verbosity 6 \
+			--verbosity 4 \
 			{params.clock_rate_cl} \
 			{params.year_bounds_cl}
 		"""

@@ -19,21 +19,12 @@ describe:
 
     - **In-depth investigation of outer membrane protein (OMP) diversity**:
     The <code>Nucleotide diversity of genome</code> panel is annotated with selected OMP genes.
-    Clicking on one of these genes switches the view to the <code>Amino acid diversity</code> of that gene.
+    Clicking on one of these genes, or selecting it using the controls in the sidebar, switches the view to show the <code>Amino acid diversity</code> of that gene.
     This view is annotated with curated protein topology annotations that provide insight into, for example, the diversity of extracellular loops (ECLs), which are key targets for vaccine design.
     Additionally, an information panel below provides more details on the protein, including links to external resources.
     
-    - **Direct access to genome assemblies.**:
-    To download genome assemblies for all samples in the dataset with metadata filters applied, select <code>Download Data → Genome Sequences (FASTA)</code> at the bottom of the page.
+    We are eagerly working on providing access to more detailed gene expression, protein diversity and sequence data by integrating access to collaborating projects, and by adding more comprehensive sample annotations regarding upcoming classification schemas and the latest MLSTs.
   postscript: |
-    ##### Contributors
-
-    The curation of the underlying genome data and metadata is overseen by Nicole Lieberman (University of Washington).
-    Jeffrey Furlong (University of Washington) is in charge of generating the genotyping data. 
-    Simon Hackl (University of Tübingen) is responsible for implementing the Nextstrain workflow and the customized Auspice fork.
-
-    Acknowledgements go to Kay Nieselt (University of Tübingen) for scientific advice on the project and to the Nextstrain development team for their support in its implementation.
-
     ##### Funding and Data Provenance
 
     This project receives funding [To support the development of a broadly effective syphilis vaccine (INV-072205)](https://www.gatesfoundation.org/about/committed-grants/2024/12/inv-072205) by the _Gates Foundation_.
@@ -41,7 +32,7 @@ describe:
     We gratefully acknowledge the authors, originating and submitting laboratories of the genetic sequences and metadata for sharing their work.
     Data producers should be named where possible and cooperation should be sought in certain circumstances.
     Please avoid scooping the work of others and reach out if uncertain.
-    Detailed author information can be found via the NCBI accessors (strain) in the downloadable metadata file.
+    *By clicking on a leaf node, the user can access detailed author information, raw data, and genome sequences (if available) via the linked NCBI accessors in the tooltips.*
 
     ##### Disclaimer
 

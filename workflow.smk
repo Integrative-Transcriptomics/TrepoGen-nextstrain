@@ -285,7 +285,7 @@ rule export:
 			--colors {input.colors} \
 			--lat-longs {input.coordinates} \
 			--output {output} \
-			--include-root-sequence
+			--include-root-sequence-inline
 		"""
 
 # Reprocesses the exported dataset.

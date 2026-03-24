@@ -143,16 +143,17 @@ rule refine:
 			--covariance \
 			--keep-polytomies \
 			--precision {params.precision} \
-			--coalescent opt \
-			--date-format %Y-%m-%d \
-			--date-inference joint \
+			--coalescent 'opt' \
+			--date-format '%Y-%m-%d' \
+			--date-inference 'joint' \
 			--date-confidence \
-			--branch-length-inference joint \
+			--branch-length-inference 'joint' \
 			--seed {params.seed} \
 			--output-tree {output.tree} \
 			--output-node-data {output.branch_lengths} \
 			--verbosity 4 \
 			{params.clock_rate_cl} \
+			{params.root_cl} \
 			{params.year_bounds_cl}
 		"""
 

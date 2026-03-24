@@ -15,11 +15,12 @@ sources:
 
     # Optional command line arguments for tree refinement.
     refine:
-      year_bounds_cl: "--year-bounds 2023 2000"
+      year_bounds_cl: "--year-bounds 2000 2023"
       precision: 2
       iterations: 2
       # The fixed clock rate is based on literature references: https://pmc.ncbi.nlm.nih.gov/articles/PMC8612932/.
-      clock_rate_cl: "--clock-rate 1.28e-7 --clock-std-dev 1.67e-8"
+      # Maybe skews the tree, causing future nodes.
+      # clock_rate_cl: "--clock-rate 1.28e-7 --clock-std-dev 1.67e-8"
 
     # Metadata fields to infer for ancestral states (internal nodes of the tree).
     traits:

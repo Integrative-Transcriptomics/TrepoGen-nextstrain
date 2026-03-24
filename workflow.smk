@@ -142,7 +142,6 @@ rule refine:
 			--max-iter {params.iterations} \
 			--covariance \
 			--keep-polytomies \
-			--stochastic-resolve \
 			--precision {params.precision} \
 			--coalescent opt \
 			--date-format %Y-%m-%d \

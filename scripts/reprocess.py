@@ -82,7 +82,7 @@ def main():
 		topology_file = join( "source", "data", args.source, 'topology', f'{feature}.tsv' )
 		if exists( topology_file ) :
 			topology_df = pd.read_csv( topology_file, sep='\t', comment='#' )
-			dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).get( feature, {} )[ 'topology' ] = ",".join( [ f"{entry.type}:{entry.nuc_start}:{entry.nuc_end}" for entry in topology_df.itertuples() ] )
+			dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).get( feature, {} )[ 'topology' ] = ",".join( [ f"{entry.type}:{entry.genomic_start}:{entry.genomic_end}" for entry in topology_df.itertuples() ] )
 		if feature in feature_descriptions :
 			dataset.get( 'meta', {} ).get( 'genome_annotations', {} ).get( feature, {} )[ 'info' ] = feature_descriptions[ feature ][ 'describe' ]
 

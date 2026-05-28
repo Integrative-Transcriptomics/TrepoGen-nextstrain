@@ -2,7 +2,7 @@
 configfile: "config/global.yaml" # Global configurations.
 configfile: "config/source.yaml" # Data-source specific configurations.
 
-sources = ["TPA-SS14-N25AF08DP3"]
+sources = ["TPA-SS14"]
 
 # List of source files that are part of the source data; files are expected to be present in the source/data/{source} directory.
 source_files = [

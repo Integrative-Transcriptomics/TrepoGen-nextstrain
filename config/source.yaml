@@ -4,9 +4,9 @@ sources:
     reference_sample: "CP004011"
     meta_identifier: "sra"
 
-    # Optional command line arguments to filter variants.
-    filter:
-      query_cl: "--query-columns ambiguity:float coverage:float --query '(coverage >= 5) & (ambiguity <= 10)'"
+    # Optional command line arguments to filter variants. Currently (2026-05-29) not used, as the data source is already pre-filtered.
+    #filter:
+    #  query_cl: "--query-columns ambiguity:float coverage:float --query '(coverage >= 5) & (ambiguity <= 10)'"
 
     # Parameters to build the initial tree from this data source.
     tree:
@@ -15,7 +15,7 @@ sources:
 
     # Optional command line arguments for tree refinement.
     refine:
-      year_bounds_cl: "--year-bounds 2023 2000"
+      year_bounds_cl: "--year-bounds 2025 2000"
       precision: 3
       iterations: 2
       # The fixed clock rate is based on literature references: https://pmc.ncbi.nlm.nih.gov/articles/PMC8612932/.
@@ -27,7 +27,7 @@ sources:
 
     # Additional metadata columns to be included in the Auspice export. These will not be available for coloring.
     export:
-      metadata_columns: "label biosample bioproject"
+      metadata_columns: "Label BioSample BioProject PMID Center Host Origin"
 
     # Data source and metadata description.
     describe: |
@@ -45,6 +45,46 @@ sources:
 
     # Specification of genes to use for this data source.
     genes:
+      rpsJ:
+        describe: |
+          The rpsJ gene in _T. pallidum_ is responsible for encoding the 30S ribosomal protein S10. This protein is a critical component of the bacterial translation machinery
+
+          ##### Relevance
+
+          Mutations in the rpsJ gene are closely monitored for their association with tetracycline resistance in _T. pallidum_. Specifically, amino acid substitutions like V57G, V57I, and V57K within the S10 protein have been identified in variants with reduced susceptibility to the antibiotic. [PMC12518048](https://pmc.ncbi.nlm.nih.gov/articles/PMC12518048/)
+
+          Additional information on rpsJ can be found at:
+          - [UniProt B2S2D5](https://www.uniprot.org/uniprotkb/B2S2D5/entry)
+      rpsC:
+        describe: |
+          rpsC encodes the 30S ribosomal protein S3. This protein is an essential component of bacterial translation machinery, playing a critical structural role in binding messenger RNA and assembling the 30S ribosomal subunit.
+
+          ##### Relevance
+
+           In molecular surveillance studies, mutations in rpsC are analyzed as potential markers for tetracycline resistance. Variants, such as the H178Q mutation, have been evaluated for their role in altering antibiotic susceptibility. [PMC12518048](https://pmc.ncbi.nlm.nih.gov/articles/PMC12518048/)
+
+          Additional information on rpsC can be found at:
+          - [UniProt B2S2E2](https://www.uniprot.org/uniprotkb/B2S2E2/entry)
+      TP0136:
+        describe: |
+          TP0136 is a major outer membrane adhesion protein of _T. pallidum_ that plays a critical role in pathogenesis. It facilitates the binding of the bacteria to host endothelial cells and extracellular matrix.
+
+          ##### Relevance
+
+          Tp0136 is heavily researched as a prime syphilis vaccine candidate due to its surface-exposure. [DOI s41541-025-01330-7](https://www.nature.com/articles/s41541-025-01330-7)
+
+          Additional information on rpsC can be found at:
+          - [UniProt O83172](https://www.uniprot.org/uniprotkb/O83172/entry)
+      TP0705:
+        describe: |
+          TP0705 encodes a Penicillin-Binding Protein, essential for the synthesis and cross-linking of the bacterial cell wall.
+
+          ##### Relevance
+
+          Recent studies have identified specific genetic variations, notably the A1873G mutation, associated with reduced susceptibility to penicillin G and ceftriaxone in _T. pallidum_. [PMC12152143](https://pmc.ncbi.nlm.nih.gov/articles/PMC12152143/)
+
+          Additional information on TP0705 can be found at:
+          - [UniProt O83703 ](https://www.uniprot.org/uniprot/O83703/entry)
       TP0326:
         describe: |
           BamA (TP0326) is the central component of the molecular machinery that inserts OMPs into the spirochete's outer membrane.

@@ -17,7 +17,7 @@ describe:
 
     In addition to [Nextstrain's standard features](https://docs.nextstrain.org/en/latest/learn/interpret/index.html), this customized Auspice implementation enables:
 
-    - **In-depth investigation of outer membrane protein (OMP) diversity**:
+    - **In-depth investigation of outer membrane protein (OMP) and antimicrobial resistance (AMR) related protein diversity**:
     The <code>Nucleotide diversity of genome</code> panel is annotated with selected OMP genes.
     Clicking on one of these genes, or selecting it using the controls in the sidebar, switches the view to show the <code>Amino acid diversity</code> of that gene.
     This view is annotated with curated protein topology annotations that provide insight into, for example, the diversity of extracellular loops (ECLs), which are key targets for vaccine design.

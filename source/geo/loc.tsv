@@ -1,218 +1,273 @@
-region	Africa	4.070194	21.824559
-region	China	35.000074	104.999927
-region	Asia	35.000074	104.999927
-region	Europe	49.646237	10.799454
-region	Japan/Korea	35.845119	136.736386
-region	North America	28.2367447	-97.738017
-region	Oceania	-25.0562891	152.008576
-region	South America	-13.083583	-58.470721
-region	South Asia	24.485438	76.513158
-region	Southeast Asia	2.500537	113.027253
-region	West Asia	34.000094	48.732280
-country	Afghanistan	33.7680065	66.2385139
-country	Albania	41.000028	19.9999619
-country	Algeria	28.0000272	2.9999825
-country	American Samoa	-14.289304	-170.692511
-country	Andorra	42.5407167	1.5732033
-country	Angola	-11.8775768	17.5691241
-country	Antigua and Barbuda	17.2234721	-61.9554608
-country	Argentina	-37.052315	-64.869142
-country	Armenia	40.7696272	44.6736646
-country	Aruba	12.5013629	-69.9618475
-country	Australia	-24.7761085	134.755
-country	Austria	47.5162	14.5501
-country	Azerbaijan	40.3936294	47.7872508
-country	Bahamas	24.7736546	-78.0000547
-country	Bahrain	26.0667	50.5577
-country	Bangladesh	24.506442	90.041454
-country	Barbados	13.1500331	-59.5250305
-country	Belarus	53.704205	28.247691
-country	Belgium	50.707735	4.677726
-country	Belize	16.8259793	-88.7600927
-country	Benin	9.961027	2.327362
-country	Bermuda	32.3018217	-64.7603583
-country	Bhutan	27.549511	90.5119273
-country	Bolivia	-17.0568696	-64.9912286
-country	Bonaire	12.167	-68.29096143734236
-country	Bosnia and Herzegovina	43.9159	17.6791
-country	Botswana	-23.1681782	24.5928742
-country	Brazil	-10.3333332	-53.1999999
-country	Brunei	4.5353	114.7277
-country	Bulgaria	42.782450	25.193668
-country	Burkina Faso	12.78998	-1.683734
-country	Burundi	-3.3634357	29.8870575
-country	Cabo Verde	16.0000552	-24.0083947
+country	Afghanistan	33.0	65.0
+country	Åland Islands	60.1167	19.9
+country	Albania	41.0	20.0
+country	Algeria	28.0	3.0
+country	American Samoa	-14.3333	-170.0
+country	Andorra	42.5	1.6
+country	Angola	-12.5	18.5
+country	Anguilla	18.25	-63.1667
+country	Antarctica	-90.0	0.0
+country	Antigua and Barbuda	17.05	-61.8
+country	Argentina	-34.0	-64.0
+country	Armenia	40.0	45.0
+country	Aruba	12.5	-69.9667
+country	Australia	-27.0	133.0
+country	Austria	47.3333	13.3333
+country	Azerbaijan	40.5	47.5
+country	Bahamas	24.25	-76.0
+country	Bahrain	26.0	50.55
+country	Bangladesh	24.0	90.0
+country	Barbados	13.1667	-59.5333
+country	Belarus	53.0	28.0
+country	Belgium	50.8333	4.0
+country	Belize	17.25	-88.75
+country	Benin	9.5	2.25
+country	Bermuda	32.3333	-64.75
+country	Bhutan	27.5	90.5
+country	Bolivia	-17.0	-65.0
+country	Bonaire	12.1833	-68.2333
+country	Bosnia and Herzegovina	44.0	18.0
+country	Botswana	-22.0	24.0
+country	Bouvet Island	-54.4333	3.4
+country	Brazil	-10.0	-55.0
+country	British Indian Ocean Territory	-6.0	71.5
+country	Brunei	4.5	114.6667
+country	Bulgaria	43.0	25.0
+country	Burkina Faso	13.0	-2.0
+country	Burundi	-3.5	30.0
 country	Cambodia	13.0	105.0
-country	Cameroon	4.6125522	13.1535811
-country	Canada	61.0666922	-107.991707
-country	Cayman Islands	19.703182249999998	-79.9174627243246
-country	Central African Republic	7.0323598	19.9981227
-country	Chad	15.6134137	19.0156172
-country	Chile	-31.7613364	-71.3187696
-country	China	33.394333	104.689839
-country	Colombia	2.893108	-73.7845142
-country	Costa Rica	10.0379	-83.818759
-country	Côte d'Ivoire	7.9897371	-5.5679458
-country	Croatia	45.1	15.2
-country	Cuba	23.0131338	-80.8328748
-country	Curacao	12.1845	-68.9640875031406
-country	Cyprus	34.965802	33.171772
-country	Czech Republic	49.8175	15.473
-country	Congo	-4.0383	21.7587
-country	Denmark	56.2639	9.5018
-country	Djibouti	11.85677545	42.757784519943655
-country	Dominica	15.4185147	-61.3363561
-country	Dominican Republic	19.0974031	-70.3028026
-country	Ecuador	-1.0541	-78.1489
-country	Egypt	26.8206	30.8025
-country	El Salvador	13.8000382	-88.9140683
-country	Equatorial Guinea	1.613172	10.5170357
-country	Estonia	58.850111	25.808524
-country	Eswatini	-26.5624806	31.3991317
-country	Ethiopia	9.1450	40.4897
-country	Fiji	-18.1239696	179.0122737
-country	Finland	61.751734	26.186437
-country	France	46.2276	2.2137
-country	French Polynesia	-16.03442485	-146.0490931059517
-country	Gabon	-0.8999695	11.6899699
-country	Gambia	13.5	-15.5
-country	Georgia	41.989378	43.597463
-country	Germany	51.1657	10.4515
-country	Ghana	7.811417	-1.089272
-country	Gibraltar	36.140807	-5.3541295
+country	Cameroon	6.0	12.0
+country	Canada	60.0	-95.0
+country	Cape Verde	16.0	-24.0
+country	Cayman Islands	19.5	-80.5
+country	Central African Republic	7.0	21.0
+country	Chad	15.0	19.0
+country	Chile	-30.0	-71.0
+country	China	35.0	105.0
+country	Christmas Island	-10.5	105.6667
+country	Cocos (Keeling) Islands	-12.5	96.8333
+country	Colombia	4.0	-72.0
+country	Comoros	-12.1667	44.25
+country	Democratic Republic of Congo	0.0	25.0
+country	Congo	-1.0	15.0
+country	Cook Islands	-21.2333	-159.7667
+country	Costa Rica	10.0	-84.0
+country	Cote d'Ivoire	8.0	-5.0
+country	Croatia	45.1667	15.5
+country	Cuba	21.5	-80.0
+country	Curacao	12.1667	-68.9667
+country	Cyprus	35.0	33.0
+country	Czech Republic	49.75	15.5
+country	Denmark	56.0	10.0
+country	Djibouti	11.5	43.0
+country	Dominica	15.4167	-61.3333
+country	Dominican Republic	19.0	-70.6667
+country	Ecuador	-2.0	-77.5
+country	Egypt	27.0	30.0
+country	El Salvador	13.8333	-88.9167
+country	Equatorial Guinea	2.0	10.0
+country	Eritrea	15.0	39.0
+country	Estonia	59.0	26.0
+country	Ethiopia	8.0	38.0
+country	Falkland Islands	-51.75	-59.0
+country	Faroe Islands	62.0	-7.0
+country	Fiji	-18.0	175.0
+country	Finland	64.0	26.0
+country	France	46.0	2.0
+country	French Guiana	4.0	-53.0
+country	French Polynesia	-15.0	-140.0
+country	French Southern Territories	-43.0	67.0
+country	Gabon	-1.0	11.75
+country	Gambia	13.4667	-16.5667
+country	Georgia	42.0	43.5
+country	Germany	51.0	9.0
+country	Ghana	8.0	-2.0
+country	Gibraltar	36.1833	-5.3667
 country	Greece	39.0	22.0
-country	Grenada	12.1360374	-61.6904045
-country	Guadeloupe	16.2490067	-61.5650444
-country	Guam	13.464887	144.792016
-country	Guatemala	15.6356088	-89.8988087
-country	Guinea	10.7226226	-10.7083587
-country	Guinea-Bissau	12.100035	-14.9000214
-country	Guyana	4.8417097	-58.6416891
-country	Haiti	19.1399952	-72.3570972
-country	Honduras	15.2572432	-86.0755145
-country	Hong Kong	22.3964	114.1095
+country	Greenland	72.0	-40.0
+country	Grenada	12.1167	-61.6667
+country	Guadeloupe	16.25	-61.5833
+country	Guam	13.4667	144.7833
+country	Guatemala	15.5	-90.25
+country	Guernsey	49.5	-2.56
+country	Guinea-Bissau	12.0	-15.0
+country	Guinea	11.0	-10.0
+country	Guyana	5.0	-59.0
+country	Haiti	19.0	-72.4167
+country	Heard Island and McDonald Islands	-53.1	72.5167
+country	Holy See	41.9	12.45
+country	Honduras	15.0	-86.5
+country	Hong Kong	22.25	114.1667
 country	Hungary	47.0	20.0
-country	Iceland	64.90614	-18.4826
-country	India	21.077353	78.723951
-country	Indonesia	-0.897599	114.181602
-country	Iran	34.5732	51.876
-country	Iraq	33.0955793	44.1749775
-country	Ireland	52.865	-7.979
-country	Israel	31.217736	34.903129
-country	Italy	43.382775	12.183629
-country	Cote d'Ivoire	7.9897371	-5.5679458
-country	Jamaica	18.1096	-77.2975
-country	Japan	35.68536	139.75309
-country	Jordan	31.1667049	36.941628
-country	Kazakhstan	48.886304	67.283729
-country	Kenya	0.0236	37.9062
-country	Kiribati	0.3448612	173.6641773
-country	Kosovo	42.6026	20.9030
-country	Kuwait	29.452987	47.447194
-country	Kyrgyzstan	41.2044	74.7661
-country	Laos	20.0171109	103.378253
-country	Latvia	56.799689	25.441386
-country	Lebanon	33.945959	35.868630
-country	Lesotho	-29.6039267	28.3350193
-country	Liberia	5.7499721	-9.3658524
-country	Libya	26.4215275	17.30331995251014
-country	Liechtenstein	47.1416307	9.5531527
-country	Lithuania	55.378752	23.945328
-country	Luxembourg	49.755428	6.119486
-country	Macao	22.1899448	113.5380454
-country	Madagascar	-18.9249604	46.4416422
-country	Malawi	-13.2687204	33.9301963
-country	Malaysia	4.264153	102.222436
-country	Maldives	4.7064352	73.3287853
-country	Mali	16.3700359	-2.2900239
-country	Malta	35.8885993	14.4476911
-country	Marshall Islands	6.9518742	170.9985095
-country	Mauritania	20.2540382	-9.2399263
-country	Mauritius	-20.2759451	57.5703566
-country	Mexico	19.4325301	-99.1332101
-country	Micronesia	7.0	155.25
-country	Moldova	47.2879608	28.5670941
-country	Monaco	43.73844905	7.424224092532953
-country	Mongolia	47.504782	102.997672
-country	Montenegro	42.9868853	19.5180992
-country	Morocco	32.549785	-5.480765
-country	Mozambique	-19.302233	34.9144977
-country	Myanmar	20.600856	96.287616
-country	Namibia	-23.2335499	17.3231107
+country	Iceland	65.0	-18.0
+country	India	20.0	77.0
+country	Indonesia	-5.0	120.0
+country	Iran	32.0	53.0
+country	Iraq	33.0	44.0
+country	Ireland	53.0	-8.0
+country	Isle of Man	54.23	-4.55
+country	Israel	31.5	34.75
+country	Italy	42.8333	12.8333
+country	Jamaica	18.25	-77.5
+country	Japan	36.0	138.0
+country	Jersey	49.21	-2.13
+country	Jordan	31.0	36.0
+country	Kazakhstan	48.0	68.0
+country	Kenya	1.0	38.0
+country	Kiribati	1.4167	173.0
+country	North Korea	40.0	127.0
+country	South Korea	37.0	127.5
+country	Kosovo	42.5833	21.0
+country	Kuwait	29.3375	47.6581
+country	Kyrgyzstan	41.0	75.0
+country	Laos	18.0	105.0
+country	Latvia	57.0	25.0
+country	Lebanon	33.8333	35.8333
+country	Lesotho	-29.5	28.5
+country	Liberia	6.5	-9.5
+country	Libya	25.0	17.0
+country	Liechtenstein	47.1667	9.5333
+country	Lithuania	56.0	24.0
+country	Luxembourg	49.75	6.1667
+country	Macao	22.1667	113.55
+country	North Macedonia	41.8333	22.0
+country	Madagascar	-20.0	47.0
+country	Malawi	-13.5	34.0
+country	Malaysia	2.5	112.5
+country	Maldives	3.25	73.0
+country	Mali	17.0	-4.0
+country	Malta	35.8333	14.5833
+country	Marshall Islands	9.0	168.0
+country	Martinique	14.6667	-61.0
+country	Mauritania	20.0	-12.0
+country	Mauritius	-20.2833	57.55
+country	Mayotte	-12.8333	45.1667
+country	Mexico	23.0	-102.0
+country	Micronesia	6.9167	158.25
+country	Moldova	47.0	29.0
+country	Monaco	43.7333	7.4
+country	Mongolia	46.0	105.0
+country	Montenegro	42.0	19.0
+country	Montserrat	16.75	-62.2
+country	Morocco	32.0	-5.0
+country	Mozambique	-18.25	35.0
+country	Myanmar	22.0	98.0
+country	Namibia	-22.0	17.0
+country	Nauru	-0.5333	166.9167
 country	Nepal	28.0	84.0
-country	Netherlands	52.1326	5.2913
-country	New Zealand	-41.500083	172.8344077
-country	Nicaragua	12.6090157	-85.2936911
-country	Niger	18.061703	10.145544
+country	Netherlands Antilles	12.25	-68.75
+country	Netherlands	52.5	5.75
+country	New Caledonia	-21.5	165.5
+country	New Zealand	-41.0	174.0
+country	Nicaragua	13.0	-85.0
+country	Niger	16.0	8.0
 country	Nigeria	10.0	8.0
-country	North Macedonia	41.6171214	21.7168387
-country	Norway	61.3109	8.73701
-country	Oman	20.565641	56.861042
+country	Niue	-19.0333	-169.8667
+country	Norfolk Island	-29.0333	167.95
+country	Northern Mariana Islands	15.2	145.75
+country	Norway	62.0	10.0
+country	Oman	21.0	57.0
 country	Pakistan	30.0	70.0
-country	Palau	5.3783537	132.9102573
-country	Palestine	31.94696655	35.27386547291496
-country	Panama	8.98333	-79.5166
-country	Papua New Guinea	-5.6816069	144.2489081
-country	Paraguay	-23.3165935	-58.1693445
-country	Peru	-9.650468	-75.328211
-country	Philippines	11.383086	123.521862
-country	Poland	52.0977181	19.0258159
-country	Portugal	39.54046	-8.174701
-country	Puerto Rico	18.2247706	-66.4858295
-country	Qatar	25.230573	51.183951
-country	Congo	-0.516362	15.877811
-country	Romania	45.9432	24.9668
-country	Russia	64.6863136	97.7453061
-country	Rwanda	-1.9646631	30.0644358
-country	Saint Barthélemy	17.900773100000002	-62.7971665877911
-country	Saint Kitts and Nevis	17.250512	-62.6725973
-country	Saint Lucia	13.8250489	-60.975036
-country	Saint Martin	18.0668544	-63.0848869
-country	Saint Vincent and the Grenadines	12.90447	-61.2765569
-country	Sao Tome and Principe	0.8875498	6.9648718
+country	Palau	7.5	134.5
+country	Palestine	32.0	35.25
+country	Panama	9.0	-80.0
+country	Papua New Guinea	-6.0	147.0
+country	Paraguay	-23.0	-58.0
+country	Peru	-10.0	-76.0
+country	Philippines	13.0	122.0
+country	Pitcairn	-24.7	-127.4
+country	Poland	52.0	20.0
+country	Portugal	39.5	-8.0
+country	Puerto Rico	18.25	-66.5
+country	Qatar	25.5	51.25
+country	Réunion	-21.1	55.6
+country	Romania	46.0	25.0
+country	Russia	60.0	100.0
+country	Rwanda	-2.0	30.0
+country	Saint Barthélemy	17.8977	-62.8342
+country	Saint Helena	-15.9333	-5.7
+country	Saint Kitts and Nevis	17.3333	-62.75
+country	Saint Lucia	13.8833	-61.1333
+country	Saint Martin	18.0753	-63.06
+country	Saint Pierre and Miquelon	46.8333	-56.3333
+country	Saint Vincent and the Grenadines	13.25	-61.2
+country	Samoa	-13.5833	-172.3333
+country	San Marino	43.7667	12.4167
+country	Sao Tome and Principe	1.0	7.0
 country	Saudi Arabia	25.0	45.0
-country	Senegal	14.5	-14.25
-country	Serbia	43.745902	20.848918
-country	Seychelles	-4.6574977	55.4540146
-country	Sierra Leone	8.6400349	-11.8400269
-country	Singapore	1.344189	103.867546
-country	Sint Maarten	18.038916377498968	-63.059102766267536
-country	Slovakia	48.66667	19.5
-country	Slovenia	45.8133113	14.4808369
-country	Solomon Islands	-8.7053941	159.1070693851845
-country	Somalia	8.3676771	49.083416
-country	South Africa	-28.8166235	24.991639
-country	South Korea	36.609249	127.917932
-country	South Sudan	7.8699431	29.6667897
-country	Spain	40.4637	-3.7492
-country	Sri Lanka	7.8731	80.7718
-country	St. Lucia	13.8250489	-60.975036
-country	Sudan	14.5844444	29.4917691
-country	Suriname	4.1413025	-56.0771187
-country	Sweden	59.6749712	14.5208584
-country	Switzerland	46.8182	8.2275
-country	Syria	34.6401861	39.0494106
-country	Taiwan	23.8169	121.031365
-country	Tajikistan	38.8610	71.2761
-country	Tanzania	-6.5247123	35.7878438
-country	Thailand	14.8971921	100.83273
-country	Timor-Leste	-8.809397	125.909527
-country	Togo	8.88625	1.069709
-country	Trinidad	10.447801502473043	-61.23664353857157
-country	Trinidad and Tobago	10.8677845	-60.9821067
-country	Tunisia	33.654143	9.065134
-country	Turkey	39.046746	36.767068
-country	Uganda	1.861287	32.55149
-country	Ukraine	49.4871968	31.2718321
-country	Union of the Comoros	-12.2045176	44.2832964
-country	United Arab Emirates	23.546651	54.065059
-country	United Kingdom	54.242833	-2.088739
+country	Senegal	14.0	-14.0
+country	Serbia	44.0	21.0
+country	Seychelles	-4.5833	55.6667
+country	Sierra Leone	8.5	-11.5
+country	Singapore	1.3667	103.8
+country	Sint Maarten	18.0333	-63.05
+country	Slovakia	48.6667	19.5
+country	Slovenia	46.0	15.0
+country	Solomon Islands	-8.0	159.0
+country	Somalia	10.0	49.0
+country	South Africa	-29.0	24.0
+country	South Georgia and the South Sandwich Islands	-54.5	-37.0
+country	South Sudan	8.0	30.0
+country	Spain	40.0	-4.0
+country	Sri Lanka	7.0	81.0
+country	Sudan	15.0	30.0
+country	Suriname	4.0	-56.0
+country	Svalbard and Jan Mayen	78.0	20.0
+country	Eswatini	-26.5	31.5
+country	Sweden	62.0	15.0
+country	Switzerland	47.0	8.0
+country	Syria	35.0	38.0
+country	Taiwan	23.5	121.0
+country	Tajikistan	39.0	71.0
+country	Tanzania	-6.0	35.0
+country	Thailand	15.0	100.0
+country	Timor-Leste	-8.55	125.5167
+country	Togo	8.0	1.1667
+country	Tokelau	-9.0	-172.0
+country	Tonga	-20.0	-175.0
+country	Trinidad and Tobago	11.0	-61.0
+country	Tunisia	34.0	9.0
+country	Turkey	39.0	35.0
+country	Turkmenistan	40.0	60.0
+country	Turks and Caicos Islands	21.75	-71.5833
+country	Tuvalu	-8.0	178.0
+country	Uganda	1.0	32.0
+country	Ukraine	49.0	32.0
+country	United Arab Emirates	24.0	54.0
+country	United Kingdom	54.0	-2.0
+country	United States Minor Outlying Islands	19.2833	166.6
+country	United States	38.0	-97.0
 country	Uruguay	-33.0	-56.0
-country	USA	38.916963	-98.891372
-country	Uzbekistan	41.32373	63.9528098
-country	Vanuatu	-16.5255069	168.1069154
-country	Venezuela	7.838891	-65.916409
-country	Vietnam	16.16667	107.83333
-country	Yemen	16.3471243	47.8915271
-country	Zambia	-14.5186239	27.5599164
-country	Zimbabwe	-18.4554963	29.7468414
+country	Uzbekistan	41.0	64.0
+country	Vanuatu	-16.0	167.0
+country	Venezuela	8.0	-66.0
+country	Vietnam	16.0	106.0
+country	British Virgin Islands	18.5	-64.5
+country	US Virgin Islands	18.3333	-64.8333
+country	Wallis and Futuna	-13.3	-176.2
+country	Western Sahara	24.5	-13.0
+country	Yemen	15.0	48.0
+country	Zambia	-15.0	30.0
+country	Zimbabwe	-20.0	30.0
+region	Southern Asia	24.7478	76.2331
+region	Southern Europe	41.4758	12.4115
+region	Northern Africa	27.1137	14.0742
+region	Polynesia	165.375	-25.0004
+region	Middle Africa	2.0429	14.3942
+region	Caribbean	15.8184	-66.9138
+region	South America	-12.0946	-65.4101
+region	Western Asia	31.5121	43.6069
+region	Australia and New Zealand	144.6888	26.6655
+region	Western Europe	48.372	7.25
+region	Eastern Europe	48.1379	29.8228
+region	Central America	2.0351	-88.112
+region	Western Africa	11.9016	-6.6492
+region	Northern America	19.3714	-85.3747
+region	Southern Africa	-25.7263	25.0382
+region	South-eastern Asia	-174.4887	70.0474
+region	Eastern Africa	-5.5058	39.1925
+region	Eastern Asia	-148.591	62.5094
+region	Northern Europe	58.7474	10.9319
+region	Melanesia	167.7032	18.0522
+region	Micronesia	-172.5534	24.3046
+region	Central Asia	42.4088	69.5346

@@ -1,218 +1,273 @@
-region	Africa	#d5d995
-region	China	#bc9641
-region	Asia	#bc9641
-region	Europe	#894334
-region	Japan/Korea	#bd9842
-region	North America	#b0ddc7
-region	Oceania	#63487c
-region	South America	#4f84b7
-region	South Asia	#b48737
-region	Southeast Asia	#AAAAAA
-region	West Asia	#bb943f
-country	Afghanistan	#bb933f
-country	Albania	#853e3a
-country	Algeria	#cbe1b2
-country	American Samoa	#AAAAAA
-country	Andorra	#863f38
-country	Angola	#d4cc7d
-country	Antigua and Barbuda	#AAAAAA
-country	Argentina	#5ba1c6
-country	Armenia	#c09e47
-country	Aruba	#AAAAAA
-country	Australia	#63487b
-country	Austria	#884136
-country	Azerbaijan	#c09d46
-country	Bahamas	#b3dec6
-country	Bahrain	#AAAAAA
-country	Bangladesh	#b48737
-country	Barbados	#AAAAAA
-country	Belarus	#8c4532
-country	Belgium	#8a4334
-country	Belize	#bce0c1
-country	Benin	#d4dc9d
-country	Bermuda	#AAAAAA
-country	Bhutan	#b68a39
-country	Bolivia	#508aba
-country	Bonaire	#AAAAAA
-country	Bosnia and Herzegovina	#863f38
-country	Botswana	#d0c06b
-country	Brazil	#4f82b6
-country	Brunei	#a66d2d
-country	Bulgaria	#863f38
-country	Burkina Faso	#d3dda0
-country	Burundi	#d6d48a
-country	Cabo Verde	#AAAAAA
-country	Cambodia	#ab7730
-country	Cameroon	#d5d996
-country	Canada	#86c8cf
-country	Cayman Islands	#AAAAAA
-country	Central African Republic	#d5da98
-country	Chad	#d2dea5
-country	Chile	#579bc3
-country	China	#ba933e
-country	Colombia	#4f72aa
-country	Costa Rica	#c2e1bc
-country	Côte d'Ivoire	#d5db9a
-country	Croatia	#874037
-country	Cuba	#b5dec5
-country	Curacao	#AAAAAA
-country	Cyprus	#bc9540
-country	Czech Republic	#8a4334
-country	Congo	#d6d389
-country	Denmark	#8d4731
-country	Djibouti	#d4dd9f
-country	Dominica	#AAAAAA
-country	Dominican Republic	#bae0c2
-country	Ecuador	#4f76ad
-country	Egypt	#cce1b1
-country	El Salvador	#bfe1bf
-country	Equatorial Guinea	#d6d792
-country	Estonia	#8e4831
-country	Eswatini	#cfbd67
-country	Ethiopia	#d4dc9d
-country	Fiji	#AAAAAA
-country	Finland	#904b2f
-country	France	#874037
-country	French Polynesia	#AAAAAA
-country	Gabon	#d6d58d
-country	Gambia	#d3dda1
-country	Georgia	#c2a049
-country	Germany	#8a4334
-country	Ghana	#d5db9a
-country	Gibraltar	#833c3c
-country	Greece	#843d3b
-country	Grenada	#AAAAAA
-country	Guadeloupe	#AAAAAA
-country	Guam	#AAAAAA
-country	Guatemala	#bde0c1
-country	Guinea	#d4dc9e
-country	Guinea-Bissau	#d4dda0
-country	Guyana	#506fa8
-country	Haiti	#bae0c2
-country	Honduras	#bde0c0
-country	Hong Kong	#b38436
-country	Hungary	#884136
-country	Iceland	#924d2e
-country	India	#b28335
-country	Indonesia	#a2662c
-country	Iran	#bc9540
-country	Iraq	#ba923e
-country	Ireland	#8b4433
-country	Israel	#b9903d
-country	Italy	#863f38
-country	Cote d'Ivoire	#d5db9a
-country	Jamaica	#bbe0c2
-country	Japan	#bd9741
-country	Jordan	#b9903d
-country	Kazakhstan	#c7ab53
-country	Kenya	#d6d68e
+country	Afghanistan	#5161a1
+country	Åland Islands	#d2c673
+country	Albania	#b88e3b
+country	Algeria	#753239
+country	American Samoa	#cf789f
+country	Andorra	#ba933e
+country	Angola	#d482a7
+country	Anguilla	#97552c
+country	Antarctica	#d9d9d9
+country	Antigua and Barbuda	#96532d
+country	Argentina	#675f8a
+country	Armenia	#556ead
+country	Aruba	#904a30
+country	Australia	#8b648e
+country	Austria	#c2a24a
+country	Azerbaijan	#556ead
+country	Bahamas	#9f622c
+country	Bahrain	#7a3439
+country	Bangladesh	#4d528f
+country	Barbados	#914c2f
+country	Belarus	#5c83bf
+country	Belgium	#c7ab53
+country	Belize	#96532d
+country	Benin	#a3553f
+country	Bermuda	#aa752f
+country	Bhutan	#4f5897
+country	Bolivia	#c46d95
+country	Bonaire	#ac8652
+country	Bosnia and Herzegovina	#bd9741
+country	Botswana	#a66690
+country	Bouvet Island	#AAAAAA
+country	Brazil	#d88fb2
+country	British Indian Ocean Territory	#dea6c6
+country	Brunei	#4d3565
+country	Bulgaria	#bb933f
+country	Burkina Faso	#9b4d3d
+country	Burundi	#e2b2cf
+country	Cambodia	#4c4077
+country	Cameroon	#ab5c41
+country	Canada	#d2c572
+country	Cape Verde	#95512d
+country	Cayman Islands	#98572c
+country	Central African Republic	#a95a41
+country	Chad	#96493c
+country	Chile	#7b638d
+country	China	#5265a4
+country	Christmas Island	#d78cb0
+country	Cocos (Keeling) Islands	#d482a7
+country	Colombia	#9a7d42
+country	Comoros	#d484a9
+country	Democratic Republic of Congo	#b86a45
+country	Congo	#ba6d46
+country	Cook Islands	#ac6690
+country	Costa Rica	#8d4732
+country	Cote d'Ivoire	#a75840
+country	Croatia	#be9a44
+country	Cuba	#9b5c2c
+country	Curacao	#ac8652
+country	Cyprus	#652a3d
+country	Czech Republic	#c6a951
+country	Denmark	#ceba63
+country	Djibouti	#a0513e
+country	Dominica	#94502e
+country	Dominican Republic	#98562c
+country	Ecuador	#8e7a3b
+country	Egypt	#783339
+country	El Salvador	#924d2f
+country	Equatorial Guinea	#b46544
+country	Eritrea	#96493c
+country	Estonia	#d1c36f
+country	Ethiopia	#a75840
+country	Falkland Islands	#074720
+country	Faroe Islands	#d4c979
+country	Fiji	#bf6a93
+country	Finland	#d5ce80
+country	France	#bf9c46
+country	French Guiana	#9a7d42
+country	French Polynesia	#cd759c
+country	French Southern Territories	#463b69
+country	Gabon	#ba6d46
+country	Gambia	#9b4d3d
+country	Georgia	#5671af
+country	Germany	#c7ac54
+country	Ghana	#a75840
+country	Gibraltar	#63293e
+country	Greece	#b58837
+country	Greenland	#d4dc9c
+country	Grenada	#ac8652
+country	Guadeloupe	#95522d
+country	Guam	#4c4077
+country	Guatemala	#94502e
+country	Guernsey	#c5a850
+country	Guinea-Bissau	#9e503e
+country	Guinea	#a0523e
+country	Guyana	#9d7e44
+country	Haiti	#98562c
+country	Heard Island and McDonald Islands	#AAAAAA
+country	Holy See	#ba913d
+country	Honduras	#934f2e
+country	Hong Kong	#4d4f8c
+country	Hungary	#c2a14a
+country	Iceland	#d5d185
+country	India	#4c4b87
+country	Indonesia	#e0acca
+country	Iran	#505f9e
+country	Iraq	#682b3c
+country	Ireland	#cab15a
+country	Isle of Man	#cbb45d
+country	Israel	#6c2d3b
+country	Italy	#bb933f
+country	Jamaica	#97552c
+country	Japan	#5266a6
+country	Jersey	#c5a74f
+country	Jordan	#6d2d3a
+country	Kazakhstan	#597bb8
+country	Kenya	#b56744
 country	Kiribati	#AAAAAA
-country	Kosovo	#863f38
-country	Kuwait	#b88e3b
-country	Kyrgyzstan	#c19f48
-country	Laos	#b18134
-country	Latvia	#8d4731
-country	Lebanon	#bb933f
-country	Lesotho	#cdb861
-country	Liberia	#d5da97
-country	Libya	#cde1b0
-country	Liechtenstein	#884136
-country	Lithuania	#8d4632
-country	Luxembourg	#8a4334
-country	Macao	#AAAAAA
-country	Madagascar	#d2c573
-country	Malawi	#d4cb7c
-country	Malaysia	#a66c2d
-country	Maldives	#AAAAAA
-country	Mali	#d2dfa6
-country	Malta	#AAAAAA
-country	Marshall Islands	#AAAAAA
-country	Mauritania	#d0e0a9
-country	Mauritius	#AAAAAA
-country	Mexico	#badfc3
-country	Micronesia	#AAAAAA
-country	Moldova	#884136
-country	Monaco	#863f38
-country	Mongolia	#c6a951
-country	Montenegro	#863f38
-country	Morocco	#c8e1b7
-country	Mozambique	#d2c572
-country	Myanmar	#b18234
-country	Namibia	#d0c06b
-country	Nepal	#b68b39
-country	Netherlands	#8b4434
-country	New Zealand	#555f99
-country	Nicaragua	#c0e1be
-country	Niger	#d1dfa7
-country	Nigeria	#d4dc9d
-country	North Macedonia	#853e39
-country	Norway	#904b2f
-country	Oman	#b18234
-country	Pakistan	#b98f3c
-country	Palau	#AAAAAA
-country	Palestine	#ba913d
-country	Panama	#c3e1bc
-country	Papua New Guinea	#713a5b
-country	Paraguay	#5291be
-country	Peru	#4f81b5
-country	Philippines	#AAAAAA
-country	Poland	#8b4434
-country	Portugal	#843d3b
-country	Puerto Rico	#bbe0c2
-country	Qatar	#b48737
-country	Congo	#d6d58d
-country	Romania	#874037
-country	Russia	#924d2e
-country	Rwanda	#d6d48c
-country	Saint Barthélemy	#AAAAAA
-country	Saint Kitts and Nevis	#AAAAAA
-country	Saint Lucia	#AAAAAA
-country	Saint Martin	#AAAAAA
-country	Saint Vincent and the Grenadines	#AAAAAA
-country	Sao Tome and Principe	#AAAAAA
-country	Saudi Arabia	#b48737
-country	Senegal	#d3dea3
-country	Serbia	#863f38
-country	Seychelles	#AAAAAA
-country	Sierra Leone	#d4db9c
-country	Singapore	#a3682c
-country	Sint Maarten	#AAAAAA
-country	Slovakia	#894235
-country	Slovenia	#874037
-country	Solomon Islands	#AAAAAA
-country	Somalia	#d5db9b
-country	South Africa	#cdb963
-country	South Korea	#bd9843
-country	South Sudan	#d5db9a
-country	Spain	#843d3a
-country	Sri Lanka	#a8702e
-country	St. Lucia	#AAAAAA
-country	Sudan	#d3dea3
-country	Suriname	#5070a9
-country	Sweden	#8f4930
-country	Switzerland	#884136
-country	Syria	#bc9540
-country	Taiwan	#b48636
-country	Tajikistan	#bf9b45
-country	Tanzania	#d5d286
-country	Thailand	#ad7a31
-country	Timor-Leste	#9d5d2b
-country	Togo	#d4dc9c
-country	Trinidad	#c2e1bc
-country	Trinidad and Tobago	#c2e1bd
-country	Tunisia	#c7e1b7
-country	Turkey	#bf9b45
-country	Uganda	#d6d892
-country	Ukraine	#894334
-country	Union of the Comoros	#AAAAAA
-country	United Arab Emirates	#b48636
-country	United Kingdom	#8c4632
-country	Uruguay	#589cc3
-country	USA	#a3d8cc
-country	Uzbekistan	#c19f48
-country	Vanuatu	#AAAAAA
-country	Venezuela	#516ca5
-country	Vietnam	#ae7c32
-country	Yemen	#ae7c32
-country	Zambia	#d4ca7a
-country	Zimbabwe	#d2c673
+country	North Korea	#556ead
+country	South Korea	#5368a7
+country	Kosovo	#ba933e
+country	Kuwait	#712f3a
+country	Kyrgyzstan	#556fae
+country	Laos	#4c4882
+country	Latvia	#cfbd67
+country	Lebanon	#662b3d
+country	Lesotho	#7d638e
+country	Liberia	#ab5c41
+country	Libya	#7c3639
+country	Liechtenstein	#c2a14a
+country	Lithuania	#ceba63
+country	Luxembourg	#c6a951
+country	Macao	#4d4f8b
+country	North Macedonia	#ba913d
+country	Madagascar	#b36791
+country	Malawi	#d17da2
+country	Malaysia	#4e3362
+country	Maldives	#4d3463
+country	Mali	#91443b
+country	Malta	#632a3e
+country	Marshall Islands	#8c4632
+country	Martinique	#934e2e
+country	Mauritania	#8a3f3a
+country	Mauritius	#b26790
+country	Mayotte	#d381a6
+country	Mexico	#9e5f2b
+country	Micronesia	#8a4334
+country	Moldova	#5979b6
+country	Monaco	#bc9641
+country	Mongolia	#5877b5
+country	Montenegro	#ba913d
+country	Montserrat	#95522d
+country	Morocco	#6b2c3b
+country	Mozambique	#be6a93
+country	Myanmar	#4d4f8b
+country	Namibia	#a66690
+country	Nauru	#AAAAAA
+country	Nepal	#4f5997
+country	Netherlands Antilles	#ac8652
+country	Netherlands	#c9b059
+country	New Caledonia	#a96690
+country	New Zealand	#4c4371
+country	Nicaragua	#904b2f
+country	Niger	#93463b
+country	Nigeria	#a2543f
+country	Niue	#b96891
+country	Norfolk Island	#7f638e
+country	Northern Mariana Islands	#934f2e
+country	Norway	#d4c979
+country	Oman	#4d4d89
+country	Pakistan	#505c9b
+country	Palau	#4c396d
+country	Palestine	#6b2c3b
+country	Panama	#a7834d
+country	Papua New Guinea	#dea6c6
+country	Paraguay	#a0668f
+country	Peru	#d88fb2
+country	Philippines	#4c4077
+country	Pitcairn	#98658f
+country	Poland	#c9af57
+country	Portugal	#b68a39
+country	Puerto Rico	#97552c
+country	Qatar	#4e5492
+country	Réunion	#ad6790
+country	Romania	#bf9c46
+country	Russia	#d2c572
+country	Rwanda	#bc6f47
+country	Saint Barthélemy	#97542c
+country	Saint Helena	#c97098
+country	Saint Kitts and Nevis	#96532d
+country	Saint Lucia	#924d2f
+country	Saint Martin	#97552c
+country	Saint Pierre and Miquelon	#c1a049
+country	Saint Vincent and the Grenadines	#914c2f
+country	Samoa	#d17ca2
+country	San Marino	#bc9641
+country	Sao Tome and Principe	#b56744
+country	Saudi Arabia	#7c3639
+country	Senegal	#994b3c
+country	Serbia	#bd9741
+country	Seychelles	#e0aecc
+country	Sierra Leone	#a5563f
+country	Singapore	#4e325f
+country	Sint Maarten	#97542c
+country	Slovakia	#c4a64e
+country	Slovenia	#bf9c46
+country	Solomon Islands	#db9bbc
+country	Somalia	#a2543f
+country	South Africa	#80638e
+country	South Georgia and the South Sandwich Islands	#034324
+country	South Sudan	#a75840
+country	Spain	#b78c3a
+country	Sri Lanka	#4c396c
+country	Sudan	#96493c
+country	Suriname	#9a7d42
+country	Svalbard and Jan Mayen	#cfe0ac
+country	Eswatini	#8e648e
+country	Sweden	#d4c979
+country	Switzerland	#c2a14a
+country	Syria	#652a3d
+country	Taiwan	#4d518e
+country	Tajikistan	#546cab
+country	Tanzania	#dea6c6
+country	Thailand	#4c447c
+country	Timor-Leste	#da97b9
+country	Togo	#a75840
+country	Tokelau	#d995b7
+country	Tonga	#b36791
+country	Trinidad and Tobago	#ab8551
+country	Tunisia	#662b3d
+country	Turkey	#546cab
+country	Turkmenistan	#556ead
+country	Turks and Caicos Islands	#9c5d2c
+country	Tuvalu	#db9bbc
+country	Uganda	#b56744
+country	Ukraine	#5a7db9
+country	United Arab Emirates	#4d528f
+country	United Kingdom	#cbb45d
+country	United States Minor Outlying Islands	#98572c
+country	United States	#b38436
+country	Uruguay	#6c608b
+country	Uzbekistan	#556fae
+country	Vanuatu	#c97098
+country	Venezuela	#a5814b
+country	Vietnam	#4c457e
+country	British Virgin Islands	#97552c
+country	US Virgin Islands	#97552c
+country	Wallis and Futuna	#d27ea3
+country	Western Sahara	#7d3739
+country	Yemen	#96493c
+country	Zambia	#cd759c
+country	Zimbabwe	#b36791
+region	Southern Asia	#4d5290
+region	Southern Europe	#b98f3c
+region	Northern Africa	#773339
+region	Polynesia	#AAAAAA
+region	Middle Africa	#b46544
+region	Caribbean	#94502d
+region	South America	#d484a9
+region	Western Asia	#6c2d3b
+region	Australia and New Zealand	#AAAAAA
+region	Western Europe	#c4a54d
+region	Eastern Europe	#597bb8
+region	Central America	#AAAAAA
+region	Western Africa	#9e503e
+region	Northern America	#98572c
+region	Southern Africa	#92648f
+region	South-eastern Asia	#AAAAAA
+region	Eastern Africa	#dfa9c8
+region	Eastern Asia	#AAAAAA
+region	Northern Europe	#d1c26e
+region	Melanesia	#AAAAAA
+region	Micronesia	#AAAAAA
+region	Central Asia	#5671b0

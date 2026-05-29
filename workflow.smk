@@ -145,6 +145,7 @@ rule refine:
 			--coalescent 'opt' \
 			--date-inference 'joint' \
 			--date-confidence \
+			--date-format '%Y' \
 			--branch-length-inference 'joint' \
 			--seed {params.seed} \
 			--output-tree {output.tree} \

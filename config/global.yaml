@@ -15,13 +15,13 @@ describe:
 
     ##### Features
 
-    In addition to [Nextstrain's standard features](https://docs.nextstrain.org/en/latest/learn/interpret/index.html), this customized Auspice implementation enables:
+    In addition to [Nextstrain's standard features](https://docs.nextstrain.org/en/latest/learn/interpret/index.html), this customized Auspice implementation enables a **more comprehensive investigation of protein diversity**.
 
-    - **In-depth investigation of outer membrane protein (OMP) and antimicrobial resistance (AMR) related protein diversity**:
-    The <code>Nucleotide diversity of genome</code> panel is annotated with selected OMP genes.
+    The <code>Nucleotide diversity of genome</code> panel is annotated with selected genes.
     Clicking on one of these genes, or selecting it using the controls in the sidebar, switches the view to show the <code>Amino acid diversity</code> of that gene.
-    This view is annotated with curated protein topology annotations that provide insight into, for example, the diversity of extracellular loops (ECLs), which are key targets for vaccine design.
-    Additionally, an information panel below provides more details on the protein, including links to external resources.
+    This view provides curated annotations of protein features, such as the topology of outer membrane proteins.
+    This provides a deeper insight into, for example, the diversity of extracellular loops (ECLs), which are a key target for vaccine design.
+    There is also an information panel below that provides more details on the protein, including links to external resources.
     
     We are eagerly working on providing access to more detailed gene expression, protein diversity and sequence data by integrating access to collaborating projects, and by adding more comprehensive sample annotations regarding upcoming classification schemas and the latest MLSTs.
   postscript: |
@@ -34,7 +34,8 @@ describe:
     Please avoid scooping the work of others and reach out if uncertain.
     *By clicking on a leaf node, the user can access detailed author information, raw data, and genome sequences (if available) via the linked NCBI accessors in the tooltips.*
 
-    ##### Disclaimer
+    > [!WARNING]
+    > Since the reported genotyping is based on an SS14 reference genome, variants may be reference-biased. Consequently, indel calls, particularly in homopolymeric regions, should be interpreted with caution. The same applies to gene sequences inferred from the variants reported here. 
 
-    The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes.
-    It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.
+    > [!IMPORTANT]
+    > The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes. It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.

@@ -32,10 +32,9 @@ describe:
     We gratefully acknowledge the authors, originating and submitting laboratories of the genetic sequences and metadata for sharing their work.
     Data producers should be named where possible and cooperation should be sought in certain circumstances.
     Please avoid scooping the work of others and reach out if uncertain.
-    *By clicking on a leaf node, the user can access detailed author information, raw data, and genome sequences (if available) via the linked NCBI accessors in the tooltips.*
+    
+    By clicking on a leaf node, the user can access detailed author information, raw data, and genome sequences (if available) via the linked NCBI accessors in the tooltips.
 
-    > [!WARNING]
-    > Since the reported genotyping is based on an SS14 reference genome, variants may be reference-biased. Consequently, indel calls, particularly in homopolymeric regions, should be interpreted with caution. The same applies to gene sequences inferred from the variants reported here. 
-
-    > [!IMPORTANT]
-    > The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes. It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.
+    ##### Disclaimer
+    1. Since the reported genotyping is based on an SS14 reference genome, variants may be reference-biased. Consequently, indel calls, particularly in homopolymeric regions, should be interpreted with caution. The same applies to gene sequences inferred from the variants reported.
+    2. The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes. It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.

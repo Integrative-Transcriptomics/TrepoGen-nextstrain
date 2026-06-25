@@ -37,7 +37,6 @@ rule all:
 		expand(".work/{source}/{work_file}", source=sources, work_file=work_files),
 		expand("datasets/{source}_raw.json", source=sources), # Raw dataset exported by augur export before reprocessing.
 		expand("datasets/{source}.json", source=sources), # Final dataset after reprocessing.
-		expand("datasets/{source}_tip-frequencies.json", source=sources), # Tip frequencies JSON.
 		"source/misc/display_configuration.json", # Source independent file for dataset display defaults.
 		"source/geo/color.tsv", # Source independent file for geo colors.
 		"source/geo/loc.tsv" # Source independent file for geo coordinates.

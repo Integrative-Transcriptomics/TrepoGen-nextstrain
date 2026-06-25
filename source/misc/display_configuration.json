@@ -10,5 +10,11 @@
 		"sidebar": "open",
 		"transmission_lines": false,
 		"language": "en"
-	}
+	},
+	"panels": [
+		"tree",
+		"map",
+		"entropy",
+		"frequencies"
+	]
 }

@@ -288,6 +288,26 @@ rule export:
 			--include-root-sequence-inline
 		"""
 
+# Estimate frequencies of selected metadata columns over time and across the tree.
+rule frequencies:
+	input:
+        tree=rules.refine.output.tree,
+        metadata="source/data/{source}/meta.csv",
+    params:
+        metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
+    output:
+        tip_frequencies = "datasets/{source}_tip-frequencies.json"
+    shell:
+        """
+        augur frequencies \
+            --method kde \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            --metadata-id-columns {params.metadata_id} \
+            --min-date 2000.00 \
+            --output {output.tip_frequencies}
+        """
+
 # Reprocesses the exported dataset.
 rule reprocess:
 	input:

@@ -27,7 +27,7 @@ sources:
 
     # Additional metadata columns to be included in the Auspice export. These will not be available for coloring.
     export:
-      metadata_columns: "Label BioSample BioProject PMID Center Host Origin mean_coverage percent_cov_gte5"
+      metadata_columns: "Label BioSample BioProject PMID Center Host Origin 'Mean coverage depth' 'Coverage breadth (≥5X)'"
 
     # Data source and metadata description.
     describe: |
@@ -41,11 +41,11 @@ sources:
       Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>, as well as <code>Subspecies</code> designations, including division into the Nichols and SS14 lineages.
       Moreover, the Sublineage and BAP assignments introduced by [Beale _et al._ 2021](https://doi.org/10.1038/s41564-021-01000-z), [Taouk _et al._ 2022](https://doi.org/10.1016/s2666-5247(22)00035-0), and [Sena _et al._ 2024](https://doi.org/10.1016/S2666-5247(24)00087-9) are available.
       
-      For quality control we combined mean coverage and breadth of coverage (≥5X) per sample into the following <code>Sample Quality</code> categories:
-      - **Extreme**: mean coverage >50X and breadth of coverage (≥5X) >99%; suitable for accurate genotyping and phylogenetic placement.
-      - **Good**: mean coverage >30X-50X and breadth of coverage (≥5X) >97%-99%; suitable for accurate genotyping and phylogenetic placement.
-      - **Okay**: mean coverage 5X-30X and breadth of coverage (≥5X) 75%-97%; suitable for broad genome-wide analyses, but may miss data in complex or repetitive regions.
-      - **Bad**: mean coverage <5X or breadth of coverage (≥5X) <75%; insufficient data for genotyping and phylogenetic placement. **Those samples were excluded from the data.**
+      For quality control we combined mean coverage and breadth of coverage (≥5X) per sample into the following <code>Sample Coverage</code> categories:
+      - **Near-complete coverage**, if BoC ≥98% at 5X and mean depth ≥30X; highly accurate genotypes are available across the entire callable genome.
+      - **Broad coverage**, if BoC ≥90% at 5X and mean depth ≥10X; confident genotypes are available across most of the callable genome.
+      - **Partial coverage**, if BoC ≥75% at 5X, but the criteria above are not met; passes the inclusion threshold for fine-scale phylogenetic analysis, but has appreciably more missing genotype data.
+      - Samples with a BoC below 75% at 5X were excluded from the data.
 
       **Antimicrobial Resistance** information includes:
       - Macrolide resistance mediated by 23S rRNA mutations A2058G (positions 283,691 and 235,246 in the used reference genome) and A2059G (positions 283,692 and 235,247 in the used reference genome).

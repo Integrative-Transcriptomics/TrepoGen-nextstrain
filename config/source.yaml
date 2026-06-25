@@ -48,22 +48,16 @@ sources:
 
     # Specification of genes to use for this data source.
     genes:
-      rpsJ:
-        describe: |
-          The rpsJ gene in _T. pallidum_ is responsible for encoding the 30S ribosomal protein S10. This protein is a critical component of the bacterial translation machinery
-
-          Mutations in the rpsJ gene are closely monitored for their association with tetracycline resistance in _T. pallidum_. Specifically, amino acid substitutions like V57G, V57I, and V57K within the S10 protein have been identified in variants with reduced susceptibility to the antibiotic [PMC 12518048](https://pmc.ncbi.nlm.nih.gov/articles/PMC12518048/).
-
-          Additional information on rpsJ can be found at:
-          - [UniProt B2S2D5](https://www.uniprot.org/uniprotkb/B2S2D5/entry)
-      rpsC:
-        describe: |
-          rpsC encodes the 30S ribosomal protein S3. This protein is an essential component of bacterial translation machinery, playing a critical structural role in binding messenger RNA and assembling the 30S ribosomal subunit.
-
-          In molecular surveillance studies, mutations in rpsC are analyzed as potential markers for tetracycline resistance. Variants, such as the H178Q mutation, have been evaluated for their role in altering antibiotic susceptibility [PMC 12518048](https://pmc.ncbi.nlm.nih.gov/articles/PMC12518048/).
-
-          Additional information on rpsC can be found at:
-          - [UniProt B2S2E2](https://www.uniprot.org/uniprotkb/B2S2E2/entry)
+      #rpsJ:
+      #  describe: |
+      #    The rpsJ gene in _T. pallidum_ is responsible for encoding the 30S ribosomal protein S10. This protein is a critical component of the bacterial translation machinery. Mutations in the rpsJ gene are closely monitored for their association with tetracycline resistance in _T. pallidum_. Specifically, amino acid substitutions such as V57G, V57I, and V57K within the S10 protein have been identified in variants exhibiting reduced susceptibility to the antibiotic [PMC 12518048](https://pmc.ncbi.nlm.nih.gov/articles/PMC12518048/).
+      #    Additional information on rpsJ can be found at:
+      #    - [UniProt B2S2D5](https://www.uniprot.org/uniprotkb/B2S2D5/entry)
+      #rpsC:
+      #  describe: |
+      #    rpsC encodes the 30S ribosomal protein S3. This protein is an essential component of bacterial translation machinery, playing a critical structural role in binding messenger RNA and assembling the 30S ribosomal subunit. In molecular surveillance studies, mutations in rpsC are analyzed as potential markers for tetracycline resistance. Variants, such as the H178Q mutation, have been evaluated for their role in altering antibiotic susceptibility [PMC 12518048](https://pmc.ncbi.nlm.nih.gov/articles/PMC12518048/).
+      #    Additional information on rpsC can be found at:
+      #    - [UniProt B2S2E2](https://www.uniprot.org/uniprotkb/B2S2E2/entry)
       TP0136:
         describe: |
           TP0136 is a major outer membrane adhesion protein of _T. pallidum_ that plays a critical role in pathogenesis. It facilitates the binding of the bacteria to host endothelial cells and extracellular matrix.

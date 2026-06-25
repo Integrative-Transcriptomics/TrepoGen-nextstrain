@@ -60,93 +60,72 @@ sources:
       #    - [UniProt B2S2E2](https://www.uniprot.org/uniprotkb/B2S2E2/entry)
       TP0136:
         describe: |
-          TP0136 is a major outer membrane adhesion protein of _T. pallidum_ that plays a critical role in pathogenesis. It facilitates the binding of the bacteria to host endothelial cells and extracellular matrix.
-
-          Tp0136 is heavily researched as a prime syphilis vaccine candidate due to its surface-exposure [DOI s41541-025-01330-7](https://www.nature.com/articles/s41541-025-01330-7).
+          TP0136 is a major outer membrane adhesion protein of _T. pallidum_ that plays a critical role in pathogenesis. It facilitates the binding of bacteria to host endothelial cells and the extracellular matrix. TP0136 has been the focus of extensive research as a potential primary syphilis vaccine candidate, given its surface exposure [DOI s41541-025-01330-7](https://www.nature.com/articles/s41541-025-01330-7).
+          TP0136 is employed to characterize and differentiate _T. pallidum_ subspecies, particularly subsp. _pertenue_, the agent of yaws [PMC 6197692](https://pmc.ncbi.nlm.nih.gov/articles/PMC6197692/).
 
           Additional information on rpsC can be found at:
           - [UniProt O83172](https://www.uniprot.org/uniprotkb/O83172/entry)
       TP0326:
         describe: |
-          BamA (TP0326) is the central component of the molecular machinery that inserts OMPs into the spirochete's outer membrane.
-          BamA in _T. pallidum_ is bipartite and consists of a predicted 16-stranded β-barrel with eight extracellular loops (ECLs) and five polypeptide transport-associated (POTRA) domains within the periplasm.
-
-          It has been demonstrated that pools of human syphilitic sera from the USA and Colombia exhibited the capacity to recognize both the N-terminal POTRA-containing and C-terminal beta-barrel domains, as well as ECL4.
-          This finding suggests that TP0326 stimulates the human immune system [PMC 4420902](https://pmc.ncbi.nlm.nih.gov/articles/PMC4420902/).
-          The protein is estimated to be present at about 100 molecules per cell [PMC 3115443](https://pubmed.ncbi.nlm.nih.gov/21488980/).
+          BamA (TP0326) is the central component of the molecular machinery that inserts OMPs into the spirochete's outer membrane. BamA in _T. pallidum_ is bipartite and consists of a predicted 16-stranded β-barrel with eight extracellular loops (ECLs) and five polypeptide transport-associated (POTRA) domains within the periplasm.
+          It has been demonstrated that pools of human syphilitic sera from the USA and Colombia exhibited the capacity to recognize both the N-terminal POTRA-containing and C-terminal beta-barrel domains, as well as ECL4. This finding suggests that TP0326 stimulates the human immune system and might constitute a potential vaccine target [PMC 4420902](https://pmc.ncbi.nlm.nih.gov/articles/PMC4420902/).
 
           Additional information on TP0326 can be found at:
           - [UniProt O83346](https://www.uniprot.org/uniprotkb/O83346/entry)
       TP0435:
         describe: |
-          The gene TP0435, often referred to as tpp17, encodes a highly abundant 17-kDa periplasmic lipoprotein found in _T. pallidum_.
-
-          While its exact function is still under study, research suggests that it acts as a cytadhesin, helping the bacterium that causes syphilis to bind to mammalian cells. TP0435 also plays a key role in the immune system as an immunodominant antigen [DOI srep25593](https://www.nature.com/articles/srep25593).
+          The gene tp0435, frequently referred to as tpp17, encodes a highly abundant 17-kDa periplasmic lipoprotein found in _T. pallidum_. While the precise function of this protein is not yet fully elucidated, research findings indicate its role as a cytadhesin, facilitating the binding of the bacterium to mammalian cells. Furthermore, TP0435 has been identified as an immunodominant antigen [DOI srep25593](https://www.nature.com/articles/srep25593).
 
           Additional information on TP0435 can be found at:
           - [UniProt P29722](https://www.uniprot.org/uniprotkb/P29722/entry)
       TP0548:
         describe: |
-          TP0548 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
-          
-          It is a vital locus for multiple typing approaches [PMID 33093286](https://pubmed.ncbi.nlm.nih.gov/33093286/).
+          TP0548 belongs to the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium. This locus is of particular importance in the context of various typing approaches [PMID 33093286](https://pubmed.ncbi.nlm.nih.gov/33093286/).
 
           Additional information on TP0548 can be found at:
           - [UniProt O83559](https://www.uniprot.org/uniprotkb/O83559/entry)
       TP0574:
         describe: |
-          TP0574, also termed Tp47, encodes a surface-anchored lipoprotein which acts as a major virulence factor.
-
-          It was shown that TP0574-induced PGE2 production contributes to the inhibition of macrophage phagocytosis, which potentially facilitates immune evasion during infection [PMID 38258964](https://pubmed.ncbi.nlm.nih.gov/38258964/).
+          The gene tp0574, also termed tpp47, encodes a 47-kDa surface-anchored lipoprotein. This lipoprotein has been identified as a major virulence factor. It has been demonstrated that TP0574-induced PGE2 production contributes to the inhibition of macrophage phagocytosis, which potentially facilitates immune evasion during infection [PMID 38258964](https://pubmed.ncbi.nlm.nih.gov/38258964/).
 
           Additional information on TP0574 can be found at:
           - [UniProt P29723](https://www.uniprot.org/uniprotkb/P29723/entry)
       TP0705:
         describe: |
-          TP0705 encodes a Penicillin-Binding Protein, essential for the synthesis and cross-linking of the bacterial cell wall.
-
-          Recent studies have identified specific genetic variations, notably the A1873G mutation, associated with reduced susceptibility to penicillin G and ceftriaxone in _T. pallidum_ [PMC 12152143](https://pmc.ncbi.nlm.nih.gov/articles/PMC12152143/).
+          tp0705 encodes a Penicillin-Binding Protein, which is essential for the synthesis and cross-linking of the bacterial cell wall. Recent studies have identified specific genetic variations, notably the A1873G mutation, that are associated with reduced susceptibility to penicillin G and ceftriaxone in _T. pallidum_ [PMC 12152143](https://pmc.ncbi.nlm.nih.gov/articles/PMC12152143/).
 
           Additional information on TP0705 can be found at:
           - [UniProt O83703 ](https://www.uniprot.org/uniprot/O83703/entry)
       TP0751:
         describe: |
-          Gene TP0751 is responsible for encoding pallilysin, a multifunctional virulence factor that enables _T. pallidum_ to disseminate throughout its host.
-
-          It functions as an adhesin, employing its lipocalin domain to firmly attach the bacteria to host cells and components of the extracellular matrix [DOI s41598-017-01589-4](https://www.nature.com/articles/s41598-017-01589-4).
+          Pallilysin, a multifunctional metalloprotease and vascular adhesin, facilitates the dissemination of _T. pallidum_ throughout its host by employing its lipocalin domain to firmly attach the bacteria to host cells and components of the extracellular matrix [DOI s41598-017-01589-4](https://www.nature.com/articles/s41598-017-01589-4).
 
           Additional information on TP0751 can be found at:
           - [UniProt O83732](https://www.uniprot.org/uniprotkb/O83732/entry)
       TP0856:
         describe: |
-          TP0856 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
-
-          Studies have identified ECL2 and ECL4 as being highly immunogenic and surface-exposed, thus rendering them excellent candidates for a multivalent syphilis vaccine [PMC 9426418](https://pmc.ncbi.nlm.nih.gov/articles/PMC9426418/).
+          TP0856 belongs to the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium. Studies have identified ECL2 and ECL4 as being highly immunogenic and surface-exposed, thus rendering them excellent candidates for a multivalent syphilis vaccine [PMC 9426418](https://pmc.ncbi.nlm.nih.gov/articles/PMC9426418/).
 
           Additional information on TP0856 can be found at:
           - [UniProt O83828](https://www.uniprot.org/uniprotkb/O83828/entry)
       TP0858:
         describe: |
-          TP0858 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
-
-          Studies have identified ECL2 and ECL4 as being highly immunogenic and surface-exposed, thus rendering them excellent candidates for a multivalent syphilis vaccine [PMC 9426418](https://pmc.ncbi.nlm.nih.gov/articles/PMC9426418/).
+          TP0858 belongs to the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium. Studies have identified ECL2 and ECL4 as being highly immunogenic and surface-exposed, thus rendering them excellent candidates for a multivalent syphilis vaccine [PMC 9426418](https://pmc.ncbi.nlm.nih.gov/articles/PMC9426418/).
           TP0858 is employed to characterize and differentiate _T. pallidum_ subspecies, particularly subsp. _pertenue_, the agent of yaws [PMC 6197692](https://pmc.ncbi.nlm.nih.gov/articles/PMC6197692/).
 
           Additional information on TP0858 can be found in the following references:
           - [UniProt O83830](https://www.uniprot.org/uniprotkb/O83830/entry)  
       TP0859:
         describe: |
-          TP0859 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
-
-          TP0859 shows variant proteoforms and recombination in clinical strains, but is still being investigated as potential vaccine candidate due to their surface-exposed nature [PMC 8407342](https://pmc.ncbi.nlm.nih.gov/articles/PMC8407342/).
+          TP0859 belongs to the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
+          TP0859 shows variant proteoforms and recombination in clinical strains, but is still being investigated as a potential vaccine candidate due to its surface exposure [PMC 8407342](https://pmc.ncbi.nlm.nih.gov/articles/PMC8407342/).
 
           Additional information on TP0859 can be found in the following references:
           - [UniProt O83839](https://www.uniprot.org/uniprotkb/O83839/entry)
       TP0865:
         describe: |
-          TP0865 is a member of the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
+          TP0865 belongs to the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
+          TP0865 shows variant proteoforms and recombination in clinical strains, but is still being investigated as a potential vaccine candidate due to its surface exposure [PMC 8407342](https://pmc.ncbi.nlm.nih.gov/articles/PMC8407342/).
 
-          TP0865 shows variant proteoforms and recombination in clinical strains, but is still being investigated as potential vaccine candidate due to their surface-exposed nature [PMC 8407342](https://pmc.ncbi.nlm.nih.gov/articles/PMC8407342/).
-
-          Additional information on TP0859 can be found in the following references:
+          Additional information on TP0865 can be found in the following references:
           - [UniProt O83837](https://www.uniprot.org/uniprotkb/O83837/entry)

@@ -38,9 +38,9 @@ sources:
 
       ##### Metadata
 
-      Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>, as well as <code>Subspecies</code> designations, including division into the Nichols and SS14 groups.
+      Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>, as well as <code>Subspecies</code> designations, including division into the Nichols and SS14 lineages.
       Moreover, the Sublineage and BAP assignments introduced by [Beale _et al._ 2021](https://doi.org/10.1038/s41564-021-01000-z), [Taouk _et al._ 2022](https://doi.org/10.1016/s2666-5247(22)00035-0), and [Sena _et al._ 2024](https://doi.org/10.1016/S2666-5247(24)00087-9) are available.
-      <code>Mean coverage</code> and <code>Ambiguity</code> (Ns) per sample provide a foundation for quality control.
+      <code>Mean coverage</code> and <code>Breadth of Coverage (≥5X)</code> per sample provide a foundation for quality control.
 
       **Antimicrobial Resistance** information includes:
       - Macrolide resistance mediated by 23S rRNA mutations A2058G (positions 283,691 and 235,246 in the used reference genome) and A2059G (positions 283,692 and 235,247 in the used reference genome).

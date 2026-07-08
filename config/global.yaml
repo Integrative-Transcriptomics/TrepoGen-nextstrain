@@ -8,7 +8,7 @@ export:
 describe:
   preface: |
     **Syphilis** is a resurging global health threat caused by _Treponema pallidum_ ssp. _pallidum_, with additional disease burden from the closely related subspecies _pertenue_ and _endemicum_, the causative agents of yaws and bejel, respectively.
-    By 2025 whole genome sequencing data for more than 3,000 _T. pallidum_ strains were available in the NCBI Sequence Read Archive.
+    By 2026 whole genome sequencing data for more than 3,000 _T. pallidum_ strains were available in the NCBI Sequence Read Archive.
     However, more than 80% of these lack publicly available genome assemblies and, more critically, systematic annotation.
     This severely limits their utility for molecular epidemiology, resistance surveillance, and vaccine development.
     **We aim at democratizing access to _T. pallidum_ genomic diversity data by developing and maintaining unified, community-facing Nextstrain datasets for epidemiological surveillance, comparative evolutionary analysis and facilitated data sharing; with a special emphasis on tracking outer membrane protein (OMP) diversity relevant for vaccine design.**
@@ -35,6 +35,8 @@ describe:
     
     By clicking on a leaf node, the user can access detailed author information, raw data, and genome sequences (if available) via the linked NCBI accessors in the tooltips.
 
-    ##### Disclaimer
+    ```
+    Disclaimer
     1. Since the reported genotyping is based on an SS14 reference genome, variants may be reference-biased. Consequently, indel calls, particularly in homopolymeric regions, should be interpreted with caution. The same applies to gene sequences inferred from the variants reported.
     2. The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes. It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.
+    ```

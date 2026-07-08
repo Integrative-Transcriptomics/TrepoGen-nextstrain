@@ -33,23 +33,20 @@ sources:
     describe: |
       ##### Dataset
 
-      The <code>TPA-SS14</code> dataset currently comprises whole-genome variants of 2,399 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
-      Variants include **single nucleotide variants** (SNVs) and **InDels**, providing insight into the full spectrum of sequence changes and featuring the complete phylogenetic context of _T. pallidum_.
+      The <code>TPA-SS14</code> dataset currently comprises whole-genome variants of 2,487 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
+      Variants include **single nucleotide variants (SNVs) and InDels**, providing insight into the full spectrum of sequence changes and featuring the complete phylogenetic context of _T. pallidum_.
 
       ##### Metadata
 
-      Accompanying metadata includes the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>, as well as <code>Subspecies</code> designations, including division into the Nichols and SS14 lineages.
-      Moreover, the Sublineage and BAP assignments introduced by [Beale _et al._ 2021](https://doi.org/10.1038/s41564-021-01000-z), [Taouk _et al._ 2022](https://doi.org/10.1016/s2666-5247(22)00035-0), and [Sena _et al._ 2024](https://doi.org/10.1016/S2666-5247(24)00087-9) are available.
+      Accompanying **metadata includes** the sampling <code>Date</code>, <code>Country</code>, and <code>Region</code>, as well as <code>Subspecies</code> designations, including division into the Nichols and SS14 lineages.
+      Moreover, the **sublineage and Bayesian analysis of population structure (BAP) assignments** introduced by [Beale _et al._ 2021](https://doi.org/10.1038/s41564-021-01000-z), [Taouk _et al._ 2022](https://doi.org/10.1016/s2666-5247(22)00035-0), and [Sena _et al._ 2024](https://doi.org/10.1016/S2666-5247(24)00087-9) are available.
       
-      For quality control we combined mean coverage and breadth of coverage (≥5X) per sample into the following <code>Sample Coverage</code> categories:
-      - **Near-complete coverage**, if BoC ≥98% at 5X and mean depth ≥30X; highly accurate genotypes are available across the entire callable genome.
-      - **Broad coverage**, if BoC ≥90% at 5X and mean depth ≥10X; confident genotypes are available across most of the callable genome.
-      - **Partial coverage**, if BoC ≥75% at 5X, but the criteria above are not met; passes the inclusion threshold for fine-scale phylogenetic analysis, but has appreciably more missing genotype data.
-      - Samples with a BoC below 75% at 5X were excluded from the data.
+      To communicate **data quality**, we provide the <code>Effective Coverage</code> as the mean coverage multiplied by the breadth of coverage (≥5X) per sample.
+      Available whole genome sequencing samples with a breadth of coverage below 75% at 5X were excluded from the dataset.
 
-      **Antimicrobial Resistance** information includes:
-      - Macrolide resistance mediated by 23S rRNA mutations A2058G (positions 283,691 and 235,246 in the used reference genome) and A2059G (positions 283,692 and 235,247 in the used reference genome).
-      - Ceftriaxone/Penicillin G resistance mediated by TP0705 mutations A1873G (position 773,095 in the used reference genome) and G2122A (position 772,846 in the used reference genome).
+      To raise awareness of **antimicrobial resistance (AMR)**, we annotate known resistance-associated mutations as variants of interest (VOIs):
+      - **Macrolide resistance** mediated by 23S rRNA mutations A2058G (positions 283,691 and 235,246 in the used reference genome) and A2059G (positions 283,692 and 235,247 in the used reference genome) [PMC 3592075](https://pmc.ncbi.nlm.nih.gov/articles/PMC3592075/).
+      - Putative **ceftriaxone and penicillin G resistance** associated with TP0705 mutations A1873G (position 773,095 in the used reference genome) and G2122A (position 772,846 in the used reference genome) [PMC 12152143](https://pmc.ncbi.nlm.nih.gov/articles/PMC12152143/).
 
     # Specification of genes to use for this data source.
     genes:
@@ -65,39 +62,48 @@ sources:
       #    - [UniProt B2S2E2](https://www.uniprot.org/uniprotkb/B2S2E2/entry)
       TP0136:
         describe: |
-          TP0136 is a major outer membrane adhesion protein of _T. pallidum_ that plays a critical role in pathogenesis. It facilitates the binding of bacteria to host endothelial cells and the extracellular matrix. TP0136 has been the focus of extensive research as a potential primary syphilis vaccine candidate, given its surface exposure [DOI s41541-025-01330-7](https://www.nature.com/articles/s41541-025-01330-7).
+          TP0136 is a surface-exposed lipoprotein of _T. pallidum_ that plays a critical role in adhesion and pathogenesis.
+          It facilitates the binding of bacteria to host endothelial cells and the extracellular matrix.
+          TP0136 has been the focus of extensive research as a potential primary syphilis vaccine candidate, given its surface exposure [DOI s41541-025-01330-7](https://www.nature.com/articles/s41541-025-01330-7).
           TP0136 is employed to characterize and differentiate _T. pallidum_ subspecies, particularly subsp. _pertenue_, the agent of yaws [PMC 6197692](https://pmc.ncbi.nlm.nih.gov/articles/PMC6197692/).
 
           Additional information on rpsC can be found at:
           - [UniProt O83172](https://www.uniprot.org/uniprotkb/O83172/entry)
       TP0326:
         describe: |
-          BamA (TP0326) is the central component of the molecular machinery that inserts OMPs into the spirochete's outer membrane. BamA in _T. pallidum_ is bipartite and consists of a predicted 16-stranded β-barrel with eight extracellular loops (ECLs) and five polypeptide transport-associated (POTRA) domains within the periplasm.
-          It has been demonstrated that pools of human syphilitic sera from the USA and Colombia exhibited the capacity to recognize both the N-terminal POTRA-containing and C-terminal beta-barrel domains, as well as ECL4. This finding suggests that TP0326 stimulates the human immune system and might constitute a potential vaccine target [PMC 4420902](https://pmc.ncbi.nlm.nih.gov/articles/PMC4420902/).
+          TP0326 (BamA) is the central component of the molecular machinery that inserts OMPs into the spirochete's outer membrane.
+          TP0326 is bipartite and consists of a predicted 16-stranded β-barrel with eight extracellular loops (ECLs) and five polypeptide transport-associated (POTRA) domains within the periplasm.
+          It has been demonstrated that pools of human syphilitic sera from the USA and Colombia exhibited the capacity to recognize both the N-terminal POTRA-containing and C-terminal beta-barrel domains, as well as ECL4.
+          This finding suggests that TP0326 stimulates the human immune system and might constitute a potential vaccine target [PMC 4420902](https://pmc.ncbi.nlm.nih.gov/articles/PMC4420902/).
 
           Additional information on TP0326 can be found at:
           - [UniProt O83346](https://www.uniprot.org/uniprotkb/O83346/entry)
       TP0435:
         describe: |
-          The gene tp0435, frequently referred to as tpp17, encodes a highly abundant 17-kDa periplasmic lipoprotein found in _T. pallidum_. While the precise function of this protein is not yet fully elucidated, research findings indicate its role as a cytadhesin, facilitating the binding of the bacterium to mammalian cells. Furthermore, TP0435 has been identified as an immunodominant antigen [DOI srep25593](https://www.nature.com/articles/srep25593).
+          TP0435 (also Tp17/Tpp17) is a highly abundant lipoprotein found in _T. pallidum_ that is partially exposed on the surface of the bacterium.
+          While the precise function of this protein is not yet fully elucidated, research findings indicate its role as a cytadhesin, facilitating the binding of the bacterium to mammalian cells.
+          TP0435 has been identified as an immunodominant antigen [DOI srep25593](https://www.nature.com/articles/srep25593).
 
           Additional information on TP0435 can be found at:
           - [UniProt P29722](https://www.uniprot.org/uniprotkb/P29722/entry)
       TP0548:
         describe: |
-          TP0548 belongs to the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium. This locus is of particular importance in the context of various typing approaches [PMID 33093286](https://pubmed.ncbi.nlm.nih.gov/33093286/).
+          TP0548 belongs to the FadL family, which facilitates the transport of long-chain fatty acids across the outer membrane, thereby providing essential nutrients for the bacterium.
+          Its encoding gene is of particular importance in the context of various typing approaches [PMID 33093286](https://pubmed.ncbi.nlm.nih.gov/33093286/).
 
           Additional information on TP0548 can be found at:
           - [UniProt O83559](https://www.uniprot.org/uniprotkb/O83559/entry)
       TP0574:
         describe: |
-          The gene tp0574, also termed tpp47, encodes a 47-kDa surface-anchored lipoprotein. This lipoprotein has been identified as a major virulence factor. It has been demonstrated that TP0574-induced PGE2 production contributes to the inhibition of macrophage phagocytosis, which potentially facilitates immune evasion during infection [PMID 38258964](https://pubmed.ncbi.nlm.nih.gov/38258964/).
+          TP0574 (also Tp47/Tpp47) is a penicillin-binding outer membrane lipoprotein.
+          It has been demonstrated that TP0574-induced PGE2 production contributes to the inhibition of macrophage phagocytosis, which potentially facilitates immune evasion during infection [PMID 38258964](https://pubmed.ncbi.nlm.nih.gov/38258964/).
 
           Additional information on TP0574 can be found at:
           - [UniProt P29723](https://www.uniprot.org/uniprotkb/P29723/entry)
       TP0705:
         describe: |
-          tp0705 encodes a Penicillin-Binding Protein, which is essential for the synthesis and cross-linking of the bacterial cell wall. Recent studies have identified specific genetic variations, notably the A1873G mutation, that are associated with reduced susceptibility to penicillin G and ceftriaxone in _T. pallidum_ [PMC 12152143](https://pmc.ncbi.nlm.nih.gov/articles/PMC12152143/).
+          TP0705 is a periplasmic penicillin-binding protein, which is essential for the synthesis and cross-linking of the bacterial cell wall.
+          Recent studies have identified specific genetic variations, notably the A1873G mutation, that are associated with reduced susceptibility to penicillin G and ceftriaxone in _T. pallidum_ [PMC 12152143](https://pmc.ncbi.nlm.nih.gov/articles/PMC12152143/).
 
           Additional information on TP0705 can be found at:
           - [UniProt O83703 ](https://www.uniprot.org/uniprot/O83703/entry)

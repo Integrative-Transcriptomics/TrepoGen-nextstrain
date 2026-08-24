@@ -4,22 +4,19 @@ sources:
     reference_sample: "CP004011"
     meta_identifier: "sra"
 
-    # Optional command line arguments to filter variants. Currently (2026-05-29) not used, as the data source is already pre-filtered.
-    #filter:
-    #  query_cl: "--query-columns ambiguity:float coverage:float --query '(coverage >= 5) & (ambiguity <= 10)'"
-
     # Parameters to build the initial tree from this data source.
     tree:
       # The auto substitution model selection may be disabled in the future for runtime increase. HKY+F+ASC+R2 performed good for the 2588 source.
-      method_cl: "--method iqtree --substitution-model HKY+F+ASC+R2 --tree-builder-args='-safe'"
+      method_cl: "--method iqtree --substitution-model auto --tree-builder-args='-safe' --nthreads 12"
 
     # Optional command line arguments for tree refinement.
     refine:
       year_bounds_cl: "--year-bounds 2025 2000"
       precision: 3
-      iterations: 2
+      iterations: 3
       # The fixed clock rate is based on literature references: https://pmc.ncbi.nlm.nih.gov/articles/PMC8612932/.
-      clock_rate_cl: "--clock-rate 1.28e-7 --clock-std-dev 1.67e-8"
+      #clock_rate_cl: "--clock-rate 1.28e-7 --clock-std-dev 1.67e-8"
+      clock_rate_cl: ""
 
     # Metadata fields to infer for ancestral states (internal nodes of the tree).
     traits:
@@ -27,7 +24,7 @@ sources:
 
     # Additional metadata columns to be included in the Auspice export. These will not be available for coloring.
     export:
-      metadata_columns: "Label BioSample BioProject PMID Center Host Origin 'Mean coverage depth' 'Coverage breadth (≥5X)'"
+      metadata_columns: "Label BioSample BioProject PMID Center Host Origin"
 
     # Data source and metadata description.
     describe: |
@@ -35,6 +32,8 @@ sources:
 
       The <code>TPA-SS14</code> dataset currently comprises whole-genome variants of 2,487 individual _Treponema pallidum_ ssp. _pallidum_, _pertenue_, and _endemicum_ samples, genotyped against the SS14 reference genome [NC_021508.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_021508.1/).
       Variants include **single nucleotide variants (SNVs) and InDels**, providing insight into the full spectrum of sequence changes and featuring the complete phylogenetic context of _T. pallidum_.
+
+      **Note:** Given that the reported genotyping is based on an SS14 reference genome, reported variants may be reference-biased. Consequently, indel calls, particularly in homopolymeric regions, should be interpreted with caution. This extends to gene sequences inferred from the reported variants.
 
       ##### Metadata
 
@@ -44,22 +43,12 @@ sources:
       To communicate **data quality**, we provide the <code>Effective Coverage</code> as the mean coverage multiplied by the breadth of coverage (≥5X) per sample.
       Available whole genome sequencing samples with a breadth of coverage below 75% at 5X were excluded from the dataset.
 
-      To raise awareness of **antimicrobial resistance (AMR)**, we annotate known resistance-associated mutations as variants of interest (VOIs):
+      To raise awareness of **antimicrobial resistance (AMR)**, we annotate known resistance-associated variants:
       - **Macrolide resistance** mediated by 23S rRNA mutations A2058G (positions 283,691 and 235,246 in the used reference genome) and A2059G (positions 283,692 and 235,247 in the used reference genome) [PMC 3592075](https://pmc.ncbi.nlm.nih.gov/articles/PMC3592075/).
-      - Putative **ceftriaxone and penicillin G resistance** associated with TP0705 mutations A1873G (position 773,095 in the used reference genome) and G2122A (position 772,846 in the used reference genome) [PMC 12152143](https://pmc.ncbi.nlm.nih.gov/articles/PMC12152143/).
+      - Putative **ceftriaxone and penicillin G resistance** associated with TP0705 variants of interest (VOIs) A1873G (position 773,095 in the used reference genome) and G2122A (position 772,846 in the used reference genome) [PMC 12152143](https://pmc.ncbi.nlm.nih.gov/articles/PMC12152143/).
 
     # Specification of genes to use for this data source.
     genes:
-      #rpsJ:
-      #  describe: |
-      #    The rpsJ gene in _T. pallidum_ is responsible for encoding the 30S ribosomal protein S10. This protein is a critical component of the bacterial translation machinery. Mutations in the rpsJ gene are closely monitored for their association with tetracycline resistance in _T. pallidum_. Specifically, amino acid substitutions such as V57G, V57I, and V57K within the S10 protein have been identified in variants exhibiting reduced susceptibility to the antibiotic [PMC 12518048](https://pmc.ncbi.nlm.nih.gov/articles/PMC12518048/).
-      #    Additional information on rpsJ can be found at:
-      #    - [UniProt B2S2D5](https://www.uniprot.org/uniprotkb/B2S2D5/entry)
-      #rpsC:
-      #  describe: |
-      #    rpsC encodes the 30S ribosomal protein S3. This protein is an essential component of bacterial translation machinery, playing a critical structural role in binding messenger RNA and assembling the 30S ribosomal subunit. In molecular surveillance studies, mutations in rpsC are analyzed as potential markers for tetracycline resistance. Variants, such as the H178Q mutation, have been evaluated for their role in altering antibiotic susceptibility [PMC 12518048](https://pmc.ncbi.nlm.nih.gov/articles/PMC12518048/).
-      #    Additional information on rpsC can be found at:
-      #    - [UniProt B2S2E2](https://www.uniprot.org/uniprotkb/B2S2E2/entry)
       TP0136:
         describe: |
           TP0136 is a surface-exposed lipoprotein of _T. pallidum_ that plays a critical role in adhesion and pathogenesis.
@@ -67,7 +56,7 @@ sources:
           TP0136 has been the focus of extensive research as a potential primary syphilis vaccine candidate, given its surface exposure [DOI s41541-025-01330-7](https://www.nature.com/articles/s41541-025-01330-7).
           TP0136 is employed to characterize and differentiate _T. pallidum_ subspecies, particularly subsp. _pertenue_, the agent of yaws [PMC 6197692](https://pmc.ncbi.nlm.nih.gov/articles/PMC6197692/).
 
-          Additional information on rpsC can be found at:
+          Additional information on TP0136 can be found at:
           - [UniProt O83172](https://www.uniprot.org/uniprotkb/O83172/entry)
       TP0326:
         describe: |

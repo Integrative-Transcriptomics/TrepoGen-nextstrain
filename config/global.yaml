@@ -35,8 +35,6 @@ describe:
     
     By clicking on a leaf node, the user can access detailed author information, raw data, and genome sequences (if available) via the linked NCBI accessors in the tooltips.
 
-    ```
-    Disclaimer
-    1. Since the reported genotyping is based on an SS14 reference genome, variants may be reference-biased. Consequently, indel calls, particularly in homopolymeric regions, should be interpreted with caution. The same applies to gene sequences inferred from the variants reported.
-    2. The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes. It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.
+    ##### Medical Disclaimer
+    The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes. It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.
     ```

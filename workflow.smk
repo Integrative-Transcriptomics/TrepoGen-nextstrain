@@ -9,6 +9,7 @@ source_files = [
 	"sequence.fasta", # Reference genome sequence in FASTA format.
 	"annotation.gff3", # Annotation file in GFF3 format.
 	"variants.vcf", # VCF file containing the variants for the samples in the dataset.
+	"remove.bed", # (Optional empty) BED file for removing sites from the input VCF.
 	"mask.bed", # (Optional empty) BED file for masking regions in the genome for tree building.
 	"meta.csv", # Metadata file in CSV format containing information about the single samples.
 	"meta_colors.tsv", # TSV file defining colors for the metadata.
@@ -54,32 +55,20 @@ rule index:
 		  --output {output}
 		"""
 
-# Filters variants (optional) based on metadata and excludes specified samples. If no filter is defined, it simply passes the data through.
+# (Optional) Remove variants from the input VCF based on a BED file.
 rule filter:
 	input:
 		variants="source/data/{source}/variants.vcf",
-		index="source/data/{source}/variants.tsv",
-		metadata="source/data/{source}/meta.csv",
+		remove="source/data/{source}/remove.bed",
 	output:
 		".work/{source}/filtered.vcf",
-	params:
-		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
-		query_cl=lambda wc: config["sources"][wc.source].get("filter", {}).get("query_cl", ""),  # Optional query command line argument in config to filter variants.
 	run:
-		if bool(params.query_cl):
-			shell(
-				"""
-				augur filter --sequences {input.variants} \
-					--sequence-index {input.index} \
-					--metadata {input.metadata} \
-					--metadata-id-columns {params.metadata_id} \
-					--output-sequences {output} \
-					{params.query_cl}
-				"""
-			)
-		else:
-			# If no filter is defined, just pass the file through.
-			shell("cp {input.variants} {output}")
+		"""
+		python scripts/filter.py \
+			--input {input.variants} \
+			--remove {input.remove} \
+			--output {output}
+		"""
 
 # Concatenates color definition files of the source data as needed for the dataset.
 rule colors:
@@ -286,26 +275,6 @@ rule export:
 			--lat-longs {input.coordinates} \
 			--output {output} \
 			--include-root-sequence-inline
-		"""
-
-# Estimate frequencies of selected metadata columns over time and across the tree.
-rule frequencies:
-	input:
-		tree=rules.refine.output.tree,
-		metadata="source/data/{source}/meta.csv",
-	params:
-		metadata_id=lambda wc: config["sources"][wc.source].get("meta_identifier", "name strain id"),
-	output:
-		tip_frequencies = "datasets/{source}_tip-frequencies.json"
-	shell:
-		"""
-		augur frequencies \
-			--method kde \
-			--tree {input.tree} \
-			--metadata {input.metadata} \
-			--metadata-id-columns {params.metadata_id} \
-			--min-date 2000.00 \
-			--output {output.tip_frequencies}
 		"""
 
 # Reprocesses the exported dataset.

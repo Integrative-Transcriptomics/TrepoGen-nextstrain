@@ -9,7 +9,7 @@ source_files = [
 	"sequence.fasta", # Reference genome sequence in FASTA format.
 	"annotation.gff3", # Annotation file in GFF3 format.
 	"variants.vcf", # VCF file containing the variants for the samples in the dataset.
-	"remove.bed", # (Optional empty) BED file for removing sites from the input VCF.
+	"exclude.bed", # (Optional empty) BED file for removing sites from the input VCF.
 	"mask.bed", # (Optional empty) BED file for masking regions in the genome for tree building.
 	"meta.csv", # Metadata file in CSV format containing information about the single samples.
 	"meta_colors.tsv", # TSV file defining colors for the metadata.
@@ -59,14 +59,14 @@ rule index:
 rule filter:
 	input:
 		variants="source/data/{source}/variants.vcf",
-		remove="source/data/{source}/remove.bed",
+		exclude="source/data/{source}/exclude.bed",
 	output:
 		".work/{source}/filtered.vcf",
 	run:
 		"""
 		python scripts/filter.py \
 			--input {input.variants} \
-			--remove {input.remove} \
+			--remove {input.exclude} \
 			--output {output}
 		"""
 

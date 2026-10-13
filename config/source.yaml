@@ -6,16 +6,17 @@ sources:
 
     # Parameters to build the initial tree from this data source.
     tree:
-      # The auto substitution model selection may be disabled in the future for runtime increase. HKY+F+ASC+R2 performed good for the 2588 source.
-      method_cl: "--method iqtree --substitution-model auto --tree-builder-args='-safe' --nthreads 12"
+      # The auto substitution model selection may be disabled in the future for runtime increase.
+      # E.g., set "--substitution-model HKY+F+ASC+R2", which performed good for source data used so far.
+      method_cl: "--method iqtree --substitution-model auto --tree-builder-args='-safe -nt AUTO -ntmax 64'"
 
     # Optional command line arguments for tree refinement.
     refine:
       year_bounds_cl: "--year-bounds 2025 2000"
-      precision: 3
-      iterations: 3
-      # The fixed clock rate is based on literature references: https://pmc.ncbi.nlm.nih.gov/articles/PMC8612932/.
-      #clock_rate_cl: "--clock-rate 1.28e-7 --clock-std-dev 1.67e-8"
+      precision: "auto"
+      iterations: 4
+      # To use a fixed clock rate, set "--clock-rate 1.28e-7 --clock-std-dev 1.67e-8".
+      # This is based on literature references: https://pmc.ncbi.nlm.nih.gov/articles/PMC8612932/.
       clock_rate_cl: ""
 
     # Metadata fields to infer for ancestral states (internal nodes of the tree).

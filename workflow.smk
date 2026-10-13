@@ -38,7 +38,7 @@ rule all:
 		expand(".work/{source}/{work_file}", source=sources, work_file=work_files),
 		expand("datasets/{source}_raw.json", source=sources), # Raw dataset exported by augur export before reprocessing.
 		expand("datasets/{source}.json", source=sources), # Final dataset after reprocessing.
-		"source/misc/display_configuration.json", # Source independent file for dataset display defaults.
+		"config/display.json", # Source independent file for dataset display defaults.
 		"source/geo/color.tsv", # Source independent file for geo colors.
 		"source/geo/loc.tsv" # Source independent file for geo coordinates.
 
@@ -131,15 +131,15 @@ rule refine:
 			--max-iter {params.iterations} \
 			--covariance \
 			--precision {params.precision} \
-			--coalescent 'opt' \
-			--date-inference 'joint' \
+			--coalescent 0 \
+			--date-inference 'marginal' \
 			--date-confidence \
 			--date-format '%Y-%m-%d' \
 			--branch-length-inference 'joint' \
 			--seed {params.seed} \
 			--output-tree {output.tree} \
 			--output-node-data {output.branch_lengths} \
-			--verbosity 4 \
+			--verbosity 2 \
 			{params.clock_rate_cl} \
 			{params.root_cl} \
 			{params.year_bounds_cl}
@@ -243,7 +243,7 @@ rule export:
 		metadata="source/data/{source}/meta.csv",
 		colors=rules.colors.output,
 		meta_config="source/data/{source}/meta_configuration.json",
-		display_defaults="source/misc/display_configuration.json",
+		display_defaults="config/display.json",
 		description=rules.describe.output,
 		coordinates="source/geo/loc.tsv",
 		branch_lengths=rules.refine.output.branch_lengths,

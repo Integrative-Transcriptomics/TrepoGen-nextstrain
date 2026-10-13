@@ -19,11 +19,11 @@ describe:
 
     The <code>Nucleotide diversity of genome</code> panel is annotated with selected genes.
     Clicking on one of these genes, or selecting it using the controls in the sidebar, switches the view to show the <code>Amino acid diversity</code> of that gene.
-    This view provides curated annotations of protein features, such as the topology of outer membrane proteins.
+    This view offers curated annotations of protein features, specifically the topology of outer membrane proteins.
     This provides a deeper insight into, for example, the diversity of extracellular loops (ECLs), which are a key target for vaccine design.
-    There is also an information panel below that provides more details on the protein, including links to external resources.
+    In addition, an information panel is displayed below that provides more details on the protein, including links to external resources.
     
-    We are eagerly working on providing access to more detailed gene expression, protein diversity and sequence data by integrating access to collaborating projects, and by adding more comprehensive sample annotations regarding upcoming classification schemas and the latest MLSTs.
+    We are working diligently to provide access to more data modalities, such as gene expression, sequence data, and more comprehensive sample annotations regarding upcoming classification schemas and the latest MLSTs.
   postscript: |
     ##### Funding and Data Provenance
 

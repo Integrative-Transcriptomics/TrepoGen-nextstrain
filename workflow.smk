@@ -62,7 +62,7 @@ rule filter:
 		exclude="source/data/{source}/exclude.bed",
 	output:
 		".work/{source}/filtered.vcf",
-	run:
+	shell:
 		"""
 		python scripts/filter.py \
 			--input {input.variants} \

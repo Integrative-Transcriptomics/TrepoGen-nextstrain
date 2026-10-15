@@ -45,9 +45,10 @@ def main():
 			parts = line.strip().split('\t')
 			if len(parts) < 3:
 				continue
-			chrom, start, end = parts[0], int(parts[1]), int(parts[2])
+			# Account for BED format being 0-based and half-open, while VCF is 1-based and closed.
+			chrom, start, end = parts[0], int(parts[1]) + 1, int(parts[2]) - 1
 			for pos in range(start, end + 1):
-				bed_sites.add((chrom, pos))
+				bed_sites.add((chrom, pos+1))
 
 	# If no sites to remove, simply copy the input VCF to the output.
 	if not bed_sites:

@@ -8,7 +8,7 @@ sources:
     tree:
       # The auto substitution model selection may be disabled in the future for runtime increase.
       # E.g., set "--substitution-model HKY+F+ASC+R2", which performed good for source data used so far.
-      method_cl: "--method iqtree --substitution-model GTR --tree-builder-args='-safe'"
+      method_cl: "--method iqtree --substitution-model GTR+ASC+R4 --tree-builder-args='-safe'"
 
     # Optional command line arguments for tree refinement.
     refine:

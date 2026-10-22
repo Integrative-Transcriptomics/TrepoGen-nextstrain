@@ -1,5 +1,5 @@
 source/data/*
-media/*
 .snakemake
 .work
 .local
+util/*

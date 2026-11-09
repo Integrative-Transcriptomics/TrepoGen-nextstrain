@@ -11,7 +11,7 @@ source_files = [
 	"variants.vcf", # VCF file containing the variants for the samples in the dataset.
 	"exclude.bed", # (Optional empty) BED file for removing sites from the input VCF.
 	"mask.bed", # (Optional empty) BED file for masking regions in the genome for tree building.
-	"meta.csv", # Metadata file in CSV format containing information about the single samples.
+	"meta.tsv", # Metadata file in TSV format containing information about the single samples.
 	"meta_colors.tsv", # TSV file defining colors for the metadata.
 	"meta_configuration.json", # Auspice configuration file in JSON format providing settings for the metadata of the dataset.
 ]
@@ -106,7 +106,7 @@ rule refine:
 	input:
 		variants=rules.filter.output,
 		reference="source/data/{source}/sequence.fasta",
-		metadata="source/data/{source}/meta.csv",
+		metadata="source/data/{source}/meta.tsv",
 		tree=rules.tree.output,
 	output:
 		tree=".work/{source}/tree.nwk",
@@ -173,7 +173,7 @@ rule ancestral:
 rule traits:
 	input:
 		tree=rules.refine.output.tree,
-		metadata="source/data/{source}/meta.csv",
+		metadata="source/data/{source}/meta.tsv",
 	output:
 		".work/{source}/traits.json",
 	params:
@@ -240,7 +240,7 @@ rule describe:
 rule export:
 	input:
 		tree=rules.refine.output.tree,
-		metadata="source/data/{source}/meta.csv",
+		metadata="source/data/{source}/meta.tsv",
 		colors=rules.colors.output,
 		meta_config="source/data/{source}/meta_configuration.json",
 		display_defaults="config/display.json",

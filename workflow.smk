@@ -7,7 +7,7 @@ sources = ["TPA-SS14"]
 # List of source files that are part of the source data; files are expected to be present in the source/data/{source} directory.
 source_files = [
 	"sequence.fasta", # Reference genome sequence in FASTA format.
-	"annotation.gff3", # Annotation file in GFF3 format.
+	"genes.gff3", # Annotation file in GFF3 format.
 	"variants.vcf", # VCF file containing the variants for the samples in the dataset.
 	"exclude.bed", # (Optional empty) BED file for removing sites from the input VCF.
 	"mask.bed", # (Optional empty) BED file for masking regions in the genome for tree building.
@@ -194,11 +194,11 @@ rule translate:
 		tree=rules.refine.output.tree,
 		ancestral_variants=rules.ancestral.output.ancestral_variants,
 		reference="source/data/{source}/sequence.fasta",
-		annotation="source/data/{source}/annotation.gff3",
+		annotation="source/data/{source}/genes.gff3",
 	output:
 		".work/{source}/amino_acid_mutations.json",
 	params:
-		genes=lambda wc: " ".join(config["sources"][wc.source].get("genes", {}).keys()).strip(), # List of genes to translate, expected to match the gene names in the annotation.gff3 file.
+		genes=lambda wc: " ".join(config["sources"][wc.source].get("genes", {}).keys()).strip(), # List of genes to translate, expected to match the gene names in the genes.gff3 file.
 	run:
 		if len(params.genes) > 0:
 			shell(

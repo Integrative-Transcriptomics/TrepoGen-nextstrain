@@ -46,7 +46,7 @@ def main():
 		dataset = json.load( f )
 
 	# Load metadata.
-	meta_file = join( "source", "data", args.source, 'meta.csv' )
+	meta_file = join( "source", "data", args.source, 'meta.tsv' )
 	meta_df = pd.read_csv( meta_file, sep='\t' if meta_file.endswith('.tsv') or meta_file.endswith('.txt') else ',' )
 	if args.id not in meta_df.columns :
 		raise ValueError( f"Specified ID column '{args.id}' not found in metadata file." )

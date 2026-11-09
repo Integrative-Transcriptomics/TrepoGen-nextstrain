@@ -24,7 +24,7 @@ sources:
 
     # Additional metadata columns to be included in the Auspice export. These will not be available for coloring.
     export:
-      metadata_columns: "Label BioSample BioProject PMID Center Host Origin"
+      metadata_columns: "Label BioSample BioProject Publication Center Host 'Date (method)'"
 
     # Data source and metadata description.
     describe: |
@@ -49,15 +49,6 @@ sources:
 
     # Specification of genes to use for this data source.
     genes:
-      TP0136:
-        describe: |
-          TP0136 is a surface-exposed lipoprotein of _T. pallidum_ that plays a critical role in adhesion and pathogenesis.
-          It facilitates the binding of bacteria to host endothelial cells and the extracellular matrix.
-          TP0136 has been the focus of extensive research as a potential primary syphilis vaccine candidate, given its surface exposure [DOI s41541-025-01330-7](https://www.nature.com/articles/s41541-025-01330-7).
-          TP0136 is employed to characterize and differentiate _T. pallidum_ subspecies, particularly subsp. _pertenue_, the agent of yaws [PMC 6197692](https://pmc.ncbi.nlm.nih.gov/articles/PMC6197692/).
-
-          Additional information on TP0136 can be found at:
-          - [UniProt O83172](https://www.uniprot.org/uniprotkb/O83172/entry)
       TP0326:
         describe: |
           TP0326 (BamA) is the central component of the molecular machinery that inserts OMPs into the spirochete's outer membrane.

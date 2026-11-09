@@ -2,4 +2,4 @@ source/data/*
 .snakemake
 .work
 .local
-util/*
+utility/*

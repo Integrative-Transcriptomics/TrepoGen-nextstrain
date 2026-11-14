@@ -23,7 +23,7 @@ describe:
     This provides a deeper insight into, for example, the diversity of extracellular loops (ECLs), which are a key target for vaccine design.
     In addition, an information panel is displayed below that provides more details on the protein, including links to external resources.
     
-    We are working diligently to provide access to more data modalities, such as gene expression, sequence data, and more comprehensive sample annotations regarding upcoming classification schemas and the latest MLSTs.
+    We are working diligently to provide access to more data modalities, such as gene expression, sequence data, and more comprehensive sample annotations.
   postscript: |
     ##### Funding and Data Provenance
 
@@ -33,7 +33,8 @@ describe:
     Data producers should be named where possible and cooperation should be sought in certain circumstances.
     Please avoid scooping the work of others and reach out if uncertain.
     
-    By clicking on a leaf node, the user can access detailed author information, raw data, and genome sequences (if available) via the linked NCBI accessors in the tooltips.
+    By clicking on a leaf node, you can access detailed author information, raw data, and genome sequences (if available) via the linked NCBI accessors in the tooltips.
 
     ##### Medical Disclaimer
+    
     The inclusion of medical and genetic information in this project is intended solely for research, educational, and informational purposes. It is not intended to be used as a substitute for professional medical advice, diagnosis, treatment, or care.

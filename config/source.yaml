@@ -12,7 +12,8 @@ sources:
 
     # Optional command line arguments for tree refinement.
     refine:
-      year_bounds_cl: "--year-bounds 2025 2000"
+      # As all dates have at least a defined year, no need to set bounds at the moment.
+      # year_bounds_cl: "--year-bounds 2025 2000"
       precision: 3
       iterations: 4
       # The current clock rate is based on https://link.springer.com/article/10.1186/s12915-024-02108-4.
@@ -20,11 +21,11 @@ sources:
 
     # Metadata fields to infer for ancestral states (internal nodes of the tree).
     traits:
-      columns: "subspecies country region date"
+      columns: "country region date"
 
     # Additional metadata columns to be included in the Auspice export. These will not be available for coloring.
     export:
-      metadata_columns: "Label BioSample BioProject Publication Center Host 'Date (method)'"
+      metadata_columns: "Label BioSample BioProject Publication Center 'Date (method)'"
 
     # Data source and metadata description.
     describe: |

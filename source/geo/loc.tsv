@@ -1,73 +1,76 @@
 country	Afghanistan	33.0	65.0
-country	Åland Islands	60.1167	19.9
+country	Aland Islands	60.117	19.9
 country	Albania	41.0	20.0
 country	Algeria	28.0	3.0
-country	American Samoa	-14.3333	-170.0
+country	American Samoa	-14.333	-170.0
 country	Andorra	42.5	1.6
 country	Angola	-12.5	18.5
-country	Anguilla	18.25	-63.1667
+country	Anguilla	18.25	-63.167
 country	Antarctica	-90.0	0.0
 country	Antigua and Barbuda	17.05	-61.8
 country	Argentina	-34.0	-64.0
 country	Armenia	40.0	45.0
-country	Aruba	12.5	-69.9667
+country	Aruba	12.5	-69.967
 country	Australia	-27.0	133.0
-country	Austria	47.3333	13.3333
+country	Austria	47.333	13.333
 country	Azerbaijan	40.5	47.5
 country	Bahamas	24.25	-76.0
 country	Bahrain	26.0	50.55
 country	Bangladesh	24.0	90.0
-country	Barbados	13.1667	-59.5333
+country	Barbados	13.167	-59.533
 country	Belarus	53.0	28.0
-country	Belgium	50.8333	4.0
+country	Belgium	50.833	4.0
 country	Belize	17.25	-88.75
 country	Benin	9.5	2.25
-country	Bermuda	32.3333	-64.75
+country	Bermuda	32.333	-64.75
 country	Bhutan	27.5	90.5
 country	Bolivia	-17.0	-65.0
-country	Bonaire	12.1833	-68.2333
+country	Bonaire	12.183	-68.233
 country	Bosnia and Herzegovina	44.0	18.0
 country	Botswana	-22.0	24.0
-country	Bouvet Island	-54.4333	3.4
+country	Bouvet Island	-54.433	3.4
 country	Brazil	-10.0	-55.0
 country	British Indian Ocean Territory	-6.0	71.5
-country	Brunei	4.5	114.6667
+country	British Virgin Islands	18.5	-64.5
+country	Brunei Darussalam	4.5	114.667
 country	Bulgaria	43.0	25.0
 country	Burkina Faso	13.0	-2.0
 country	Burundi	-3.5	30.0
+country	Cabo Verde	16.0	-24.0
 country	Cambodia	13.0	105.0
 country	Cameroon	6.0	12.0
 country	Canada	60.0	-95.0
-country	Cape Verde	16.0	-24.0
 country	Cayman Islands	19.5	-80.5
 country	Central African Republic	7.0	21.0
 country	Chad	15.0	19.0
 country	Chile	-30.0	-71.0
 country	China	35.0	105.0
-country	Christmas Island	-10.5	105.6667
-country	Cocos (Keeling) Islands	-12.5	96.8333
+country	Christmas Island	-10.5	105.667
+country	Cocos Islands	-12.5	96.833
 country	Colombia	4.0	-72.0
-country	Comoros	-12.1667	44.25
-country	Democratic Republic of Congo	0.0	25.0
+country	Comoros	-12.167	44.25
 country	Congo	-1.0	15.0
-country	Cook Islands	-21.2333	-159.7667
+country	Cook Islands	-21.233	-159.767
 country	Costa Rica	10.0	-84.0
 country	Cote d'Ivoire	8.0	-5.0
-country	Croatia	45.1667	15.5
+country	Croatia	45.167	15.5
 country	Cuba	21.5	-80.0
-country	Curacao	12.1667	-68.9667
+country	Curacao	12.167	-68.967
 country	Cyprus	35.0	33.0
 country	Czech Republic	49.75	15.5
+country	Democratic People's Republic of Korea	40.0	127.0
+country	Democratic Republic of the Congo	0.0	25.0
 country	Denmark	56.0	10.0
 country	Djibouti	11.5	43.0
-country	Dominica	15.4167	-61.3333
-country	Dominican Republic	19.0	-70.6667
+country	Dominica	15.417	-61.333
+country	Dominican Republic	19.0	-70.667
 country	Ecuador	-2.0	-77.5
 country	Egypt	27.0	30.0
-country	El Salvador	13.8333	-88.9167
+country	El Salvador	13.833	-88.917
 country	Equatorial Guinea	2.0	10.0
 country	Eritrea	15.0	39.0
 country	Estonia	59.0	26.0
+country	Eswatini	-26.5	31.5
 country	Ethiopia	8.0	38.0
 country	Falkland Islands	-51.75	-59.0
 country	Faroe Islands	62.0	-7.0
@@ -78,26 +81,26 @@ country	French Guiana	4.0	-53.0
 country	French Polynesia	-15.0	-140.0
 country	French Southern Territories	-43.0	67.0
 country	Gabon	-1.0	11.75
-country	Gambia	13.4667	-16.5667
+country	Gambia	13.467	-16.567
 country	Georgia	42.0	43.5
 country	Germany	51.0	9.0
 country	Ghana	8.0	-2.0
-country	Gibraltar	36.1833	-5.3667
+country	Gibraltar	36.183	-5.367
 country	Greece	39.0	22.0
 country	Greenland	72.0	-40.0
-country	Grenada	12.1167	-61.6667
-country	Guadeloupe	16.25	-61.5833
-country	Guam	13.4667	144.7833
+country	Grenada	12.117	-61.667
+country	Guadeloupe	16.25	-61.583
+country	Guam	13.467	144.783
 country	Guatemala	15.5	-90.25
 country	Guernsey	49.5	-2.56
-country	Guinea-Bissau	12.0	-15.0
 country	Guinea	11.0	-10.0
+country	Guinea-Bissau	12.0	-15.0
 country	Guyana	5.0	-59.0
-country	Haiti	19.0	-72.4167
-country	Heard Island and McDonald Islands	-53.1	72.5167
+country	Haiti	19.0	-72.417
+country	Heard Island and McDonald Islands	-53.1	72.517
 country	Holy See	41.9	12.45
 country	Honduras	15.0	-86.5
-country	Hong Kong	22.25	114.1667
+country	Hong Kong	22.25	114.167
 country	Hungary	47.0	20.0
 country	Iceland	65.0	-18.0
 country	India	20.0	77.0
@@ -107,45 +110,40 @@ country	Iraq	33.0	44.0
 country	Ireland	53.0	-8.0
 country	Isle of Man	54.23	-4.55
 country	Israel	31.5	34.75
-country	Italy	42.8333	12.8333
+country	Italy	42.833	12.833
 country	Jamaica	18.25	-77.5
 country	Japan	36.0	138.0
 country	Jersey	49.21	-2.13
 country	Jordan	31.0	36.0
 country	Kazakhstan	48.0	68.0
 country	Kenya	1.0	38.0
-country	Kiribati	1.4167	173.0
-country	North Korea	40.0	127.0
-country	South Korea	37.0	127.5
-country	Kosovo	42.5833	21.0
-country	Kuwait	29.3375	47.6581
+country	Kiribati	1.417	173.0
+country	Kuwait	29.337	47.658
 country	Kyrgyzstan	41.0	75.0
-country	Laos	18.0	105.0
+country	Lao People's Democratic Republic	18.0	105.0
 country	Latvia	57.0	25.0
-country	Lebanon	33.8333	35.8333
+country	Lebanon	33.833	35.833
 country	Lesotho	-29.5	28.5
 country	Liberia	6.5	-9.5
 country	Libya	25.0	17.0
-country	Liechtenstein	47.1667	9.5333
+country	Liechtenstein	47.167	9.533
 country	Lithuania	56.0	24.0
-country	Luxembourg	49.75	6.1667
-country	Macao	22.1667	113.55
-country	North Macedonia	41.8333	22.0
+country	Luxembourg	49.75	6.167
+country	Macao	22.167	113.55
 country	Madagascar	-20.0	47.0
 country	Malawi	-13.5	34.0
 country	Malaysia	2.5	112.5
 country	Maldives	3.25	73.0
 country	Mali	17.0	-4.0
-country	Malta	35.8333	14.5833
+country	Malta	35.833	14.583
 country	Marshall Islands	9.0	168.0
-country	Martinique	14.6667	-61.0
+country	Martinique	14.667	-61.0
 country	Mauritania	20.0	-12.0
-country	Mauritius	-20.2833	57.55
-country	Mayotte	-12.8333	45.1667
+country	Mauritius	-20.283	57.55
+country	Mayotte	-12.833	45.167
 country	Mexico	23.0	-102.0
-country	Micronesia	6.9167	158.25
-country	Moldova	47.0	29.0
-country	Monaco	43.7333	7.4
+country	Micronesia	6.917	158.25
+country	Monaco	43.733	7.4
 country	Mongolia	46.0	105.0
 country	Montenegro	42.0	19.0
 country	Montserrat	16.75	-62.2
@@ -153,23 +151,22 @@ country	Morocco	32.0	-5.0
 country	Mozambique	-18.25	35.0
 country	Myanmar	22.0	98.0
 country	Namibia	-22.0	17.0
-country	Nauru	-0.5333	166.9167
+country	Naoero	-0.533	166.917
 country	Nepal	28.0	84.0
-country	Netherlands Antilles	12.25	-68.75
 country	Netherlands	52.5	5.75
 country	New Caledonia	-21.5	165.5
 country	New Zealand	-41.0	174.0
 country	Nicaragua	13.0	-85.0
 country	Niger	16.0	8.0
 country	Nigeria	10.0	8.0
-country	Niue	-19.0333	-169.8667
-country	Norfolk Island	-29.0333	167.95
+country	Niue	-19.033	-169.867
+country	Norfolk Island	-29.033	167.95
+country	North Macedonia	41.833	22.0
 country	Northern Mariana Islands	15.2	145.75
 country	Norway	62.0	10.0
 country	Oman	21.0	57.0
 country	Pakistan	30.0	70.0
 country	Palau	7.5	134.5
-country	Palestine	32.0	35.25
 country	Panama	9.0	-80.0
 country	Papua New Guinea	-6.0	147.0
 country	Paraguay	-23.0	-58.0
@@ -180,28 +177,30 @@ country	Poland	52.0	20.0
 country	Portugal	39.5	-8.0
 country	Puerto Rico	18.25	-66.5
 country	Qatar	25.5	51.25
-country	Réunion	-21.1	55.6
+country	Republic of Korea	37.0	127.5
+country	Republic of Moldova	47.0	29.0
 country	Romania	46.0	25.0
 country	Russia	60.0	100.0
 country	Rwanda	-2.0	30.0
-country	Saint Barthélemy	17.8977	-62.8342
-country	Saint Helena	-15.9333	-5.7
-country	Saint Kitts and Nevis	17.3333	-62.75
-country	Saint Lucia	13.8833	-61.1333
-country	Saint Martin	18.0753	-63.06
-country	Saint Pierre and Miquelon	46.8333	-56.3333
+country	Réunion	-21.1	55.6
+country	Saint Barthélemy	17.898	-62.834
+country	Saint Helena	-15.933	-5.7
+country	Saint Kitts and Nevis	17.333	-62.75
+country	Saint Lucia	13.883	-61.133
+country	Saint Martin	18.075	-63.06
+country	Saint Pierre and Miquelon	46.833	-56.333
 country	Saint Vincent and the Grenadines	13.25	-61.2
-country	Samoa	-13.5833	-172.3333
-country	San Marino	43.7667	12.4167
+country	Samoa	-13.583	-172.333
+country	San Marino	43.767	12.417
 country	Sao Tome and Principe	1.0	7.0
 country	Saudi Arabia	25.0	45.0
 country	Senegal	14.0	-14.0
 country	Serbia	44.0	21.0
-country	Seychelles	-4.5833	55.6667
+country	Seychelles	-4.583	55.667
 country	Sierra Leone	8.5	-11.5
-country	Singapore	1.3667	103.8
-country	Sint Maarten	18.0333	-63.05
-country	Slovakia	48.6667	19.5
+country	Singapore	1.367	103.8
+country	Sint Maarten	18.033	-63.05
+country	Slovakia	48.667	19.5
 country	Slovenia	46.0	15.0
 country	Solomon Islands	-8.0	159.0
 country	Somalia	10.0	49.0
@@ -210,64 +209,62 @@ country	South Georgia and the South Sandwich Islands	-54.5	-37.0
 country	South Sudan	8.0	30.0
 country	Spain	40.0	-4.0
 country	Sri Lanka	7.0	81.0
+country	State of Palestine	32.0	35.25
 country	Sudan	15.0	30.0
 country	Suriname	4.0	-56.0
-country	Svalbard and Jan Mayen	78.0	20.0
-country	Eswatini	-26.5	31.5
+country	Svalbard and Jan Mayen Islands	78.0	20.0
 country	Sweden	62.0	15.0
 country	Switzerland	47.0	8.0
-country	Syria	35.0	38.0
-country	Taiwan	23.5	121.0
+country	Syrian Arab Republic	35.0	38.0
 country	Tajikistan	39.0	71.0
 country	Tanzania	-6.0	35.0
 country	Thailand	15.0	100.0
-country	Timor-Leste	-8.55	125.5167
-country	Togo	8.0	1.1667
+country	Timor-Leste	-8.55	125.517
+country	Togo	8.0	1.167
 country	Tokelau	-9.0	-172.0
 country	Tonga	-20.0	-175.0
 country	Trinidad and Tobago	11.0	-61.0
 country	Tunisia	34.0	9.0
 country	Turkey	39.0	35.0
 country	Turkmenistan	40.0	60.0
-country	Turks and Caicos Islands	21.75	-71.5833
+country	Turks and Caicos Islands	21.75	-71.583
 country	Tuvalu	-8.0	178.0
 country	Uganda	1.0	32.0
 country	Ukraine	49.0	32.0
 country	United Arab Emirates	24.0	54.0
 country	United Kingdom	54.0	-2.0
-country	United States Minor Outlying Islands	19.2833	166.6
 country	United States	38.0	-97.0
+country	United States Minor Outlying Islands	19.283	166.6
+country	United States Virgin Islands	18.333	-64.833
 country	Uruguay	-33.0	-56.0
 country	Uzbekistan	41.0	64.0
 country	Vanuatu	-16.0	167.0
 country	Venezuela	8.0	-66.0
 country	Vietnam	16.0	106.0
-country	British Virgin Islands	18.5	-64.5
-country	US Virgin Islands	18.3333	-64.8333
-country	Wallis and Futuna	-13.3	-176.2
+country	Wallis and Futuna Islands	-13.3	-176.2
 country	Western Sahara	24.5	-13.0
 country	Yemen	15.0	48.0
 country	Zambia	-15.0	30.0
 country	Zimbabwe	-20.0	30.0
-region	Southern Asia	24.7478	76.2331
-region	Southern Europe	41.4758	12.4115
-region	Northern Africa	27.1137	14.0742
-region	Polynesia	-16.7691	-151.4525
-region	Middle Africa	2.0429	14.3942
-region	Caribbean	15.8184	-66.9138
-region	South America	-12.0946	-65.4101
-region	Western Asia	31.5121	43.6069
-region	Australia and New Zealand	-34.1777	151.2473
-region	Western Europe	48.372	7.25
-region	Eastern Europe	48.1379	29.8228
-region	Central America	8.9328	-82.5704
-region	Western Africa	11.9016	-6.6492
-region	Northern America	19.3714	-85.3747
-region	Southern Africa	-25.7263	25.0382
-region	South-eastern Asia	3.5110	114.0129
-region	Eastern Africa	-5.5058	39.1925
-region	Eastern Asia	33.5375	108.0914
-region	Northern Europe	58.7474	10.9319
-region	Melanesia	-5.3192	151.9152
-region	Micronesia	6.8772	158.2250
-region	Central Asia	42.4088	69.5346
+region	Southern Asia	23.2	76.248
+region	Northern Europe	59.536	7.365
+region	Southern Europe	42.02	11.69
+region	Northern Africa	27.363	10.462
+region	Polynesia	-16.439	-165.02
+region	Middle Africa	1.845	15.447
+region	Caribbean	16.814	-66.318
+region	South America	-18.833	-60.196
+region	Western Asia	31.249	43.662
+region	Australia and New Zealand	-33.81	125.367
+region	Western Europe	48.411	7.264
+region	Eastern Europe	51.26	28.381
+region	Central America	14.647	-88.046
+region	Western Africa	10.456	-6.548
+region	Northern America	51.56	-73.431
+region	Southern Africa	-25.884	24.923
+region	Eastern Africa	-7.546	42.176
+region	South-eastern Asia	8.462	110.332
+region	Eastern Asia	34.598	118.551
+region	Melanesia	-14.084	162.545
+region	Micronesia	9.264	157.313
+region	Central Asia	41.92	67.589

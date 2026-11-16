@@ -1,12 +1,12 @@
 country	Afghanistan	#ce854e
-country	Åland Islands	#76762e
+country	Aland Islands	#76762e
 country	Albania	#476c19
 country	Algeria	#61293f
 country	American Samoa	#da99ba
 country	Andorra	#4d6d1b
 country	Angola	#94473b
 country	Anguilla	#1b3a42
-country	Antarctica	#d9d9d9
+country	Antarctica	#404040
 country	Antigua and Barbuda	#1b3940
 country	Argentina	#66b5ca
 country	Armenia	#c67a4b
@@ -31,24 +31,24 @@ country	Botswana	#9f513e
 country	Bouvet Island	#AAAAAA
 country	Brazil	#99d9d2
 country	British Indian Ocean Territory	#fcca65
-country	Brunei	#efb65f
+country	British Virgin Islands	#1b3a43
+country	Brunei Darussalam	#efb65f
 country	Bulgaria	#4f6e1c
 country	Burkina Faso	#72303a
 country	Burundi	#873d3a
+country	Cabo Verde	#0d4e1b
 country	Cambodia	#e5a75a
 country	Cameroon	#7b3539
 country	Canada	#2969a0
-country	Cape Verde	#0d4e1b
 country	Cayman Islands	#1c3a44
 country	Central African Republic	#7a3439
 country	Chad	#6f2e3a
 country	Chile	#6cbbcb
 country	China	#cc824d
 country	Christmas Island	#dda3c3
-country	Cocos (Keeling) Islands	#dc9ebe
+country	Cocos Islands	#dc9ebe
 country	Colombia	#c5efdd
 country	Comoros	#93463b
-country	Democratic Republic of Congo	#823a39
 country	Congo	#843b39
 country	Cook Islands	#d689ad
 country	Costa Rica	#1a3435
@@ -58,6 +58,8 @@ country	Cuba	#1c3c48
 country	Curacao	#ddfbe3
 country	Cyprus	#cc824d
 country	Czech Republic	#607224
+country	Democratic People's Republic of Korea	#c67a4b
+country	Democratic Republic of the Congo	#823a39
 country	Denmark	#6d742a
 country	Djibouti	#743139
 country	Dominica	#1b373d
@@ -68,6 +70,7 @@ country	El Salvador	#1b363b
 country	Equatorial Guinea	#813939
 country	Eritrea	#6f2e3a
 country	Estonia	#73752d
+country	Eswatini	#a5563f
 country	Ethiopia	#783339
 country	Falkland Islands	#499bc8
 country	Faroe Islands	#797630
@@ -90,8 +93,8 @@ country	Guadeloupe	#1b383f
 country	Guam	#e5a659
 country	Guatemala	#1b373d
 country	Guernsey	#5f7123
-country	Guinea-Bissau	#733039
 country	Guinea	#743139
+country	Guinea-Bissau	#733039
 country	Guyana	#c9f1de
 country	Haiti	#1c3a43
 country	Heard Island and McDonald Islands	#AAAAAA
@@ -115,12 +118,9 @@ country	Jordan	#d0884f
 country	Kazakhstan	#bc6f47
 country	Kenya	#813939
 country	Kiribati	#AAAAAA
-country	North Korea	#c67a4b
-country	South Korea	#c97f4c
-country	Kosovo	#4d6d1b
 country	Kuwait	#d28b50
 country	Kyrgyzstan	#c4794a
-country	Laos	#df9e57
+country	Lao People's Democratic Republic	#df9e57
 country	Latvia	#6f742b
 country	Lebanon	#cd844e
 country	Lesotho	#a85940
@@ -130,7 +130,6 @@ country	Liechtenstein	#597020
 country	Lithuania	#6d742a
 country	Luxembourg	#607224
 country	Macao	#db9754
-country	North Macedonia	#4b6d1a
 country	Madagascar	#9e4f3d
 country	Malawi	#95483c
 country	Malaysia	#f2ba60
@@ -144,7 +143,6 @@ country	Mauritius	#d78cb0
 country	Mayotte	#94473b
 country	Mexico	#1c3d4b
 country	Micronesia	#044423
-country	Moldova	#597020
 country	Monaco	#516e1d
 country	Mongolia	#be7148
 country	Montenegro	#4b6d1a
@@ -153,9 +151,8 @@ country	Morocco	#5d2842
 country	Mozambique	#9b4d3d
 country	Myanmar	#db9754
 country	Namibia	#9f513e
-country	Nauru	#AAAAAA
+country	Naoero	#AAAAAA
 country	Nepal	#d48d51
-country	Netherlands Antilles	#ddfbe3
 country	Netherlands	#667327
 country	New Caledonia	#d688ac
 country	New Zealand	#b56891
@@ -164,12 +161,12 @@ country	Niger	#6e2e3a
 country	Nigeria	#763239
 country	Niue	#d78eb2
 country	Norfolk Island	#cf779e
+country	North Macedonia	#4b6d1a
 country	Northern Mariana Islands	#0c4d1c
 country	Norway	#797630
 country	Oman	#dc9955
 country	Pakistan	#d18a50
 country	Palau	#ecb05d
-country	Palestine	#cf874f
 country	Panama	#1a3434
 country	Papua New Guinea	#e0adcb
 country	Paraguay	#78c5cc
@@ -180,10 +177,12 @@ country	Poland	#657326
 country	Portugal	#426a17
 country	Puerto Rico	#1b3a42
 country	Qatar	#d79152
-country	Réunion	#d68aae
+country	Republic of Korea	#c97f4c
+country	Republic of Moldova	#597020
 country	Romania	#56701f
 country	Russia	#75752e
 country	Rwanda	#853b39
+country	Réunion	#d68aae
 country	Saint Barthélemy	#1b3942
 country	Saint Helena	#984b3c
 country	Saint Kitts and Nevis	#1b3941
@@ -210,14 +209,13 @@ country	South Georgia and the South Sandwich Islands	#4496c8
 country	South Sudan	#783339
 country	Spain	#446b17
 country	Sri Lanka	#ecb15d
+country	State of Palestine	#cf874f
 country	Sudan	#6f2e3a
 country	Suriname	#c5efdd
-country	Svalbard and Jan Mayen	#967c3f
-country	Eswatini	#a5563f
+country	Svalbard and Jan Mayen Islands	#967c3f
 country	Sweden	#797630
 country	Switzerland	#597020
-country	Syria	#cc824d
-country	Taiwan	#d99453
+country	Syrian Arab Republic	#cc824d
 country	Tajikistan	#c77c4b
 country	Tanzania	#8b403a
 country	Thailand	#e3a358
@@ -235,39 +233,38 @@ country	Uganda	#813939
 country	Ukraine	#5e7123
 country	United Arab Emirates	#d89453
 country	United Kingdom	#697328
-country	United States Minor Outlying Islands	#125218
 country	United States	#204b6a
+country	United States Minor Outlying Islands	#125218
+country	United States Virgin Islands	#1b3a42
 country	Uruguay	#67b6ca
 country	Uzbekistan	#c4794a
 country	Vanuatu	#d996b8
 country	Venezuela	#d2f5e1
 country	Vietnam	#e2a158
-country	British Virgin Islands	#1b3a43
-country	US Virgin Islands	#1b3a42
-country	Wallis and Futuna	#db9cbd
+country	Wallis and Futuna Islands	#db9cbd
 country	Western Sahara	#652a3d
 country	Yemen	#e3a358
 country	Zambia	#97493c
 country	Zimbabwe	#9e4f3d
-region	Southern Asia	#e09f57
-region	Southern Europe	#3f6916
-region	Northern Africa	#5b2844
-region	Polynesia	#aa6690
-region	Middle Africa	#7c3639
-region	Caribbean	#1c3a44
-region	South America	#95d6d1
-region	Western Asia	#c57a4b
-region	Australia and New Zealand	#da99ba
-region	Western Europe	#667327
-region	Eastern Europe	#897938
-region	Central America	#225179
-region	Western Africa	#793439
-region	Northern America	#378ac5
-region	Southern Africa	#ad5e42
-region	South-eastern Asia	#f5c062
-region	Eastern Africa	#783339
-region	Eastern Asia	#9d643b
-region	Northern Europe	#857836
-region	Melanesia	#d9abc6
-region	Micronesia	#ecb05d
-region	Central Asia	#b56744
+region	Southern Asia	#da9554
+region	Northern Europe	#75752e
+region	Southern Europe	#4b6d1a
+region	Northern Africa	#62293f
+region	Polynesia	#d995b7
+region	Middle Africa	#813939
+region	Caribbean	#1b3940
+region	South America	#7fcacd
+region	Western Asia	#d0884f
+region	Australia and New Zealand	#c76e96
+region	Western Europe	#5c7122
+region	Eastern Europe	#637225
+region	Central America	#1b373c
+region	Western Africa	#753139
+region	Northern America	#255c8f
+region	Southern Africa	#a4553f
+region	Eastern Africa	#8d413a
+region	South-eastern Asia	#ebaf5c
+region	Eastern Asia	#cc834e
+region	Melanesia	#db99bb
+region	Micronesia	#064621
+region	Central Asia	#c4784a
